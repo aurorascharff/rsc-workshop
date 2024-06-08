@@ -4,21 +4,12 @@
 
 html,
 body {
-  @apply flex h-full w-full;
+  @apply flex h-svh w-full;
 }
 
-button,
 textarea,
 input {
   @apply m-0 w-full rounded-lg border-none bg-white px-3 py-2 shadow-sm hover:shadow-md active:shadow-xs;
-}
-
-a {
-  @apply underline;
-}
-
-button {
-  @apply font-medium text-primary active:translate-y-px;
 }
 
 .search-icon {
@@ -32,20 +23,9 @@ button {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24'%3E%3Cpath stroke='%23000' strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M20 4v5h-.582m0 0a8.001 8.001 0 00-15.356 2m15.356-2H15M4 20v-5h.581m0 0a8.003 8.003 0 0015.357-2M4.581 15H9' /%3E%3C/svg%3E");
 }
 
-.active {
-  background: hsl(224, 98%, 58%);
-  color: white;
-}
-
 .pending {
   animation: progress 2s infinite ease-in-out;
   animation-delay: 200ms;
-}
-
-.loading {
-  opacity: 0.25;
-  transition: opacity 200ms;
-  transition-delay: 200ms;
 }
 
 @keyframes progress {

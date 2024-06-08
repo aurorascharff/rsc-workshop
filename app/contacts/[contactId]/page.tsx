@@ -1,9 +1,9 @@
 import Image from 'next/image';
+import GithubLogo from '@/public/github-mark.svg';
 import DeleteContactButton from '../../../components/DeleteContactButton';
 import Favorite from '../../../components/Favorite';
-import NavButton from '../../../components/NavButton';
+import LinkButton from '../../../components/LinkButton';
 import { getContact } from '../../../lib/services/getContact';
-import GithubLogo from '@/public/github-mark.svg';
 
 type PageProps = {
   params: {
@@ -22,7 +22,7 @@ export default async function ContactPage({ params }: PageProps) {
           <Image
             width={192}
             height={192}
-            className="bg-gray-light mr-8 rounded-3xl object-cover"
+            className="mr-8 rounded-3xl bg-gray-light object-cover"
             alt={`${contact.first} ${contact.last} avatar`}
             key={contact.avatar}
             src={contact.avatar}
@@ -58,11 +58,7 @@ export default async function ContactPage({ params }: PageProps) {
               <Image width={16} height={16} src={GithubLogo} alt="Github Logo" />
             </div>
             <p className="text-xl text-primary">
-              <a
-                target="_blank"
-                className="text-primary no-underline hover:underline"
-                href={`https://github.com/${contact.github}`}
-              >
+              <a target="_blank" className="no-underline hover:underline" href={`https://github.com/${contact.github}`}>
                 {contact.github}
               </a>
             </p>
@@ -72,7 +68,7 @@ export default async function ContactPage({ params }: PageProps) {
         {contact.notes ? <p>{contact.notes}</p> : null}
 
         <div className="my-4 flex gap-2">
-          <NavButton href={`/contacts/${contactId}/edit`}>Edit</NavButton>
+          <LinkButton href={`/contacts/${contactId}/edit`}>Edit</LinkButton>
           <DeleteContactButton contactId={contactId} />
         </div>
       </div>

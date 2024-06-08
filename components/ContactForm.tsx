@@ -1,24 +1,23 @@
 'use client';
 
-import React from 'react';
+import React, { useTransition } from 'react';
 import { updateContact } from '../lib/actions/updateContact';
-import { useLoading } from '../providers/LoadingContext';
-import NavButton from './NavButton';
+import Button from './Button';
+import LinkButton from './LinkButton';
 import type { Contact } from '@prisma/client';
 
 export default function ContactForm({ contact }: { contact: Contact }) {
-  const updateContactById = updateContact.bind(null, contact.id);
-  const { startTransition } = useLoading();
+  const [isPending, startTransition] = useTransition();
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     startTransition(async () => {
-      await updateContactById(new FormData(event.currentTarget));
+      await updateContact(contact.id, new FormData(event.currentTarget));
     });
   };
 
   return (
-    <form className="flex max-w-[40rem] flex-col gap-4" action={updateContactById} onSubmit={onSubmit} key={contact.id}>
+    <form className="flex max-w-[40rem] flex-col gap-4" onSubmit={onSubmit} key={contact.id}>
       <div className="grip-rows-6 grid grid-cols-1 gap-2 sm:grid-cols-[1fr_4fr] sm:gap-4">
         <span className="flex">Name</span>
         <div className="flex gap-4">
@@ -37,21 +36,13 @@ export default function ContactForm({ contact }: { contact: Contact }) {
             type="text"
           />
         </div>
-        <label htmlFor="position" className="flex flex-col justify-between gap-4 sm:flex-row">
-          Position
-        </label>
+        <label htmlFor="position">Position</label>
         <input defaultValue={contact.position || undefined} name="position" placeholder="Konsulent" type="text" />
-        <label htmlFor="email" className="flex flex-col justify-between gap-4 sm:flex-row">
-          Email
-        </label>
+        <label htmlFor="email">Email</label>
         <input defaultValue={contact.email || undefined} name="email" placeholder="moa@inmeta.no" type="text" />
-        <label htmlFor="github" className="flex flex-col justify-between gap-4 sm:flex-row">
-          Github
-        </label>
+        <label htmlFor="github">Github</label>
         <input defaultValue={contact.github || undefined} name="github" placeholder="@moa" type="text" />
-        <label htmlFor="avatar" className="flex flex-col justify-between gap-4 sm:flex-row">
-          Avatar URL
-        </label>
+        <label htmlFor="avatar">Avatar URL</label>
         <input
           aria-label="Avatar URL"
           defaultValue={contact.avatar || undefined}
@@ -59,18 +50,14 @@ export default function ContactForm({ contact }: { contact: Contact }) {
           placeholder="https://example.com/avatar.jpg"
           type="text"
         />
-        <label htmlFor="notes" className="flex flex-col justify-between gap-4 sm:flex-row">
-          Notes
-        </label>
+        <label htmlFor="notes">Notes</label>
         <textarea className="grow" defaultValue={contact.notes || undefined} name="notes" rows={6} />
       </div>
       <div className="flex gap-2 self-end">
-        <button className="w-fit" type="submit">
-          Save
-        </button>
-        <NavButton color="black" href={`/contacts/${contact.id}`}>
-          Cancel
-        </NavButton>
+        <LinkButton href={`/contacts/${contact.id}`}>Cancel</LinkButton>
+        <Button theme="primary" disabled={isPending} className="w-fit" type="submit">
+          {isPending ? 'Saving...' : 'Save'}
+        </Button>
       </div>
     </form>
   );

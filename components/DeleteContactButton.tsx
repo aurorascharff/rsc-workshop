@@ -1,25 +1,27 @@
 'use client';
 
-import React from 'react';
+import React, { useTransition } from 'react';
 import { deleteContact } from '../lib/actions/deleteContact';
-import ActionButton from './ActionButton';
+import Button from './Button';
 
 export default function DeleteContactButton({ contactId }: { contactId: string }) {
-  const deleteContactById = deleteContact.bind(null, contactId);
+  const [isPending, startTransition] = useTransition();
 
   return (
-    <ActionButton
+    <Button
+      theme="destroy"
+      disabled={isPending}
       onClick={() => {
         const response = confirm('Please confirm you want to delete this record.');
         if (!response) {
           return;
         }
-        deleteContactById();
+        startTransition(() => {
+          deleteContact(contactId);
+        });
       }}
-      action={deleteContactById}
-      className="text-red-400"
     >
-      Delete
-    </ActionButton>
+      {isPending ? 'Deleting...' : 'Delete'}
+    </Button>
   );
 }
