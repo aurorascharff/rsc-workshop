@@ -10,7 +10,7 @@ body {
 button,
 textarea,
 input {
-  @apply m-0 rounded-lg border-none bg-white px-3 py-2 shadow-sm hover:shadow-md active:shadow-xs;
+  @apply m-0 w-full rounded-lg border-none bg-white px-3 py-2 shadow-sm hover:shadow-md active:shadow-xs;
 }
 
 a {

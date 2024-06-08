@@ -46,7 +46,7 @@ const CONTACTS = [
       'https://media.licdn.com/dms/image/C5103AQEW-xbR-2s5UA/profile-displayphoto-shrink_200_200/0/1516466254031?e=1723075200&v=beta&t=7mMVUobGkrZ_dpyHsfP0m7jsh0EM-9AIePSbbuOBYRU',
     favorite: false,
     first: 'Caspar',
-    position: 'Seniorkonsultent/ Arkitekt',
+    position: 'Seniorkonsulent/ Arkitekt',
     last: 'Høegh',
     email: 'caspar.hoegh@inmeta.no',
   },

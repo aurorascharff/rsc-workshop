@@ -23,8 +23,8 @@ export default function Favorite({ contact }: { contact: Contact }) {
       <button
         type="submit"
         className={cn(
-          optimisticFavorite ? 'text-secondary' : 'text-gray-400',
-          'hover:text-secondary m-0 p-0 text-2xl shadow-none hover:shadow-none',
+          optimisticFavorite ? 'text-secondary' : 'text-gray-dark',
+          'm-0 p-0 text-2xl shadow-none hover:text-secondary hover:shadow-none',
         )}
         aria-label={optimisticFavorite ? 'Remove from favorites' : 'Add to favorites'}
       >

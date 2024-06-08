@@ -17,7 +17,7 @@ export default function ContactList({ contacts }: { contacts: Contact[] }) {
     : contacts;
 
   return (
-    <nav className="flex-1 overflow-auto px-8 pt-4">
+    <nav className="flex-1 overflow-auto px-8 py-4">
       {filteredContacts.length ? (
         <ul>
           {filteredContacts.map(contact => {

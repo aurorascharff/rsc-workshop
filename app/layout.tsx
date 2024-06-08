@@ -29,24 +29,27 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body className={inter.className}>
         <LoadingStateProvider>
-          <div className="flex w-[22rem] flex-col border-r border-gray bg-gray-background">
-            <Suspense>
-              <div className="flex items-center gap-2 border-b border-gray px-8 py-4">
-                <Search />
-                <ActionButton className="bg-white" action={createEmptyContact}>
-                  New
-                </ActionButton>
+          <div className="flex w-full flex-col sm:flex-row">
+            <div className="bg-gray-light flex h-1/3 w-full flex-col border-r border-gray sm:h-auto sm:w-[16rem] md:w-[22rem]">
+              <Suspense>
+                <div className="flex items-center gap-2 border-b border-gray px-8 py-4">
+                  <Search />
+                  <ActionButton className="bg-white" action={createEmptyContact}>
+                    New
+                  </ActionButton>
+                </div>
+                <ContactList contacts={contacts} />
+              </Suspense>
+              <div className="m-0 hidden flex-row items-center gap-2 border-t border-t-gray px-8 py-4 font-medium sm:flex">
+                <Link className="flex items-center gap-2 text-black no-underline" href="/">
+                  <Image width={30} height={30} src={Logo} alt="" />
+                  Inmeta Contacts
+                </Link>
               </div>
-              <ContactList contacts={contacts} />
-            </Suspense>
-            <div className="m-0 flex flex-row items-center gap-2 border-t border-t-gray px-8 py-4 font-medium">
-              <Image width={30} height={30} src={Logo} alt="" />
-              <Link className="text-black no-underline" href="/">
-                Next Contacts
-              </Link>
+              <div className="flex border-t border-t-gray sm:hidden" />
             </div>
+            <Details>{children}</Details>
           </div>
-          <Details>{children}</Details>
         </LoadingStateProvider>
       </body>
     </html>

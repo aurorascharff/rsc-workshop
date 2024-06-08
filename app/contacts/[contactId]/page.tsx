@@ -16,13 +16,13 @@ export default async function ContactPage({ params }: PageProps) {
   const contact = await getContact(contactId);
 
   return (
-    <div className="flex max-w-[40rem]">
+    <div className="flex flex-col gap-4 lg:flex-row">
       <div>
         {contact.avatar && (
           <Image
             width={192}
             height={192}
-            className="mr-8 rounded-3xl bg-gray-background object-cover"
+            className="bg-gray-light mr-8 rounded-3xl object-cover"
             alt={`${contact.first} ${contact.last} avatar`}
             key={contact.avatar}
             src={contact.avatar}
@@ -54,7 +54,7 @@ export default async function ContactPage({ params }: PageProps) {
 
         {contact.github ? (
           <div className="flex items-center gap-2">
-            <div className="h-4 w-4">
+            <div>
               <Image width={16} height={16} src={GithubLogo} alt="Github Logo" />
             </div>
             <p className="text-xl text-primary">
