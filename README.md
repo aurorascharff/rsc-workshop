@@ -1,4 +1,4 @@
-# Next 14 starter project with ESLint, Prettier and Tailwind set up
+# React Server Components and React 19 in Next.js App Router
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -19,6 +19,31 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Prisma Setup
+
+Add a `.env` file to the root of the project, refer to `.env.sample` for the required environment variables.
+You need decide between prisma local development with `sqlite` or a real database with for example `sqlserver`. Define it in the `schema.prisma` file.
+
+After switching, delete the `prisma/migrations` folder before running the migration command.
+
+When using sqlserver, you need to migrate the database schema with:
+
+```bash
+npm run prisma.migrate
+```
+
+When using sqllite, initialize with:
+
+```bash
+npm run prisma.push
+```
+
+Seed prisma/seed.ts for initial data:
+
+```sh
+npm run prisma.seed
+```
 
 ## Learn More
 
