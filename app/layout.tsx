@@ -10,7 +10,7 @@ import Search from '../components/Search';
 import { createEmptyContact } from '../lib/actions/createEmptyContact';
 import { getContacts } from '../lib/services/getContacts';
 import LoadingStateProvider from '../providers/LoadingContext';
-import Logo from '../public/next-js.svg';
+import Logo from '@/public/next-js.svg';
 import type { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';

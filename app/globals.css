@@ -14,7 +14,7 @@ input {
 }
 
 a {
-  @apply text-gray-text underline;
+  @apply underline;
 }
 
 button {

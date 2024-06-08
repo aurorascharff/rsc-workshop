@@ -39,12 +39,32 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
       </p>
       <label className="flex">
-        <span className="w-32">Twitter</span>
+        <span className="w-32">Position</span>
         <input
           className="grow"
-          defaultValue={contact.twitter || undefined}
-          name="twitter"
-          placeholder="@jack"
+          defaultValue={contact.position || undefined}
+          name="position"
+          placeholder="Konsultent"
+          type="text"
+        />
+      </label>
+      <label className="flex">
+        <span className="w-32">Email</span>
+        <input
+          className="grow"
+          defaultValue={contact.email || undefined}
+          name="email"
+          placeholder="moa@inmeta.no"
+          type="text"
+        />
+      </label>
+      <label className="flex">
+        <span className="w-32">Github</span>
+        <input
+          className="grow"
+          defaultValue={contact.github || undefined}
+          name="github"
+          placeholder="@moa"
           type="text"
         />
       </label>

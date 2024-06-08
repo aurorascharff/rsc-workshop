@@ -20,6 +20,7 @@ model Contact {
   avatar    String?
   email     String?
   github    String?
+  position  String?
   favorite  Boolean  @default(false)
   notes     String?
 }
