@@ -9,15 +9,15 @@ type Props = {
   children: React.ReactNode;
 };
 
-export default function LinkButton({ children, href, theme, ...otherProps }: Props & LinkProps) {
+export default function LinkButton({ children, href, theme = 'primary', ...otherProps }: Props & LinkProps) {
   const colorClass =
     theme === 'primary'
       ? 'bg-primary text-white'
       : theme === 'secondary'
-        ? 'bg-secondary text-white'
+        ? 'bg-white text-primary'
         : theme === 'destroy'
           ? 'bg-destroy text-white'
-          : 'bg-white text-black';
+          : '';
 
   return (
     <Link

@@ -29,11 +29,6 @@ const config: Config = {
           dark: '#1a3dbf',
           light: '#4c7eff',
         },
-        secondary: {
-          DEFAULT: '#eeb004',
-          dark: '#cc8c03',
-          light: '#ffcc36',
-        },
       },
     },
   },

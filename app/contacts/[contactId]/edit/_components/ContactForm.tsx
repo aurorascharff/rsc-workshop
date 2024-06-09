@@ -54,7 +54,9 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <textarea className="grow" defaultValue={contact.notes || undefined} name="notes" rows={6} />
       </div>
       <div className="flex gap-2 self-end">
-        <LinkButton href={`/contacts/${contact.id}`}>Cancel</LinkButton>
+        <LinkButton theme="secondary" href={`/contacts/${contact.id}`}>
+          Cancel
+        </LinkButton>
         <Button theme="primary" disabled={isPending} className="w-fit" type="submit">
           {isPending ? 'Saving...' : 'Save'}
         </Button>

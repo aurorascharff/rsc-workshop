@@ -7,15 +7,20 @@ export type Props = {
   children: React.ReactNode;
 };
 
-export default function Button({ children, theme, type, ...otherProps }: Props & React.HTMLProps<HTMLButtonElement>) {
+export default function Button({
+  children,
+  theme = 'primary',
+  type,
+  ...otherProps
+}: Props & React.HTMLProps<HTMLButtonElement>) {
   const colorClass =
     theme === 'primary'
       ? 'bg-primary text-white disabled:bg-primary-dark'
       : theme === 'secondary'
-        ? 'bg-secondary text-white disabled:bg-secondary-dark'
+        ? 'bg-white text-primary disabled:text-gray-dark'
         : theme === 'destroy'
           ? 'bg-destroy text-white disabled:bg-destroy-dark'
-          : 'bg-white text-black disabled:text-gray-dark';
+          : '';
 
   return (
     <button
@@ -23,7 +28,7 @@ export default function Button({ children, theme, type, ...otherProps }: Props &
       type={type}
       className={cn(
         colorClass,
-        'm-0 rounded-lg border-none px-3 py-2 font-medium shadow-sm hover:shadow-md active:shadow-xs active:enabled:translate-y-px disabled:translate-y-px',
+        'm-0 rounded-lg border-none px-3 py-2 font-medium shadow-sm hover:shadow-md active:shadow-xs active:enabled:translate-y-px disabled:translate-y-px disabled:shadow-xs',
       )}
     >
       {children}

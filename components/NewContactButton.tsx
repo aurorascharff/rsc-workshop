@@ -9,6 +9,7 @@ export default function NewContactButton() {
 
   return (
     <Button
+      theme="secondary"
       onClick={() => {
         startTransition(() => {
           createEmptyContact();

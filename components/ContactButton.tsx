@@ -26,7 +26,7 @@ export default function ContactButton({ contact }: { contact: Contact }) {
         <i>No Name</i>
       )}{' '}
       {contact.favorite ? (
-        <span className={cn('float-right', isActive ? 'text-white' : 'text-secondary')}>★</span>
+        <span className={cn('float-right', isActive ? 'text-white' : 'text-yellow-500')}>★</span>
       ) : null}
     </Link>
   );
