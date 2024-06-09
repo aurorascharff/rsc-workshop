@@ -1,8 +1,9 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import invariant from 'tiny-invariant';
+import { revalidationKeys } from '@/constants/revalidationKeys';
 import { prisma } from '../../db';
 
 export async function updateContact(contactId: string, formData: FormData) {
@@ -15,5 +16,7 @@ export async function updateContact(contactId: string, formData: FormData) {
     },
   });
   revalidatePath(`/contacts/${contactId}`);
+  revalidateTag(revalidationKeys.contact(contactId));
+  revalidateTag(revalidationKeys.contacts);
   redirect(`/contacts/${contactId}`);
 }
