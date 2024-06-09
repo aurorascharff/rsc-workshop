@@ -1,8 +1,8 @@
 import Image from 'next/image';
+import DeleteContactButton from '@/components/DeleteContactButton';
+import Favorite from '@/components/Favorite';
+import LinkButton from '@/components/LinkButton';
 import GithubLogo from '@/public/github-mark.svg';
-import DeleteContactButton from '../../../components/DeleteContactButton';
-import Favorite from '../../../components/Favorite';
-import LinkButton from '../../../components/LinkButton';
 import { getContact } from '../../../lib/services/getContact';
 
 type PageProps = {
@@ -22,7 +22,7 @@ export default async function ContactPage({ params }: PageProps) {
           <Image
             width={192}
             height={192}
-            className="mr-8 rounded-3xl bg-gray-light object-cover"
+            className="mr-8 rounded-3xl bg-gray object-cover"
             alt={`${contact.first} ${contact.last} avatar`}
             key={contact.avatar}
             src={contact.avatar}

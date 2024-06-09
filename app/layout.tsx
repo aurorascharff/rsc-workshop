@@ -3,10 +3,10 @@ import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import ContactList from '@/components/ContactList';
+import NewContactButton from '@/components/NewContactButton';
+import Search from '@/components/Search';
 import Logo from '@/public/next-js.svg';
-import ContactList from '../components/ContactList';
-import NewContactButton from '../components/NewContactButton';
-import Search from '../components/Search';
 import { getContacts } from '../lib/services/getContacts';
 import type { Metadata } from 'next';
 
