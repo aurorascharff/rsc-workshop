@@ -1,27 +1,30 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import Button from '@/components/Button';
+import SubmitButton from '@/components/SubmitButton';
 import { deleteContact } from '@/lib/actions/deleteContact';
 
 export default function DeleteContactButton({ contactId }: { contactId: string }) {
+  const deleteContactById = deleteContact.bind(null, contactId);
   const [isPending, startTransition] = useTransition();
 
   return (
-    <Button
-      theme="destroy"
-      disabled={isPending}
-      onClick={() => {
+    <form
+      action={deleteContactById}
+      onSubmit={e => {
+        e.preventDefault();
         const response = confirm('Please confirm you want to delete this record.');
         if (!response) {
           return;
         }
-        startTransition(() => {
-          deleteContact(contactId);
+        startTransition(async () => {
+          await deleteContactById();
         });
       }}
     >
-      {isPending ? 'Deleting...' : 'Delete'}
-    </Button>
+      <SubmitButton loading={isPending} theme="destroy">
+        Delete
+      </SubmitButton>
+    </form>
   );
 }

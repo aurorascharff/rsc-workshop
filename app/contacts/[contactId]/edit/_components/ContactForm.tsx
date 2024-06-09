@@ -1,23 +1,16 @@
 'use client';
 
-import React, { useTransition } from 'react';
-import Button from '@/components/Button';
-import LinkButton from '@/components/LinkButton';
+import React from 'react';
+import SubmitButton from '@/components/SubmitButton';
+import LinkButton from '@/components/ui/LinkButton';
 import { updateContact } from '@/lib/actions/updateContact';
 import type { Contact } from '@prisma/client';
 
 export default function ContactForm({ contact }: { contact: Contact }) {
-  const [isPending, startTransition] = useTransition();
-
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    startTransition(async () => {
-      await updateContact(contact.id, new FormData(event.currentTarget));
-    });
-  };
+  const updateContactById = updateContact.bind(null, contact.id);
 
   return (
-    <form className="flex max-w-[40rem] flex-col gap-4" onSubmit={onSubmit}>
+    <form className="flex max-w-[40rem] flex-col gap-4" action={updateContactById}>
       <div className="grip-rows-6 grid grid-cols-1 gap-4 sm:grid-cols-[1fr_4fr]">
         <span className="flex">Name</span>
         <div className="flex gap-4">
@@ -57,9 +50,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <LinkButton theme="secondary" href={`/contacts/${contact.id}`}>
           Cancel
         </LinkButton>
-        <Button theme="primary" disabled={isPending} className="w-fit" type="submit">
-          {isPending ? 'Saving...' : 'Save'}
-        </Button>
+        <SubmitButton theme="primary">Save</SubmitButton>
       </div>
     </form>
   );

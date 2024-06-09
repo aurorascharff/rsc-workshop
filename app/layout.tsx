@@ -4,8 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import ContactList from '@/components/ContactList';
-import NewContactButton from '@/components/NewContactButton';
 import Search from '@/components/Search';
+import SubmitButton from '@/components/SubmitButton';
+import { createEmptyContact } from '@/lib/actions/createEmptyContact';
 import { getContacts } from '@/lib/services/getContacts';
 import Logo from '@/public/next-js.svg';
 import type { Metadata } from 'next';
@@ -28,7 +29,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Suspense>
               <div className="flex items-center gap-2 border-b border-gray px-8 py-4">
                 <Search />
-                <NewContactButton />
+                <form action={createEmptyContact}>
+                  <SubmitButton theme="secondary">New</SubmitButton>
+                </form>
               </div>
               <ContactList contacts={contacts} />
             </Suspense>
