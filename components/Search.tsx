@@ -2,7 +2,8 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import React, { useTransition } from 'react';
-import { cn } from '@/utils/cn';
+import { SpinningIcon } from './ui/icons';
+import SearchIcon from './ui/icons/SearchIcon';
 
 export default function Search() {
   const router = useRouter();
@@ -15,7 +16,7 @@ export default function Search() {
   return (
     <form role="search">
       <input
-        className={cn(!searching && 'search-icon', 'w-full pl-8 outline-offset-1')}
+        className="w-full pl-8 outline-offset-1"
         onChange={e => {
           const isFirstSearch = query === null;
           startTransition(() => {
@@ -30,7 +31,13 @@ export default function Search() {
         placeholder="Search"
         type="search"
       />
-      <div aria-hidden hidden={!searching} className="search-spinner absolute left-10 top-7 h-4 w-4 animate-spin" />
+      <div aria-hidden className="absolute left-10 top-7">
+        {searching ? (
+          <SpinningIcon width={16} height={16} className="text-gray-dark" />
+        ) : (
+          <SearchIcon width={16} height={16} className="text-gray-dark" />
+        )}
+      </div>
     </form>
   );
 }

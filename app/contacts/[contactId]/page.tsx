@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import LinkButton from '@/components/LinkButton';
+import LinkButton from '@/components/ui/LinkButton';
 import { getContact } from '@/lib/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import DeleteContactButton from './_components/DeleteContactButton';

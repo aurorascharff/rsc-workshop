@@ -2,7 +2,7 @@
 
 import React, { useTransition } from 'react';
 import { createEmptyContact } from '@/lib/actions/createEmptyContact';
-import Button from './Button';
+import Button from './ui/Button';
 
 export default function NewContactButton() {
   const [isPending, startTransition] = useTransition();
@@ -11,8 +11,8 @@ export default function NewContactButton() {
     <Button
       theme="secondary"
       onClick={() => {
-        startTransition(() => {
-          createEmptyContact();
+        startTransition(async () => {
+          await createEmptyContact();
         });
       }}
       disabled={isPending}

@@ -11,13 +11,11 @@ type Props = {
 
 export default function LinkButton({ children, href, theme = 'primary', ...otherProps }: Props & LinkProps) {
   const colorClass =
-    theme === 'primary'
-      ? 'bg-primary text-white'
-      : theme === 'secondary'
-        ? 'bg-white text-primary'
-        : theme === 'destroy'
-          ? 'bg-destroy text-white'
-          : '';
+    theme === 'secondary'
+      ? 'bg-white text-primary'
+      : theme === 'destroy'
+        ? 'bg-destroy text-white'
+        : 'bg-primary text-white';
 
   return (
     <Link

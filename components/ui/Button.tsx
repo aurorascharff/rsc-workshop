@@ -14,13 +14,11 @@ export default function Button({
   ...otherProps
 }: Props & React.HTMLProps<HTMLButtonElement>) {
   const colorClass =
-    theme === 'primary'
-      ? 'bg-primary text-white disabled:bg-primary-dark'
-      : theme === 'secondary'
-        ? 'bg-white text-primary disabled:text-gray-dark'
-        : theme === 'destroy'
-          ? 'bg-destroy text-white disabled:bg-destroy-dark'
-          : '';
+    theme === 'secondary'
+      ? 'bg-white text-primary disabled:text-gray-dark'
+      : theme === 'destroy'
+        ? 'bg-destroy text-white disabled:bg-gray-dark'
+        : 'bg-primary text-white disabled:bg-primary-dark';
 
   return (
     <button
