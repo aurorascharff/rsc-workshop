@@ -12,11 +12,7 @@ export default function Loading() {
         <div>Avatar URL</div>
         <div>Notes</div>
       </div>
-      <div className="hidden w-full flex-col sm:flex">
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-      </div>
+      <Skeleton className="hidden sm:block" />
     </div>
   );
 }
