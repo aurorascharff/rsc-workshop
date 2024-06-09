@@ -1,5 +1,5 @@
-import ContactForm from '@/components/ContactForm';
-import { getContact } from '../../../../lib/services/getContact';
+import { getContact } from '@/lib/services/getContact';
+import ContactForm from './_components/ContactForm';
 
 type PageProps = {
   params: {

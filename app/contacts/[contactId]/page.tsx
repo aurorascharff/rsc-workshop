@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import DeleteContactButton from '@/components/DeleteContactButton';
-import Favorite from '@/components/Favorite';
 import LinkButton from '@/components/LinkButton';
+import { getContact } from '@/lib/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
-import { getContact } from '../../../lib/services/getContact';
+import DeleteContactButton from './_components/DeleteContactButton';
+import Favorite from './_components/Favorite';
 
 type PageProps = {
   params: {

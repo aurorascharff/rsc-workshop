@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import { updateContact } from '../lib/actions/updateContact';
-import Button from './Button';
-import LinkButton from './LinkButton';
+import Button from '@/components/Button';
+import LinkButton from '@/components/LinkButton';
+import { updateContact } from '@/lib/actions/updateContact';
 import type { Contact } from '@prisma/client';
 
 export default function ContactForm({ contact }: { contact: Contact }) {

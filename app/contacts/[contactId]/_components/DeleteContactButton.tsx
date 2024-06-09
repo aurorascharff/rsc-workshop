@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import { deleteContact } from '../lib/actions/deleteContact';
-import Button from './Button';
+import Button from '@/components/Button';
+import { deleteContact } from '@/lib/actions/deleteContact';
 
 export default function DeleteContactButton({ contactId }: { contactId: string }) {
   const [isPending, startTransition] = useTransition();

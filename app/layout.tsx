@@ -6,8 +6,8 @@ import { Suspense } from 'react';
 import ContactList from '@/components/ContactList';
 import NewContactButton from '@/components/NewContactButton';
 import Search from '@/components/Search';
+import { getContacts } from '@/lib/services/getContacts';
 import Logo from '@/public/next-js.svg';
-import { getContacts } from '../lib/services/getContacts';
 import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
