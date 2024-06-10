@@ -6,9 +6,9 @@ generator client {
 }
 
 datasource db {
-  provider          = "sqlite"
-  url               = "file:./dev.db" // Change to "file:./dev.db" with sqlite
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Remove with sqlite
+  provider = "sqlite"
+  url      = "file:./dev.db" // Change to env("DATABASE_URL") for real db
+  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Use this for shadow database for real db
 }
 
 model Contact {

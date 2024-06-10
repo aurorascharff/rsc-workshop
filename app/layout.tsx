@@ -14,7 +14,7 @@ import type { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  description: 'React Server Components and React 19 in Next.js App Router',
+  description: 'React Server Components and React 19 in the Next.js App Router',
   title: 'RSC Workshop - Contacts App',
 };
 

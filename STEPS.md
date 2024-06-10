@@ -1,1 +1,1 @@
-# React Server Components and React 19 in Next.js App Router
+# React Server Components and React 19 in the Next.js App Router
