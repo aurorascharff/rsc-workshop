@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import SubmitButton from '@/components/SubmitButton';
+import SubmitButton from '@/components/ui/SubmitButton';
 import { deleteContact } from '@/lib/actions/deleteContact';
 
 export default function DeleteContactButton({ contactId }: { contactId: string }) {

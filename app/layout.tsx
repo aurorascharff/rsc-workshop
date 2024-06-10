@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Suspense } from 'react';
 import ContactList from '@/components/ContactList';
 import Search from '@/components/Search';
-import SubmitButton from '@/components/SubmitButton';
+import SubmitButton from '@/components/ui/SubmitButton';
 import { createEmptyContact } from '@/lib/actions/createEmptyContact';
 import { getContacts } from '@/lib/services/getContacts';
 import Logo from '@/public/next-js.svg';

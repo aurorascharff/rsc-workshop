@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import SubmitButton from '@/components/SubmitButton';
 import LinkButton from '@/components/ui/LinkButton';
+import SubmitButton from '@/components/ui/SubmitButton';
 import { updateContact } from '@/lib/actions/updateContact';
 import type { Contact } from '@prisma/client';
 
