@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { useFormStatus } from 'react-dom';
-import Button from './ui/Button';
-import { SpinnerIcon } from './ui/icons';
+import Button from './Button';
+import { SpinnerIcon } from './icons';
 
 type Props = {
   theme?: 'primary' | 'secondary' | 'destroy';
