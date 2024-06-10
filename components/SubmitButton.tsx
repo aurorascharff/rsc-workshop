@@ -3,7 +3,7 @@
 import React from 'react';
 import { useFormStatus } from 'react-dom';
 import Button from './ui/Button';
-import SpinningIcon from './ui/icons/SpinningIcon';
+import { SpinnerIcon } from './ui/icons';
 
 type Props = {
   theme?: 'primary' | 'secondary' | 'destroy';
@@ -26,7 +26,9 @@ export default function SubmitButton({
       {pending || loading ? (
         <div className="flex items-center justify-center gap-2">
           {children}
-          <SpinningIcon width={16} height={16} className={theme === 'secondary' ? 'text-gray-dark' : 'text-white'} />
+          <div className="h-fit w-fit animate-spin">
+            <SpinnerIcon width={16} height={16} className={theme === 'secondary' ? 'text-gray-dark' : 'text-white'} />
+          </div>
         </div>
       ) : (
         children

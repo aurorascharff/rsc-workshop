@@ -17,7 +17,7 @@ const config: Config = {
         destroy: {
           DEFAULT: '#f44250',
           dark: '#cc3740',
-          light: '#ff4d5c',
+          light: '#ff6d79',
         },
         gray: {
           DEFAULT: '#e3e3e3',
@@ -27,7 +27,7 @@ const config: Config = {
         primary: {
           DEFAULT: '#2b63fd',
           dark: '#1a3dbf',
-          light: '#4c7eff',
+          light: '#7297ff',
         },
       },
     },

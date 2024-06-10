@@ -1,1 +1,4 @@
-export { default as SpinningIcon } from './SpinningIcon';
+import SearchIcon from './SearchIcon';
+import SpinnerIcon from './SpinnerIcon';
+
+export { SpinnerIcon, SearchIcon };
