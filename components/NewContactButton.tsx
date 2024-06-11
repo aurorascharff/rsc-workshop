@@ -18,7 +18,7 @@ export default function NewContactButton() {
       disabled={isPending}
       type="submit"
     >
-      New
+      {isPending ? 'Creating...' : 'New'}
     </Button>
   );
 }
