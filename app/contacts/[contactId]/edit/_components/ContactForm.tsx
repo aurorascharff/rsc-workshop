@@ -24,7 +24,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
-            defaultValue={state.data?.first || ''}
+            defaultValue={state.data?.first || undefined}
             aria-label="First name"
             name="first"
             type="text"
@@ -33,7 +33,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
           />
           <Input
             aria-label="Last name"
-            defaultValue={state.data?.last || ''}
+            defaultValue={state.data?.last || undefined}
             name="last"
             placeholder="Last"
             type="text"
@@ -43,7 +43,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <label htmlFor="position">Position</label>
         <Input
           error={state.error?.fieldErrors?.position}
-          defaultValue={state.data?.position || ''}
+          defaultValue={state.data?.position || undefined}
           name="position"
           placeholder="Konsulent"
           type="text"
@@ -51,7 +51,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <label htmlFor="email">Email</label>
         <Input
           error={state.error?.fieldErrors?.email}
-          defaultValue={state.data?.email || ''}
+          defaultValue={state.data?.email || undefined}
           name="email"
           placeholder="moa@inmeta.no"
           type="text"
@@ -59,7 +59,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <label htmlFor="github">Github</label>
         <Input
           error={state.error?.fieldErrors?.github}
-          defaultValue={state.data?.github || ''}
+          defaultValue={state.data?.github || undefined}
           name="github"
           placeholder="@moa"
           type="text"
@@ -68,7 +68,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <Input
           error={state.error?.fieldErrors?.avatar}
           aria-label="Avatar URL"
-          defaultValue={state.data?.avatar || ''}
+          defaultValue={state.data?.avatar || undefined}
           name="avatar"
           placeholder="https://example.com/avatar.jpg"
           type="text"
@@ -77,7 +77,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <TextArea
           error={state.error?.fieldErrors?.notes}
           className="grow"
-          defaultValue={state.data?.notes || ''}
+          defaultValue={state.data?.notes || undefined}
           name="notes"
           rows={6}
         />
