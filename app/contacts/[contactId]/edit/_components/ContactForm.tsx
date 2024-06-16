@@ -24,20 +24,20 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
+            error={state.error?.fieldErrors?.first}
             defaultValue={state.data?.first || undefined}
             aria-label="First name"
             name="first"
             type="text"
-            error={state.error?.fieldErrors?.first}
             placeholder="First"
           />
           <Input
+            error={state.error?.fieldErrors?.last}
             aria-label="Last name"
             defaultValue={state.data?.last || undefined}
             name="last"
             placeholder="Last"
             type="text"
-            error={state.error?.fieldErrors?.last}
           />
         </div>
         <label htmlFor="position">Position</label>
@@ -67,7 +67,6 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <label htmlFor="avatar">Avatar URL</label>
         <Input
           error={state.error?.fieldErrors?.avatar}
-          aria-label="Avatar URL"
           defaultValue={state.data?.avatar || undefined}
           name="avatar"
           placeholder="https://example.com/avatar.jpg"
