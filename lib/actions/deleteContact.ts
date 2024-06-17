@@ -1,8 +1,7 @@
 'use server';
 
-import { revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { revalidationKeys } from '@/constants/revalidationKeys';
 import { prisma } from '../../db';
 
 export async function deleteContact(contactId: string) {
@@ -12,6 +11,6 @@ export async function deleteContact(contactId: string) {
     },
   });
 
-  revalidateTag(revalidationKeys.contacts);
+  revalidatePath('/');
   redirect('/');
 }
