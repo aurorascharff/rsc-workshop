@@ -2,7 +2,7 @@ import { z } from 'zod';
 
 export const contactSchema = z.object({
   avatar: z.string().url().or(z.literal('')).nullable(),
-  email: z.string().email().nullable(),
+  email: z.string().email().or(z.literal('')).nullable(),
   first: z.string().nullable(),
   github: z.string().nullable(),
   last: z.string().nullable(),
