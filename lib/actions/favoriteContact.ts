@@ -1,6 +1,7 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidateTag } from 'next/cache';
+import { revalidationKeys } from '@/constants/revalidationKeys';
 import { prisma } from '../../db';
 
 export async function favoriteContact(contactId: string, isFavorite: boolean) {
@@ -12,5 +13,7 @@ export async function favoriteContact(contactId: string, isFavorite: boolean) {
       id: contactId,
     },
   });
-  revalidatePath('/');
+
+  revalidateTag(revalidationKeys.contacts);
+  revalidateTag(revalidationKeys.contact);
 }

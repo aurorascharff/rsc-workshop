@@ -1,6 +1,4 @@
 export const revalidationKeys = {
-  contact: (contactId: string) => {
-    return `contact-${contactId}`;
-  },
+  contact: 'contact',
   contacts: 'contacts',
 } as const;
