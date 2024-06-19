@@ -15,7 +15,7 @@ const CONTACTS = [
   },
   {
     avatar:
-      'https://media.licdn.com/dms/image/D4D03AQEnOlZcEP5iOQ/profile-displayphoto-shrink_200_200/0/1686000056465?e=1723075200&v=beta&t=wfrlybg0hPmqqmPrH1waGDtjy06HVrFBhqAVpHDqtUE',
+      'https://media.licdn.com/dms/image/D4D03AQEls0WFu3XSAQ/profile-displayphoto-shrink_400_400/0/1718224389043?e=1724284800&v=beta&t=82Hbka1jgP_r-6LsE3Un5ZhrzRG_3MbaIGkg8IRux3I',
     email: 'aurora.scharff@inmeta.no',
     favorite: false,
     first: 'Aurora',
