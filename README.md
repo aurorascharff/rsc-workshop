@@ -51,6 +51,12 @@ Seed prisma/seed.ts for initial data:
 npm run prisma.seed
 ```
 
+To view your data in the database, you can run:
+
+```bash
+npm run prisma.studio
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
