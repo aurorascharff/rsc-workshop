@@ -9,5 +9,5 @@ type Props = {
 };
 
 export default function Error({ reset }: Props) {
-  return <ErrorMessage onReset={reset}>⚠️Something went wrong</ErrorMessage>;
+  return <ErrorMessage onReset={reset}>⚠️ Something went wrong</ErrorMessage>;
 }
