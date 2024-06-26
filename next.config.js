@@ -4,10 +4,18 @@ const nextConfig = {
     reactCompiler: true,
     staleTimes: {
       dynamic: 30,
-    }
+    },
   },
   images: {
     domains: ['media.licdn.com'],
+    remotePatterns: [
+      {
+        hostname: 'media.licdn.com',
+        pathname: '/dms/image/**',
+        port: '',
+        protocol: 'https',
+      },
+    ],
   },
 };
 
