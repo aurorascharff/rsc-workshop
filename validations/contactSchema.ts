@@ -4,7 +4,7 @@ export const contactSchema = z.object({
   avatar: z
     .string()
     .url()
-    .startsWith('https://media.licdn.com', 'Avatar URL must be from LinkedIn')
+    .startsWith('https://media.licdn.com', 'Avatar URL must be from LinkedIn (media.licdn.com)')
     .or(z.literal(''))
     .nullable(),
   email: z.string().email().or(z.literal('')).nullable(),
