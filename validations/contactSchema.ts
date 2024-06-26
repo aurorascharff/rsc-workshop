@@ -1,7 +1,12 @@
 import { z } from 'zod';
 
 export const contactSchema = z.object({
-  avatar: z.string().url().or(z.literal('')).nullable(),
+  avatar: z
+    .string()
+    .url()
+    .startsWith('https://media.licdn.com', 'Avatar URL must be from LinkedIn')
+    .or(z.literal(''))
+    .nullable(),
   email: z.string().email().or(z.literal('')).nullable(),
   first: z.string().nullable(),
   github: z.string().nullable(),
