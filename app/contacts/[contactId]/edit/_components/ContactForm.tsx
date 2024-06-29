@@ -14,7 +14,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
 
   const [state, updateContactAction] = useActionState(updateContactById, {
     data: contact,
-    error: {} as ContactSchemaErrorType,
+    errors: {} as ContactSchemaErrorType,
     success: false,
   });
 
@@ -24,7 +24,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
-            error={state.error?.fieldErrors?.first}
+            error={state.errors?.fieldErrors?.first}
             defaultValue={state.data?.first || undefined}
             aria-label="First name"
             name="first"
@@ -32,7 +32,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
             placeholder="First"
           />
           <Input
-            error={state.error?.fieldErrors?.last}
+            error={state.errors?.fieldErrors?.last}
             aria-label="Last name"
             defaultValue={state.data?.last || undefined}
             name="last"
@@ -42,7 +42,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         </div>
         <label htmlFor="position">Position</label>
         <Input
-          error={state.error?.fieldErrors?.position}
+          error={state.errors?.fieldErrors?.position}
           defaultValue={state.data?.position || undefined}
           name="position"
           placeholder="Konsulent"
@@ -50,7 +50,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
         <label htmlFor="email">Email</label>
         <Input
-          error={state.error?.fieldErrors?.email}
+          error={state.errors?.fieldErrors?.email}
           defaultValue={state.data?.email || undefined}
           name="email"
           placeholder="moa@inmeta.no"
@@ -58,7 +58,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
         <label htmlFor="github">Github</label>
         <Input
-          error={state.error?.fieldErrors?.github}
+          error={state.errors?.fieldErrors?.github}
           defaultValue={state.data?.github || undefined}
           name="github"
           placeholder="@moa"
@@ -66,7 +66,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
         <label htmlFor="avatar">Avatar URL</label>
         <Input
-          error={state.error?.fieldErrors?.avatar}
+          error={state.errors?.fieldErrors?.avatar}
           defaultValue={state.data?.avatar || undefined}
           name="avatar"
           placeholder="https:// media.licdn.com/dms/image/example"
@@ -74,7 +74,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
         <label htmlFor="notes">Notes</label>
         <TextArea
-          error={state.error?.fieldErrors?.notes}
+          error={state.errors?.fieldErrors?.notes}
           className="grow"
           defaultValue={state.data?.notes || undefined}
           name="notes"
