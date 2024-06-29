@@ -69,7 +69,7 @@ export default function ContactForm({ contact }: { contact: Contact }) {
           error={state.error?.fieldErrors?.avatar}
           defaultValue={state.data?.avatar || undefined}
           name="avatar"
-          placeholder="https://example.com/avatar.jpg"
+          placeholder="https:// media.licdn.com/dms/image/example"
           type="text"
         />
         <label htmlFor="notes">Notes</label>
