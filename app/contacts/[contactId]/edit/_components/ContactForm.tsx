@@ -23,7 +23,6 @@ export default function ContactForm({ contact }: { contact: Contact }) {
       position: contact.position || '',
     },
     errors: {} as ContactSchemaErrorType,
-    success: false,
   });
 
   return (
