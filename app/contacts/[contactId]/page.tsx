@@ -45,7 +45,7 @@ export default async function ContactPage({ params }: PageProps) {
       </div>
 
       <div className="flex flex-col gap-2">
-        <h1 className="flex-start flex gap-4 text-3xl font-bold">
+        <h1 className="flex-start flex items-center gap-4 text-3xl font-bold">
           {contact.first || contact.last ? (
             <>
               {contact.first} {contact.last}
