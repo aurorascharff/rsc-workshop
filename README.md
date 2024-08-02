@@ -2,9 +2,7 @@
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
-
-First, force install the dependencies to make the React 19 Beta work:
+First, force install the dependencies:
 
 ```bash
 npm install --force
@@ -28,18 +26,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Prisma Setup
 
-Add a `.env` file to the root of the project, refer to `.env.sample` for the required environment variables.
-You need decide between prisma local development with `sqlite` or a real database with for example `sqlserver`. Define it in the `schema.prisma` file.
-
-After switching, delete the `prisma/migrations` folder before running the migration command.
-
-When using sqlserver, you need to migrate the database schema with:
-
-```bash
-npm run prisma.migrate
-```
-
-When using sqllite, initialize with:
+Initialize the local sqllite db with:
 
 ```bash
 npm run prisma.push

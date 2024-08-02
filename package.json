@@ -10,7 +10,13 @@
     "prisma.studio": "npx prisma studio",
     "prisma.seed": "npx prisma db seed",
     "prisma.migrate": "npx prisma migrate dev",
-    "prisma.push": "npx prisma db push"
+    "prisma.push": "npx prisma db push",
+    "test.unit": "vitest run",
+    "test.unit.watch": "vitest watch",
+    "test.unit.coverage": "vitest run --coverage",
+    "test.e2e": "playwright test",
+    "test.e2e.debug": "playwright test --debug",
+    "test.e2e.codegen": "npx playwright codegen"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
@@ -21,13 +27,14 @@
     "autoprefixer": "10.4.16",
     "babel-plugin-react-compiler": "^0.0.0-experimental-938cd9a-20240601",
     "clsx": "^2.1.0",
+    "dotenv": "^16.4.5",
     "eslint": "8.56.0",
     "eslint-config-next": "14.0.4",
     "match-sorter": "^6.3.1",
     "next": "^15.0.0-rc.0",
     "postcss": "^8.4.33",
-    "react": "19.0.0-rc-f994737d14-20240522",
-    "react-dom": "19.0.0-rc-f994737d14-20240522",
+    "react": "^19.0.0-rc-06d0b89e-20240801",
+    "react-dom": "^19.0.0-rc-06d0b89e-20240801",
     "server-only": "^0.0.1",
     "sort-by": "^0.0.2",
     "tailwind-merge": "^2.2.1",
@@ -36,17 +43,24 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.3",
     "@tailwindcss/typography": "^0.5.10",
+    "@testing-librarxy/react": "^16.0.0",
     "@types/eslint": "^8.56.1",
+    "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-autofix": "^1.1.0",
     "eslint-plugin-react-compiler": "^0.0.0-experimental-51a85ea-20240601",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "jsdom": "^24.1.1",
     "prettier": "^3.1.1",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "prisma": "^5.11.0",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^2.0.5"
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"

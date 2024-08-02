@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+/vitest-report/
+/playwright-report/
+/test-results/
+/playwright/.cache/
 
 # database
 dev.db
