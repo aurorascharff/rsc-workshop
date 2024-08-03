@@ -1,6 +1,21 @@
 # React Server Components and React 19 i Next.js App Router
 
-## What are server components?
+## DAY 1
+
+### Create a Next.js app
+
+- Create a new Next.js app with `npx create-next-app@latest`
+- Go through Next.js 14 boilerplate file structure and basics
+
+### Introduce the repository
+
+- Fork / copy files for starter project
+- CRUD app for managing contacts
+- Talk about eslint and prettier, show setup and rules
+- Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
+- Introduce the structure and the components
+
+### What are server components?
 
 - Server components are a new feature in React 19, that allows you to run React components on the server. Differ from SSR because they never re-render, only run once on the server to generate UI. Js never shipped to client, never hydrated.
 - Excalidraw: "the server" fullstack framework, rendered in build or request time
@@ -33,21 +48,14 @@
 - Server in client: server becomes client, fails and console.log
 - Excalidraw: donut pattern and fetch data again, use cases collapsible sidebar or autoscrolling-chat
 
-## Benefits and drawbacks
+### Benefits and drawbacks
 
 - Excalidraw: benefits and drawbacks
 - Benefits: data fetching, access to backend, caching, bundle size, streaming, DX
 - Drawbacks: needs framework like nextjs, complexity, learning curve
 - Commit code and show repo
 
-## Introduce the repository
-
-- CRUD app for managing contacts
-- Talk about eslint and prettier
-- Next.js has lots of stuff like file-based-routing, nested layouts, caching etc. We will focus on the new stuff.
-- Introduce the structure and the components, all is server right now, loads same contact. Pre-coded because this is just react and html. We want more time for the new stuff.
-
-## Code all data fetching
+### Code all data fetching
 
 - Fetch data in contactList: getContacts inside lib/services
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
@@ -61,7 +69,7 @@
 - Excalidraw tree so far
 - Commit code
 
-## Code client component logic
+### Code client component logic
 
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
@@ -71,11 +79,31 @@
 - Excalidraw tree
 - Commit code
 
-## BREAK
+### BREAK
 
-- Remove slow data fetching
+TODO
 
-## Introduce Server Actions
+### TASK 1 Slides
+
+### TASK 1 Solution
+
+- Show the favourite code and example edit loading.tsx
+- Go through the files and solutions
+- Decide what level of polish you want
+- We will improve the favourite tomorrow med React 19
+
+## DAY 2
+
+### Add the React Compiler
+
+- Add the React Compiler to the project
+- Install the React Compiler plugin for Next.js
+- Install the eslint plugin for the React Compiler
+- Enable it in next.config.js
+- Look at devtools
+- Make slow component and show result
+
+### Introduce Server Actions
 
 - Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
 - We cant pass functions over the network, serializable
@@ -84,9 +112,10 @@
 - Excalidraw: "use server" mutateData.ts, back to the server
 - Kommentere kode
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
+- Not recommended for data fetching unless specific use cases such as infinite scroll
 - Commit code
 
-## Write and use all server actions, make CRUD work
+### Write and use all server actions, make CRUD work
 
 - Create: action-prop, mention onClick and hydration and web standards, revalidate etter visning
 - Update: action-prop, onSubmit, hidden inputs or .bind, add all props prisma
@@ -94,7 +123,7 @@
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Commit code
 
-## Add interactivity with SubmitButton
+### Add interactivity with SubmitButton
 
 - Make all functions slow
 - Use loading boolean for delete button
@@ -105,7 +134,7 @@
 - Add component to update contact
 - Commit code
 
-## Use useActionState for form validation
+### Use useActionState for form validation
 
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url.
 - Don´t trust client input
@@ -117,7 +146,28 @@
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 - Commit code
 
-## Final note
+## Unit and Component tests with Vitest
+
+- Show vitest setup and package.json commands
+- Run example test and other commands
+- Test Favorite button
+- Test DeleteContactButton
+- Test ContactPage
+
+## End-to-end tests with Playwright
+
+- Show playwright setup and package.json commands
+- Show example test
+- Run example test and other commands
+- Talk about the benefits of e2e tests and why I´m not spending more time on it
+
+### TASK 2 Slides
+
+### TASK 2 Solution
+
+- Go through the files and solutions
+
+### Final note
 
 - Excalidraw: final trees
 - Performant, interactive, applications with good developer experience, even be prog.enh
