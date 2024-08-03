@@ -79,7 +79,7 @@
 - Excalidraw tree
 - Commit code
 
-### BREAK
+### BREAK 1
 
 TODO
 
@@ -145,6 +145,8 @@ TODO
 - Mention ways to use useActionState, toast on error
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 - Commit code
+
+### BREAK 2
 
 ## Unit and Component tests with Vitest
 
