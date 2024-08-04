@@ -81,6 +81,13 @@
 
 ### Intro: What are transitions?
 
+- Create a slow page and LinkButton to it, how the loading app
+- Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening
+- Create TransitionButton, display the loading state
+- Create a "Home" button and show the app is still responsive, app handles urgent update
+- Explain next.js navigations are already transitions
+- All state updates are executes once they are all done, show example with setCount
+
 ### Add transition to ContactButton sidebar
 
 - Awaiting the server on the page we´re navigating to. Need to show this somehow or the app will not feel good.

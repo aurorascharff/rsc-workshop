@@ -13,7 +13,7 @@ export default function ClientComponent({ children, content }: Props) {
   console.log('ClientComponent');
 
   return (
-    <div className="flex flex-col gap-4 border-2 border-red-500 p-4">
+    <div className="flex w-fit flex-col gap-4 border-2 border-red-500 p-4">
       <Button
         onClick={async () => {
           // Without "use server" on mutateData this will fail
