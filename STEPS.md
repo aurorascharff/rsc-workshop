@@ -15,7 +15,7 @@
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
 
-### What are server components?
+### Intro: What are server components?
 
 - Server components are a new feature in React 19, that allows you to run React components on the server. Differ from SSR because they never re-render, only run once on the server to generate UI. Js never shipped to client, never hydrated.
 - Excalidraw: "the server" fullstack framework, rendered in build or request time
@@ -29,7 +29,7 @@
 - Anything you do here won't add to the bundle size
 - Limitations onclick button, we need client for interactivity or browser stuff
 
-## What are client components?
+## Intro: What are client components?
 
 - Normal react components are marked with "use client"
 - They are rendered on the server and then hydrated on the client like with normal SSR
@@ -41,19 +41,18 @@
 - Basically, try to put client code in the leaves to optimize performance
 - Next.js [docs](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns) client/server components
 
-## Client/server composition
+## Intro: Client/server composition
 
 - Now we need to compose them
 - Client in server: all good
 - Server in client: server becomes client, fails and console.log
 - Excalidraw: donut pattern and fetch data again, use cases collapsible sidebar or autoscrolling-chat
 
-### Benefits and drawbacks
+### Intro: Benefits and drawbacks
 
 - Excalidraw: benefits and drawbacks
 - Benefits: data fetching, access to backend, caching, bundle size, streaming, DX
 - Drawbacks: needs framework like nextjs, complexity, learning curve
-- Commit code and show repo
 
 ### Code all data fetching
 
@@ -67,7 +66,6 @@
 - Add slow functions
 - Show suspense and streaming, nextjs caching happening
 - Excalidraw tree so far
-- Commit code
 
 ### Code client component logic
 
@@ -77,13 +75,45 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features. Prog-enh works.
 - Cache contact: We are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation.
 - Excalidraw tree
-- Commit code
 
 ### BREAK 1
 
-TODO
+### Intro: What are transitions?
 
-### TASK 1 Slides
+-
+
+### Add transition to ContactButton sidebar
+
+- Awaiting the server on the page we´re navigating to. Need to show this somehow or the app will not feel good.
+- Talk about dynamic content. Since this is dynamic, we are running the await on the server. With static content., it has already run in the build and we don´t have to worry about loading states.
+- Add transition to ContactButton as new button ContactButtonTransition
+
+### Intro: What is suspense?
+
+-
+
+### Add suspense to ContactPage
+
+-
+
+### Intro: Introduce Server Actions
+
+- Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
+- We cant pass functions over the network, serializable
+- Pages router: you created API endpoints and used for example trpc
+- Type safety and creates a hidden api-endpoint
+- Excalidraw: "use server" mutateData.ts, back to the server
+- Kommentere kode
+- Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
+- Not recommended for data fetching unless specific use cases such as infinite scroll
+
+### Write and use all server actions, make CRUD work
+
+- Create: onClick, revalidate etter visning
+- Update: onClick, add all props prisma
+- Delete: onClick modal
+
+### Slides: TASK 1
 
 ### TASK 1 Solution
 
@@ -103,36 +133,26 @@ TODO
 - Look at devtools
 - Make slow component and show result
 
-### Introduce Server Actions
+### Update CRUD with React 19 form actions and .bind
 
-- Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
-- We cant pass functions over the network, serializable
-- Pages router: you created API endpoints and used for example trpc
-- Type safety and creates a hidden api-endpoint
-- Excalidraw: "use server" mutateData.ts, back to the server
-- Kommentere kode
-- Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
-- Not recommended for data fetching unless specific use cases such as infinite scroll
-- Commit code
-
-### Write and use all server actions, make CRUD work
-
-- Create: action-prop, mention onClick and hydration and web standards, revalidate etter visning
-- Update: action-prop, onSubmit, hidden inputs or .bind, add all props prisma
-- Delete: action-prop, .bind, then modal. Prog enh fallback.
+- Create: form and action-prop, mention onClick and hydration and web standards
+- This is an implicit action = async transition
+- Mention again progressive enhancement
+- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh
+- Delete: form and action-prop, .bind, then modal. Prog enh fallback.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
-- Commit code
+- Favorite: form and action-prop with .bind or hidden input
 
-### Add interactivity with SubmitButton
+### Add interactivity with transitions and SubmitButton
 
 - Make all functions slow
-- Use loading boolean for delete button
+- Use loading boolean for delete button transition
 - The other buttons are not client components
 - Add useFormStatus isSubmitting
 - Use it in new contact
 - Power of rsc, composability of client/server while mainaining interactivity
 - Add component to update contact
-- Commit code
+- Delete suspense boundaries and show it works without JS
 
 ### Use useActionState for form validation
 
@@ -142,9 +162,17 @@ TODO
 - Per-field errors coming back
 - Move await to page.tsx
 - Use errors, then test, then set defaultValue
+- By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-- Commit code
+- Delete suspense boundaries and show it works without JS
+
+### Use useOptimistic on favorite button
+
+- Show slow favorite button
+- Add hook useOptimistic, explain and show different use cases
+- Add onSubmit, mention you could use action directly, action is now a fallback
+- Show it works without JS
 
 ### BREAK 2
 
@@ -154,7 +182,7 @@ TODO
 - Run example test and other commands
 - Test Favorite button
 - Test DeleteContactButton
-- Test ContactPage
+- Test ContactPage, show that it fails without suspense
 
 ## End-to-end tests with Playwright
 
@@ -163,7 +191,7 @@ TODO
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 
-### TASK 2 Slides
+### Slides: TASK 2
 
 ### TASK 2 Solution
 
