@@ -15,7 +15,6 @@ export default function ClientComponent({ children, content }: Props) {
   return (
     <div className="flex flex-col gap-4 border-2 border-red-500 p-4">
       <Button
-        className="w-fit"
         onClick={async () => {
           // Without "use server" on mutateData this will fail
           const data = await mutateData();

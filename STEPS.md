@@ -14,6 +14,7 @@
 - Talk about eslint and prettier, show setup and rules
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
+- Introduce the cva() library, show on npm
 
 ### Intro: What are server components?
 
@@ -80,8 +81,6 @@
 
 ### Intro: What are transitions?
 
--
-
 ### Add transition to ContactButton sidebar
 
 - Awaiting the server on the page we´re navigating to. Need to show this somehow or the app will not feel good.
@@ -90,11 +89,7 @@
 
 ### Intro: What is suspense?
 
--
-
 ### Add suspense to ContactPage
-
--
 
 ### Intro: Introduce Server Actions
 
@@ -176,7 +171,21 @@
 
 ### BREAK 2
 
-## Unit and Component tests with Vitest
+### Into: Introduce data fetching patterns
+
+### Use Fetch API and /api-routes
+
+### Add caching and Next.js improvements
+
+### Intro: Introduce the use() hook
+
+### Use the use() hook in contacts
+
+### Intro: Introduce React Query
+
+### TODO
+
+### Unit and Component tests with Vitest
 
 - Show vitest setup and package.json commands
 - Run example test and other commands
@@ -184,7 +193,7 @@
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
 
-## End-to-end tests with Playwright
+### End-to-end tests with Playwright
 
 - Show playwright setup and package.json commands
 - Show example test

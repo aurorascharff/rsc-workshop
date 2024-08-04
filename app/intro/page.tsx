@@ -1,17 +1,18 @@
-import Link from 'next/link';
 import React from 'react';
-import ServerComponent from '@/app/intro/_components/ServerComponent';
-import ClientComponent from './_components/ClientComponent';
+import LinkButton from '@/components/ui/LinkButton';
 
 export default function IntroPage() {
   return (
-    <div className="flex flex-col gap-4">
-      Client and Server Components
-      <ClientComponent content={<ServerComponent />}>
-        <ServerComponent />
-      </ClientComponent>
-      <Link href="/intro/transitions">Transitions</Link>
-      <Link href="/intro/suspense">Suspense</Link>
+    <div className="flex w-fit flex-col gap-4">
+      <LinkButton theme="secondary" href="/intro/client-server">
+        Client and Server Components
+      </LinkButton>
+      <LinkButton theme="secondary" href="/intro/transitions">
+        Transitions
+      </LinkButton>
+      <LinkButton theme="secondary" href="/intro/suspense">
+        Suspense
+      </LinkButton>
     </div>
   );
 }
