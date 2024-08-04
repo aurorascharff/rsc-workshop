@@ -46,6 +46,7 @@
   "devDependencies": {
     "@playwright/test": "^1.45.3",
     "@tailwindcss/typography": "^0.5.10",
+    "@testing-library/jest-dom": "^6.4.8",
     "@testing-library/react": "^16.0.0",
     "@types/eslint": "^8.56.1",
     "@types/jest": "^29.5.12",

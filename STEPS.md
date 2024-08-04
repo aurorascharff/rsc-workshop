@@ -79,10 +79,18 @@
 
 ### BREAK 1
 
+## Intro: Statiske og dynamiske sider
+
+- Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek.
+- Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
+- Nevne PPR
+
 ### Intro: What are transitions?
 
-- Create a slow page and LinkButton to it, how the loading app
-- Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening
+- Create a slow page and LinkButton to it, how the app is loading, show console being run. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
+- Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
+- Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
 - Create TransitionButton, display the loading state
 - Create a "Home" button and show the app is still responsive, app handles urgent update
 - Explain next.js navigations are already transitions
@@ -90,13 +98,25 @@
 
 ### Add transition to ContactButton sidebar
 
-- Awaiting the server on the page we´re navigating to. Need to show this somehow or the app will not feel good.
-- Talk about dynamic content. Since this is dynamic, we are running the await on the server. With static content., it has already run in the build and we don´t have to worry about loading states.
 - Add transition to ContactButton as new button ContactButtonTransition
 
 ### Intro: What is suspense?
 
+- Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
+- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
+- Also used for progressive hydration, meaning priorotizing what to hydrate first.
+- In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
+- The content is streaming in to the client, show in network tab.
+- You need to decide where to wait: in the source or in the destination.
+- Vise avfallsdek suspenses.
+- Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
+
 ### Add suspense to ContactPage
+
+- Undo usage of ContactButtonTransition
+- Await slow i getContact
+- Add suspense loading.tsx to ContactPage
+- Create skeleton by copy-pasting the component and filling in the content
 
 ### Intro: Introduce Server Actions
 

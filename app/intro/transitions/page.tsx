@@ -1,5 +1,5 @@
 import React from 'react';
 
-export default function TransitionsPage() {
-  return <div>Home</div>;
+export default function SlowPage() {
+  return <div>SlowPage</div>;
 }

@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import { Suspense } from 'react';
 import { vi } from 'vitest';
 import ContactPage from '../page';
