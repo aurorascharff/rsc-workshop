@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
+import Button from '@/components/ui/Button';
 import { mutateData } from '@/lib/actions/intro/mutateData';
-import Button from '../../../components/ui/Button';
 
 type Props = {
   children: React.ReactNode;

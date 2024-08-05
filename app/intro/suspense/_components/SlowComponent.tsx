@@ -1,9 +1,8 @@
 import React from 'react';
+import { slow } from '@/utils/slow';
 
 export default async function SlowComponent() {
-  await new Promise(resolve => {
-    return setTimeout(resolve, 1000);
-  });
+  await slow();
 
   return <div>SlowComponent</div>;
 }

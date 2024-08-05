@@ -93,6 +93,7 @@
 - Create a slow page and Tabs component
 - Show unresponsive app
 - Add transition: responsive app
+- UseTransition: pending state
 - All state updates are executes once they are all done, show example with setCount
 - Explain next.js navigations are transitions, can always be cancelled
 
@@ -201,6 +202,12 @@
 ### BREAK 2
 
 ### Into: Introduce data fetching patterns
+
+- Fetch in an efficient way
+- Data fetching page
+- Sequential, parallel, suspenses receiving data
+- Suspense strategy: wait for all or stream independently
+- use() hook: suspend client component
 
 ### Use Fetch API and /api-routes
 

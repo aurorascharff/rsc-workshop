@@ -1,10 +1,9 @@
 import React, { Suspense } from 'react';
+import { slow } from '@/utils/slow';
 import SlowComponent from '../_components/SlowComponent';
 
 export default async function SlowPage() {
-  await new Promise(resolve => {
-    return setTimeout(resolve, 1000);
-  });
+  await slow();
 
   return (
     <div>

@@ -13,6 +13,9 @@ export default function IntroPage() {
       <LinkButton theme="secondary" href="/intro/suspense">
         Suspense
       </LinkButton>
+      <LinkButton theme="secondary" href="/intro/data-fetching">
+        Data Fetching
+      </LinkButton>
     </div>
   );
 }
