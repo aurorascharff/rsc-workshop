@@ -12,6 +12,7 @@ type Props = {
 export default function ClientComponent({ children, content }: Props) {
   console.log('ClientComponent');
 
+  // Without "use client" we cannot use onClick, useState, useEffect, etc.
   return (
     <div className="flex w-fit flex-col gap-4 border-2 border-red-500 p-4">
       <Button
