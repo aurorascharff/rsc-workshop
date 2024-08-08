@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 const CONTACTS = [
   {
     avatar:
-      'https://media.licdn.com/dms/image/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_200_200/0/1668631096577?e=1723075200&v=beta&t=tDOKwL6oZgRXkC-i2KUPgqUfUVbfyaBqQ0KX1-_xC9g',
+      'https://media.licdn.com/dms/image/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_200_200/0/1668631096577?e=1728518400&v=beta&t=xkw5B7ynjHXcosrUKipY2Y8NqWs0MtvyqhE2HvMBbhE',
     email: 'devlin.duldulao@inmeta.no',
     favorite: true,
     first: 'Devlin',
@@ -15,7 +15,7 @@ const CONTACTS = [
   },
   {
     avatar:
-      'https://media.licdn.com/dms/image/D4D03AQEls0WFu3XSAQ/profile-displayphoto-shrink_400_400/0/1718224389043?e=1724284800&v=beta&t=82Hbka1jgP_r-6LsE3Un5ZhrzRG_3MbaIGkg8IRux3I',
+      'https://media.licdn.com/dms/image/D4D03AQHXcpkKQKm3NA/profile-displayphoto-shrink_200_200/0/1721032144371?e=1728518400&v=beta&t=9Nx4RikGOKUoGcke8r9E6-U8i6Lgatr6_4lX0_xjjII',
     email: 'aurora.scharff@inmeta.no',
     favorite: false,
     first: 'Aurora',

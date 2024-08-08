@@ -74,7 +74,6 @@
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features. Prog-enh works.
-- Cache contact: We are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation.
 - Excalidraw tree
 
 ### BREAK 1
@@ -209,13 +208,17 @@
 - Suspense strategy: wait for all or stream independently
 - use() hook: suspend client component
 
+### Use the use() hook in contacts
+
 ### Use Fetch API and /api-routes
 
 ### Add caching and Next.js improvements
 
-### Intro: Introduce the use() hook
-
-### Use the use() hook in contacts
+- Add metadata to contactId page
+- Add cache() to getContact since it´s a dynamic page with metadata, log the result
+- Add staleTimes 30 to cache routes
+- Mention instable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation. Leave it as a seperate function but dont use it, mention revalidateTag.
+- Add not-found global,  contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
 ### Intro: Introduce React Query
 
