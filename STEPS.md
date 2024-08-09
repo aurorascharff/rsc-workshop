@@ -152,6 +152,10 @@
 
 ## DAY 2
 
+## Slides: Dag 1 plan, hva lærte dere?
+
+## Slides: Introduksjon til React 19 og React Compiler
+
 ### App: Add the React Compiler
 
 - Add the React Compiler to the project
@@ -220,6 +224,7 @@
 - Suspense strategy: wait for all or stream independently
 - use() hook: unblock a by making suspenses around client components because we cant await inside them
 - Use hook can resolve any promise but this is not recommended inside client components because they are recreated on every render
+- Avfallsdek: use() eksempel i maler
 
 ### App: Use the use() hook in contacts
 
@@ -265,7 +270,9 @@
 - Add routes to a a few application pages href and router.push
 - Add useSafeSearchParams to contactButton and Search
 - Add parseParams to all pageProps
+- Use in redirect and revalidatePath
 - Mention server/client hook and functions
+- Bruker i avfallsdek
 
 ### Show: React Query
 
