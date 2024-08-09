@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import LinkButton from '@/components/ui/LinkButton';
-import { getContact } from '@/lib/services/getContact';
+import { getContact, getContactCache } from '@/lib/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import { routes } from '@/validations/routeSchema';
 import DeleteContactButton from './_components/DeleteContactButton';
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ContactPage({ params }: PageProps) {
   const { contactId } = routes.contactId.$parseParams(params);
-  const contact = await getContact(contactId);
+  const contact = await getContactCache(contactId);
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row">
