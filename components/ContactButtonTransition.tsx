@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import React, { useTransition } from 'react';
 import { cn } from '@/utils/cn';
+import { routes, useSafeSearchParams } from '@/validations/routeSchema';
 import type { Contact } from '@prisma/client';
 
 export default function ContactButtonTransition({ contact }: { contact: Contact }) {
@@ -11,6 +12,7 @@ export default function ContactButtonTransition({ contact }: { contact: Contact 
   const isActive = pathName.includes(`/contacts/${contact.id}`);
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+  const { q } = useSafeSearchParams('home');
 
   return (
     <Link
@@ -19,11 +21,11 @@ export default function ContactButtonTransition({ contact }: { contact: Contact 
         isPending ? 'pending' : '',
         'flex w-full items-center justify-between gap-4 overflow-hidden whitespace-pre rounded-lg p-2 hover:no-underline',
       )}
-      href={`/contacts/${contact.id}`}
+      href={routes.contactId({ contactId: contact.id, search: { q } })}
       onClick={e => {
         e.preventDefault();
         startTransition(() => {
-          router.push(`/contacts/${contact.id}`);
+          router.push(routes.contactId({ contactId: contact.id, search: { q } }));
         });
       }}
     >

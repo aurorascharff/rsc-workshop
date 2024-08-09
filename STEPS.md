@@ -2,12 +2,14 @@
 
 ## DAY 1
 
-### Create a Next.js app
+## Slides: Introduksjon til Rendering on the Web and Next.js App Router
+
+### Code: Create a Next.js app
 
 - Create a new Next.js app with `npx create-next-app@latest`
 - Go through Next.js 14 boilerplate file structure and basics
 
-### Introduce the repository
+### Show: Go through the repository
 
 - Fork / copy files for starter project
 - CRUD app for managing contacts
@@ -39,7 +41,7 @@
 - Console log client
 - Page.js has js in the browser
 - Excalidraw: show tree server and client and discuss hydration
-- Basically, try to put client code in the leaves to optimize performance
+- Basically, try to put client code in the leaves to optimize performance, but dont worry too much about it
 - Next.js [docs](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns) client/server components
 
 ## Intro: Client/server composition
@@ -55,7 +57,7 @@
 - Benefits: data fetching, access to backend, caching, bundle size, streaming, DX
 - Drawbacks: needs framework like nextjs, complexity, learning curve
 
-### Code all data fetching
+### App: code all data fetching
 
 - Fetch data in contactList: getContacts inside lib/services
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
@@ -68,7 +70,7 @@
 - Show suspense and streaming, nextjs caching happening
 - Excalidraw tree so far
 
-### Code client component logic
+### App: code client component logic
 
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
@@ -96,7 +98,7 @@
 - All state updates are executes once they are all done, show example with setCount
 - Explain next.js navigations are transitions, can always be cancelled
 
-### Add transition to ContactButton sidebar
+### App: Add transition to ContactButton sidebar
 
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
@@ -113,7 +115,7 @@
 - Vise avfallsdek suspenses.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 
-### Add suspense to ContactPage
+### App: Add suspense to ContactPage
 
 - Undo usage of ContactButtonTransition
 - Await slow i getContact
@@ -131,7 +133,7 @@
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
-### Write and use all server actions, make CRUD work
+### App: Write and use all server actions, make CRUD work
 
 - Create: onClick, revalidate etter visning
 - Update: onClick, add all props prisma
@@ -139,7 +141,7 @@
 
 ### Slides: TASK 1
 
-### TASK 1 Solution
+### Show: TASK 1 Solution
 
 - Show the favourite code and example edit loading.tsx
 - Go through the files and solutions
@@ -148,7 +150,7 @@
 
 ## DAY 2
 
-### Add the React Compiler
+### App: Add the React Compiler
 
 - Add the React Compiler to the project
 - Install the React Compiler plugin for Next.js
@@ -157,7 +159,7 @@
 - Look at devtools
 - Make slow component and show result
 
-### Update CRUD with React 19 form actions and .bind
+### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards
 - This is an implicit action = async transition
@@ -167,7 +169,7 @@
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Favorite: form and action-prop with .bind or hidden input
 
-### Add interactivity with transitions and SubmitButton
+### App: Add interactivity with transitions and SubmitButton
 
 - Make all functions slow
 - Use loading boolean for delete button transition
@@ -178,7 +180,7 @@
 - Add component to update contact
 - Delete suspense boundaries and show it works without JS
 
-### Use useActionState for form validation
+### App: Use useActionState for form validation
 
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url.
 - Don´t trust client input
@@ -191,28 +193,51 @@
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 - Delete suspense boundaries and show it works without JS
 
-### Use useOptimistic on favorite button
+### App: Use useOptimistic on favorite button
 
 - Show slow favorite button
 - Add hook useOptimistic, explain and show different use cases
 - Add onSubmit, mention you could use action directly, action is now a fallback
 - Show it works without JS
 
+### Show: Final application
+
+- Excalidraw: final trees
+- Performant, interactive, applications with good developer experience, even be prog.enh
+- React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
+- After break: improving it with data fetching patterns, global state, typed params, testing, deployment
+
 ### BREAK 2
 
-### Into: Introduce data fetching patterns
+### Intro: Introduce data fetching patterns
 
 - Fetch in an efficient way
 - Data fetching page
 - Sequential, parallel, suspenses receiving data
 - Suspense strategy: wait for all or stream independently
-- use() hook: suspend client component
+- use() hook: unblock a by making suspenses around client components because we cant await inside them
+- Use hook can resolve any promise but this is not recommended inside client components because they are recreated on every render
 
-### Use the use() hook in contacts
+### App: Use the use() hook in contacts
 
-### Use Fetch API and /api-routes
+- Instead of loading.tsx lets try to use the use() hook
+- Dont await getContact, just pass as promise
+- Use() hook in contactForm
+- Move skeleton to contactForm skeleton component
+- Explicit suspense
+- Delete loading.tsx
 
-### Add caching and Next.js improvements
+### App: Use Fetch API and /api-routes
+
+- Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
+- Explain fetch API and build-in dedupe, we dont have this with prisma by the way.
+- Create new api endpoint /contacts, we are writing our own api route here to display the use.
+- Call the fetch API inside getContacts, no type safety anymore. Next tags.
+- Create revalidationkeys and attach to getContacts
+- Use revalidationKeys in updateContact instead of revalidatePath("/)
+- Use fetch directly in client component with useEffect, but we need the API
+
+### App: Add caching and Next.js improvements
 
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result
@@ -220,11 +245,31 @@
 - Mention instable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation. Leave it as a seperate function but dont use it, mention revalidateTag.
 - Add not-found global,  contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
-### Intro: Introduce React Query
+### Intro: Implement global error state with Zustand and React Context
 
-### TODO
+- You might want to use this to share state accross the component tree. Common for React apps. Error store, theme store.
+- Create new page gobal-state
+- Show the context and the provider
+- Context works because it has children, doesn't convert to a client component, has more uses
+- Use the provider and create Error.tsx component, implement with store and provider
 
-### Unit and Component tests with Vitest
+### App: Add typed params with next-safe-navigation
+
+- Show library on npm
+- Next.js doesnt have type safety for params, show example with wrong param
+- Show config file
+- Add routes to a a few application pages href and router.push
+- Add useSafeSearchParams to contactButton and Search
+- Add parseParams to all pageProps
+- Mention server/client hook and functions
+
+### Show: React Query
+
+### Show: React Hook Form
+
+### Show: Search Param filtering
+
+### App: Unit and Component tests with Vitest
 
 - Show vitest setup and package.json commands
 - Run example test and other commands
@@ -232,7 +277,7 @@
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
 
-### End-to-end tests with Playwright
+### Show: End-to-end tests with Playwright
 
 - Show playwright setup and package.json commands
 - Show example test
@@ -241,14 +286,8 @@
 
 ### Slides: TASK 2
 
-### TASK 2 Solution
+### Show: TASK 2 Solution
 
 - Go through the files and solutions
 
-### Final note
-
-- Excalidraw: final trees
-- Performant, interactive, applications with good developer experience, even be prog.enh
-- Spas are still okay for certain uses cases! But now we solve certain problems.
-- There´s a lot I didn't cover today
-- React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
+### Slides: Deployment

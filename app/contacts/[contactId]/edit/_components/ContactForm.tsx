@@ -1,15 +1,18 @@
 'use client';
 
-import React, { useActionState } from 'react';
+import React, { use, useActionState } from 'react';
 import Input from '@/components/ui/Input';
 import LinkButton from '@/components/ui/LinkButton';
+import Skeleton from '@/components/ui/Skeleton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import TextArea from '@/components/ui/TextArea';
 import { updateContact } from '@/lib/actions/updateContact';
 import type { ContactSchemaErrorType } from '@/validations/contactSchema';
+import { routes } from '@/validations/routeSchema';
 import type { Contact } from '@prisma/client';
 
-export default function ContactForm({ contact }: { contact: Contact }) {
+export default function ContactForm({ contactPromise }: { contactPromise: Promise<Contact> }) {
+  const contact = use(contactPromise);
   const updateContactById = updateContact.bind(null, contact.id);
 
   const [state, updateContactAction] = useActionState(updateContactById, {
@@ -89,11 +92,29 @@ export default function ContactForm({ contact }: { contact: Contact }) {
         />
       </div>
       <div className="flex gap-2 self-end">
-        <LinkButton theme="secondary" href={`/contacts/${contact.id}`}>
+        <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
           Cancel
         </LinkButton>
         <SubmitButton theme="primary">Save</SubmitButton>
       </div>
     </form>
+  );
+}
+
+export function ContactFormSkeleton() {
+  return (
+    <div className="flex max-w-[40rem] flex-col gap-4 @container">
+      <div className="grip-rows-6 grid grid-cols-1 gap-4 @sm:grid-cols-[1fr_4fr]">
+        <div className="hidden flex-col gap-[72px] @sm:flex @sm:gap-8">
+          <span className="flex">Name</span>
+          <div>Position</div>
+          <div>Email</div>
+          <div>Github</div>
+          <div>Avatar URL</div>
+          <div>Notes</div>
+        </div>
+        <Skeleton />
+      </div>
+    </div>
   );
 }
