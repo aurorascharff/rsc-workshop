@@ -4,7 +4,7 @@
 
 ## Slides: Introduksjon til Rendering on the Web and Next.js App Router
 
-### Code: Create a Next.js app
+### Intro: Create a Next.js app
 
 - Create a new Next.js app with `npx create-next-app@latest`
 - Go through Next.js 14 boilerplate file structure and basics
@@ -83,7 +83,7 @@
 ## Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler.
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne PPR
 - Loading states are hard
@@ -112,7 +112,7 @@
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
-- Vise avfallsdek suspenses.
+- Avfallsdek: suspenses maler.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 
 ### App: Add suspense to ContactPage
@@ -148,6 +148,8 @@
 - Decide what level of polish you want
 - We will improve the favourite tomorrow med React 19
 
+### Slides: CSS in Server Components
+
 ## DAY 2
 
 ### App: Add the React Compiler
@@ -179,6 +181,7 @@
 - Power of rsc, composability of client/server while mainaining interactivity
 - Add component to update contact
 - Delete suspense boundaries and show it works without JS
+- Avfallsdek: submitbutton
 
 ### App: Use useActionState for form validation
 
@@ -236,13 +239,14 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
+- Show example from pages router forms: https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations
 
 ### App: Add caching and Next.js improvements
 
 - Add metadata to contactId page
-- Add cache() to getContact since it´s a dynamic page with metadata, log the result
+- Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Add staleTimes 30 to cache routes
-- Mention instable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation. Leave it as a seperate function but dont use it, mention revalidateTag.
+- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation. Leave it as a seperate function but dont use it, mention revalidateTag.
 - Add not-found global,  contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
 ### Intro: Implement global error state with Zustand and React Context
@@ -266,6 +270,12 @@
 ### Show: React Query
 
 ### Show: React Hook Form
+
+- Checkout new branch
+- Show implementation
+- Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
+- Formik works as well
+- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i maler.
 
 ### Show: Search Param filtering
 

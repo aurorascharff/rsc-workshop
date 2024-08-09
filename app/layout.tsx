@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
+import { Toaster } from 'react-hot-toast';
 import ContactList from '@/components/ContactList';
 import Search from '@/components/Search';
 import SubmitButton from '@/components/ui/SubmitButton';
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={inter.className}>
         <div className="flex w-full flex-col sm:flex-row">
           <div className="flex h-1/3 w-full flex-col border-r border-gray bg-gray-light sm:h-auto sm:w-[16rem] md:w-[22rem]">
+            <Toaster position="top-right" />
             <Suspense>
               <div className="flex items-center gap-2 border-b border-gray px-8 py-4">
                 <Search />
