@@ -34,7 +34,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
-            error={state.errors?.fieldErrors?.first}
+            errors={state.errors?.fieldErrors?.first}
             defaultValue={state.data?.first || undefined}
             aria-label="First name"
             name="first"
@@ -42,7 +42,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
             placeholder="First"
           />
           <Input
-            error={state.errors?.fieldErrors?.last}
+            errors={state.errors?.fieldErrors?.last}
             aria-label="Last name"
             defaultValue={state.data?.last || undefined}
             name="last"
@@ -52,7 +52,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         </div>
         <label htmlFor="position">Position</label>
         <Input
-          error={state.errors?.fieldErrors?.position}
+          errors={state.errors?.fieldErrors?.position}
           defaultValue={state.data?.position || undefined}
           name="position"
           placeholder="Konsulent"
@@ -60,7 +60,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         />
         <label htmlFor="email">Email</label>
         <Input
-          error={state.errors?.fieldErrors?.email}
+          errors={state.errors?.fieldErrors?.email}
           defaultValue={state.data?.email || undefined}
           name="email"
           placeholder="moa@inmeta.no"
@@ -68,7 +68,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         />
         <label htmlFor="github">Github</label>
         <Input
-          error={state.errors?.fieldErrors?.github}
+          errors={state.errors?.fieldErrors?.github}
           defaultValue={state.data?.github || undefined}
           name="github"
           placeholder="@moa"
@@ -76,7 +76,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         />
         <label htmlFor="avatar">Avatar URL</label>
         <Input
-          error={state.errors?.fieldErrors?.avatar}
+          errors={state.errors?.fieldErrors?.avatar}
           defaultValue={state.data?.avatar || undefined}
           name="avatar"
           placeholder="https:// media.licdn.com/dms/image/example"
@@ -84,7 +84,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         />
         <label htmlFor="notes">Notes</label>
         <TextArea
-          error={state.errors?.fieldErrors?.notes}
+          errors={state.errors?.fieldErrors?.notes}
           className="grow"
           defaultValue={state.data?.notes || undefined}
           name="notes"
