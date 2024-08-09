@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
 import type { ContactSchemaType } from '@/validations/contactSchema';
@@ -25,5 +25,6 @@ export async function updateContact(contactId: string, data: ContactSchemaType) 
   });
 
   revalidatePath(routes.home());
+  revalidateTag('contact');
   redirect(routes.contactId({ contactId }));
 }
