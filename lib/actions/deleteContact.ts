@@ -3,6 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
+import { routes } from '@/validations/routeSchema';
 
 export async function deleteContact(contactId: string) {
   await prisma.contact.delete({
@@ -11,6 +12,6 @@ export async function deleteContact(contactId: string) {
     },
   });
 
-  revalidatePath('/');
-  redirect('/');
+  revalidatePath(routes.home());
+  redirect(routes.home());
 }

@@ -265,6 +265,7 @@
 - Add routes to a a few application pages href and router.push
 - Add useSafeSearchParams to contactButton and Search
 - Add parseParams to all pageProps
+- Use in redirect and revalidatePath
 - Mention server/client hook and functions
 
 ### Show: React Query

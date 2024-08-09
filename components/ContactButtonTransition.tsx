@@ -9,7 +9,7 @@ import type { Contact } from '@prisma/client';
 
 export default function ContactButtonTransition({ contact }: { contact: Contact }) {
   const pathName = usePathname();
-  const isActive = pathName.includes(`/contacts/${contact.id}`);
+  const isActive = pathName.includes(routes.contactId({ contactId: contact.id }));
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
   const { q } = useSafeSearchParams('home');

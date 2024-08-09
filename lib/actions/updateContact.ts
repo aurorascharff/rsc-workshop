@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
 import type { ContactSchemaType } from '@/validations/contactSchema';
 import { contactSchema } from '@/validations/contactSchema';
+import { routes } from '@/validations/routeSchema';
 
 export async function updateContact(contactId: string, data: ContactSchemaType) {
   const result = contactSchema.safeParse(data);
@@ -23,6 +24,6 @@ export async function updateContact(contactId: string, data: ContactSchemaType) 
     },
   });
 
-  revalidatePath('/');
-  redirect(`/contacts/${contactId}`);
+  revalidatePath(routes.home());
+  redirect(routes.contactId({ contactId }));
 }
