@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Button from '@/components/ui/Button';
-import { useError } from '@/providers/ErrorProvider1';
+import { useError } from '@/providers/ErrorProvider';
 import { useErrorStore } from '@/store/errorStore';
 
 export default function Error() {
