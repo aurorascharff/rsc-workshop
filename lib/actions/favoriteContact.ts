@@ -1,6 +1,6 @@
 'use server';
 
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { prisma } from '@/db';
 import { routes } from '@/validations/routeSchema';
 
@@ -14,6 +14,8 @@ export async function favoriteContact(contactId: string, isFavorite: boolean) {
     },
   });
 
-  revalidateTag('contact');
+  // revalidateTag('contact'); // For unstable-cache
+  // revalidateTag(revalidationKeys.contact(contactId)); // For getContactFetch
+  // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   revalidatePath(routes.home());
 }

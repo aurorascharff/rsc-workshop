@@ -11,5 +11,6 @@ export async function createEmptyContact() {
   });
 
   revalidatePath(routes.home());
+  // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   redirect(routes.contactIdEdit({ contactId: contact.id }));
 }

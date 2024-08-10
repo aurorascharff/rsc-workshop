@@ -239,7 +239,7 @@
 
 - Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
 - Explain fetch API and build-in dedupe, we dont have this with prisma by the way.
-- Create new api endpoint /contacts, we are writing our own api route here to display the use.
+- Create new GET api endpoint /contacts/route.ts, we are writing our own api route here to display the use.
 - Call the fetch API inside getContacts, no type safety anymore. Next tags.
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
@@ -251,7 +251,7 @@
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Add staleTimes 30 to cache routes
-- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation. Leave it as a seperate function but dont use it, mention revalidateTag.
+- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, show that we dont need to see any edit/loading.tsx. Leave it as a seperate function but dont use it, mention revalidateTag.
 - Add not-found global,  contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
 ### Intro: Implement global error state with Zustand and React Context
@@ -276,9 +276,16 @@
 
 ### Show: React Query
 
+- Checkout new branch i completed repo
+- Show implementation of React Query with hydration boundary
+- Show all api routes and fetch calls
+- If you have an external API its faster of course
+- But if youre using prisma you need to define your own api routes because you shouldnt use server actions are queued
+- Use case: polling, if you prefer it
+
 ### Show: React Hook Form
 
-- Checkout new branch
+- Checkout new branch i completed repo
 - Show implementation
 - Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
 - Formik works as well
