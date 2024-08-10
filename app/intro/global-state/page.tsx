@@ -1,5 +1,5 @@
 import React from 'react';
-import ErrorProvider from '@/providers/errorProvider';
+import ErrorProvider from '@/providers/ErrorProvider1';
 import Error from './_components/Error';
 
 export default function GlobalState() {
