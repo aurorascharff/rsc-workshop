@@ -280,7 +280,7 @@
 - Show implementation of React Query with hydration boundary
 - Show all api routes and fetch calls
 - If you have an external API its faster of course
-- But if youre using prisma you need to define your own api routes because you shouldnt use server actions are queued
+- But if youre using prisma you need to define your own api routes because you shouldnt use server actions because are queued
 - Use case: polling, if you prefer it
 
 ### Show: React Hook Form
