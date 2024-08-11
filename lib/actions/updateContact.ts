@@ -2,6 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
+
 import { prisma } from '@/db';
 import type { ContactSchemaErrorType, ContactSchemaType } from '@/validations/contactSchema';
 import { contactSchema } from '@/validations/contactSchema';
@@ -31,7 +32,7 @@ export async function updateContact(contactId: string, _prevState: State, formDa
   });
 
   revalidatePath(routes.home());
-  // revalidateTag('contact'); // For unstable-cache
+  // revalidateTag(cacheKeys.contact); // For unstable-cache
   // revalidateTag(revalidationKeys.contact(contactId)); // For getContactFetch
   // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   redirect(routes.contactId({ contactId }));
