@@ -10,7 +10,6 @@ type Params = {
 };
 
 export async function GET(_request: NextRequest, { params }: Params) {
-  console.log('API GET /api/contacts/[contactId]');
   const contact = await prisma.contact.findUnique({
     where: {
       id: params.contactId,
