@@ -4,3 +4,7 @@ export const revalidationKeys = {
   },
   contacts: 'contacts',
 } as const;
+
+export const cacheKeys = {
+  contact: 'contact',
+} as const;

@@ -13,5 +13,6 @@ export async function deleteContact(contactId: string) {
   });
 
   revalidatePath(routes.home());
+  // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   redirect(routes.home());
 }

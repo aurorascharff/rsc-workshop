@@ -13,7 +13,7 @@ export async function getContacts() {
 export async function getContactsFetch(): Promise<Contact[]> {
   const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
-  const res = await fetch(apiURL + '/contacts', {
+  const res = await fetch(`${apiURL}/contacts`, {
     next: {
       tags: [revalidationKeys.contacts],
     },

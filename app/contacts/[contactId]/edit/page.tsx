@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { getContactCache } from '@/lib/services/getContact';
+import { getContact } from '@/lib/services/getContact';
 import { routes } from '@/validations/routeSchema';
 import ContactForm, { ContactFormSkeleton } from './_components/ContactForm';
 
@@ -9,7 +9,7 @@ type PageProps = {
 
 export default async function EditContactPage({ params }: PageProps) {
   const { contactId } = routes.contactIdEdit.$parseParams(params);
-  const contact = getContactCache(contactId);
+  const contact = getContact(contactId);
 
   return (
     <Suspense fallback={<ContactFormSkeleton />}>

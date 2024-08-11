@@ -8,7 +8,7 @@ import ContactButton from './ContactButton';
 import type { Contact } from '@prisma/client';
 
 export default function ContactList({ contacts }: { contacts: Contact[] }) {
-  // Can still fetch data "like normal" if needed, but we need an API
+  // // Can still fetch data "like normal" if needed, but we need an API for this.
   // const [contacts, setContacts] = useState<Contact[]>([]);
   // useEffect(() => {
   //   fetch('/api/contacts')
