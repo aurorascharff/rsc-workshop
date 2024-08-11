@@ -5,26 +5,27 @@ import { notFound } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import Input from '@/components/ui/Input';
+import LinkButton from '@/components/ui/LinkButton';
 import Skeleton from '@/components/ui/Skeleton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import TextArea from '@/components/ui/TextArea';
 import useGetContact from '@/hooks/useGetContact';
 import useUpdateContact from '@/hooks/useUpdateContact';
 import { contactSchema, type ContactSchemaType } from '@/validations/contactSchema';
+import { routes } from '@/validations/routeSchema';
 
 export default function ContactForm({ contactId }: { contactId: string }) {
   const { contact } = useGetContact(contactId);
-
+  const { mutate: updateContact, isPending } = useUpdateContact();
   const {
     handleSubmit,
     register,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<ContactSchemaType>({
     mode: 'onChange',
     resolver: zodResolver(contactSchema),
     values: contact,
   });
-  const { mutate: updateContact } = useUpdateContact();
   if (!contact) {
     notFound();
   }
@@ -85,10 +86,10 @@ export default function ContactForm({ contactId }: { contactId: string }) {
         <TextArea error={errors.notes?.message} {...register('position')} className="grow" name="notes" rows={6} />
       </div>
       <div className="flex gap-2 self-end">
-        {/* <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
+        <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
           Cancel
-        </LinkButton> */}
-        <SubmitButton loading={isSubmitting}>Save</SubmitButton>
+        </LinkButton>
+        <SubmitButton loading={isPending}>Save</SubmitButton>
       </div>
     </form>
   );

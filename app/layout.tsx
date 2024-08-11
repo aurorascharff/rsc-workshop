@@ -7,6 +7,7 @@ import { Toaster } from 'react-hot-toast';
 import ContactList from '@/components/ContactList';
 import NewContactButton from '@/components/NewContactButton';
 import Search from '@/components/Search';
+import { queryKeys } from '@/constants/revalidationKeys';
 import { getContacts } from '@/lib/services/getContacts';
 import QueryProvider from '@/providers/QueryProvider';
 import Logo from '@/public/next-js.svg';
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({ queryFn: getContacts, queryKey: ['contacts'] });
+  await queryClient.prefetchQuery({ queryFn: getContacts, queryKey: [queryKeys.contacts] });
 
   return (
     <html lang="en">

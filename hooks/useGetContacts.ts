@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { queryKeys } from '@/constants/revalidationKeys';
 import type { Contact } from '@prisma/client';
 
 export default function useGetContacts() {
@@ -10,6 +11,6 @@ export default function useGetContacts() {
       }
       return res.json();
     },
-    queryKey: ['contacts'],
+    queryKey: [queryKeys.contacts],
   });
 }

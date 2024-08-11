@@ -1,21 +1,14 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { useRouter } from 'next/navigation';
 import { queryKeys } from '@/constants/revalidationKeys';
-import { updateContact } from '@/lib/actions/updateContact';
-import { routes } from '@/validations/routeSchema';
+import { favoriteContact } from '@/lib/actions/favoriteContact';
 import type { Contact } from '@prisma/client';
 
-export default function useUpdateContact() {
+export default function useFavoriteContact() {
   const queryClient = useQueryClient();
-  const router = useRouter();
 
   return useMutation({
-    mutationFn: (contact: Contact) => {
-      return updateContact(contact.id, contact);
-    },
-    onSettled: contact => {
-      if (!contact) return;
-      router.push(routes.contactId({ contactId: contact.id }));
+    mutationFn: (contactId: string, isFavorite: boolean) => {
+      return favoriteContact(contactId, isFavorite);
     },
     onSuccess: contact => {
       queryClient.setQueryData<Contact[]>([queryKeys.contacts], cache => {
