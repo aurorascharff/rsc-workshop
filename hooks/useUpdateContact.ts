@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
 import { queryKeys } from '@/constants/revalidationKeys';
 import { updateContact } from '@/lib/actions/updateContact';
 import { routes } from '@/validations/routeSchema';
@@ -14,10 +15,12 @@ export default function useUpdateContact() {
       return updateContact(contact.id, contact);
     },
     onSettled: contact => {
-      if (!contact) return;
-      router.push(routes.contactId({ contactId: contact.id }));
+      if (contact) {
+        router.push(routes.contactId({ contactId: contact.id }));
+      }
     },
     onSuccess: contact => {
+      toast.success('Contact updated');
       queryClient.setQueryData<Contact[]>([queryKeys.contacts], cache => {
         return cache
           ? [

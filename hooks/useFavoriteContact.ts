@@ -7,8 +7,8 @@ export default function useFavoriteContact() {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: (contactId: string, isFavorite: boolean) => {
-      return favoriteContact(contactId, isFavorite);
+    mutationFn: (contact: Contact) => {
+      return favoriteContact(contact.id, contact.favorite);
     },
     onSuccess: contact => {
       queryClient.setQueryData<Contact[]>([queryKeys.contacts], cache => {

@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
-import React, { useOptimistic } from 'react';
+import { notFound, useRouter } from 'next/navigation';
+import React, { useEffect, useOptimistic } from 'react';
 import LinkButton from '@/components/ui/LinkButton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import useDeleteContact from '@/hooks/useDeleteContact';
@@ -17,10 +17,6 @@ export default function Contact({ contactId }: { contactId: string }) {
   const { mutate: deleteContact, isPending } = useDeleteContact();
   const { mutate: favoriteContact } = useFavoriteContact();
   const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(contact.favorite);
-
-  if (!contact) {
-    notFound();
-  }
 
   const metadata =
     contact && contact.first && contact.last
@@ -60,19 +56,23 @@ export default function Contact({ contactId }: { contactId: string }) {
             ) : (
               <i>No Name</i>
             )}{' '}
-            <button
-              onClick={() => {
+            <form
+              action={() => {
                 addOptimisticFavorite(!optimisticFavorite);
-                favoriteContact(contact.id, contact.favorite);
+                favoriteContact(contact);
               }}
-              className={cn(
-                optimisticFavorite ? 'text-yellow-500' : 'text-gray-dark',
-                'flex text-2xl font-normal shadow-none hover:text-yellow-400 hover:shadow-none',
-              )}
-              aria-label={optimisticFavorite ? 'Remove from favorites' : 'Add to favorites'}
             >
-              {optimisticFavorite ? '★' : '☆'}
-            </button>
+              <button
+                type="submit"
+                className={cn(
+                  optimisticFavorite ? 'text-yellow-500' : 'text-gray-dark',
+                  'flex text-2xl font-normal shadow-none hover:text-yellow-400 hover:shadow-none',
+                )}
+                aria-label={optimisticFavorite ? 'Remove from favorites' : 'Add to favorites'}
+              >
+                {optimisticFavorite ? '★' : '☆'}
+              </button>
+            </form>
           </h1>
 
           {contact.position ? <p className="text-2xl">{contact.position}</p> : null}

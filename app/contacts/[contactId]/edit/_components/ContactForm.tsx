@@ -26,9 +26,6 @@ export default function ContactForm({ contactId }: { contactId: string }) {
     resolver: zodResolver(contactSchema),
     values: contact,
   });
-  if (!contact) {
-    notFound();
-  }
 
   const onSubmit = handleSubmit(async data => {
     updateContact({ ...contact, ...data });
