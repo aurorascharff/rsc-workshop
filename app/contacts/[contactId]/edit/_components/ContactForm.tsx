@@ -1,21 +1,19 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import React, { use } from 'react';
+import { notFound } from 'next/navigation';
+import React from 'react';
 import { useForm } from 'react-hook-form';
-import toast from 'react-hot-toast';
 import Input from '@/components/ui/Input';
-import LinkButton from '@/components/ui/LinkButton';
 import Skeleton from '@/components/ui/Skeleton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import TextArea from '@/components/ui/TextArea';
-import { updateContact } from '@/lib/actions/updateContact';
+import useGetContact from '@/hooks/useGetContact';
+import useUpdateContact from '@/hooks/useUpdateContact';
 import { contactSchema, type ContactSchemaType } from '@/validations/contactSchema';
-import { routes } from '@/validations/routeSchema';
-import type { Contact } from '@prisma/client';
 
-export default function ContactForm({ contactPromise }: { contactPromise: Promise<Contact> }) {
-  const contact = use(contactPromise);
+export default function ContactForm({ contactId }: { contactId: string }) {
+  const { contact } = useGetContact(contactId);
 
   const {
     handleSubmit,
@@ -26,14 +24,13 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
     resolver: zodResolver(contactSchema),
     values: contact,
   });
+  const { mutate: updateContact } = useUpdateContact();
+  if (!contact) {
+    notFound();
+  }
 
   const onSubmit = handleSubmit(async data => {
-    const response = await updateContact(contact.id, data);
-    if (response?.error) {
-      toast.error(response.error);
-    } else {
-      toast.success('Contact updated');
-    }
+    updateContact({ ...contact, ...data });
   });
 
   return (
@@ -88,9 +85,9 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         <TextArea error={errors.notes?.message} {...register('position')} className="grow" name="notes" rows={6} />
       </div>
       <div className="flex gap-2 self-end">
-        <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
+        {/* <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
           Cancel
-        </LinkButton>
+        </LinkButton> */}
         <SubmitButton loading={isSubmitting}>Save</SubmitButton>
       </div>
     </form>
