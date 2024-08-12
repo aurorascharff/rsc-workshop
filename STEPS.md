@@ -206,6 +206,8 @@
 - Add hook useOptimistic, explain and show different use cases
 - Add onSubmit, mention you could use action directly, action is now a fallback
 - Show it works without JS
+- Show server delay
+- UseOptimistic kan legges i provider for å bruke i flere komponenter, jeg har et eksempel på dette på github
 
 ### Show: Final application
 
