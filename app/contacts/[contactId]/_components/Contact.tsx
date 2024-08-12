@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import { notFound, useRouter } from 'next/navigation';
-import React, { useEffect, useOptimistic } from 'react';
+
+import React, { useOptimistic } from 'react';
+import ErrorMessage from '@/components/ui/ErrorMessage';
 import LinkButton from '@/components/ui/LinkButton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import useDeleteContact from '@/hooks/useDeleteContact';
@@ -16,7 +17,10 @@ export default function Contact({ contactId }: { contactId: string }) {
   const { contact } = useGetContact(contactId);
   const { mutate: deleteContact, isPending } = useDeleteContact();
   const { mutate: favoriteContact } = useFavoriteContact();
-  const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(contact.favorite);
+  const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(contact?.favorite || false);
+  if (!contact) {
+    return <ErrorMessage>Could not find contact!</ErrorMessage>;
+  }
 
   const metadata =
     contact && contact.first && contact.last

@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { queryKeys } from '@/constants/revalidationKeys';
 import { deleteContact } from '@/lib/actions/deleteContact';
-import type { Contact } from '@prisma/client';
 import { routes } from '@/validations/routeSchema';
-import { useRouter } from 'next/navigation';
+import type { Contact } from '@prisma/client';
 
 export default function useDeleteContact() {
   const queryClient = useQueryClient();
@@ -14,10 +14,7 @@ export default function useDeleteContact() {
     mutationFn: (contactId: string) => {
       return deleteContact(contactId);
     },
-    onMutate: () => {
-      router.push(routes.home());
-    },
-    onError: error => {
+    onError: () => {
       toast.error('Failed to delete contact');
     },
     onSuccess: contact => {
@@ -31,6 +28,7 @@ export default function useDeleteContact() {
             ]
           : [];
       });
+      router.push(routes.home());
     },
   });
 }

@@ -1,9 +1,9 @@
 'use client';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { notFound } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import ErrorMessage from '@/components/ui/ErrorMessage';
 import Input from '@/components/ui/Input';
 import LinkButton from '@/components/ui/LinkButton';
 import Skeleton from '@/components/ui/Skeleton';
@@ -26,6 +26,9 @@ export default function ContactForm({ contactId }: { contactId: string }) {
     resolver: zodResolver(contactSchema),
     values: contact,
   });
+  if (!contact) {
+    return <ErrorMessage>Could not find contact!</ErrorMessage>;
+  }
 
   const onSubmit = handleSubmit(async data => {
     updateContact({ ...contact, ...data });
