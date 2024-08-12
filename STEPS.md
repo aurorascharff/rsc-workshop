@@ -293,6 +293,10 @@
 
 ### Show: Search Param filtering
 
+- [BuildUI](https://buildui.com/posts/instant-search-params-with-react-server-components)
+- Avfallsdek: filter-komponent
+- [Lee Robinson Vercel](https://next-books-search.vercel.app/)
+
 ### App: Unit and Component tests with Vitest
 
 - Show vitest setup and package.json commands
