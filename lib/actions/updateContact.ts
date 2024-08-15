@@ -3,11 +3,14 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { prisma } from '@/db';
+import { slow } from '@/utils/slow';
 import type { ContactSchemaType } from '@/validations/contactSchema';
 import { contactSchema } from '@/validations/contactSchema';
 import { routes } from '@/validations/routeSchema';
 
 export async function updateContact(contactId: string, data: ContactSchemaType) {
+  await slow();
+
   const result = contactSchema.safeParse(data);
 
   if (!result.success) {
