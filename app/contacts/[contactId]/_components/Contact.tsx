@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-
 import React, { useOptimistic } from 'react';
 import ErrorMessage from '@/components/ui/ErrorMessage';
 import LinkButton from '@/components/ui/LinkButton';
