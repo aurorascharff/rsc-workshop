@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import ErrorMessage from '@/components/ui/ErrorMessage';
 import Input from '@/components/ui/Input';
 import LinkButton from '@/components/ui/LinkButton';
-import Skeleton from '@/components/ui/Skeleton';
 import SubmitButton from '@/components/ui/SubmitButton';
 import TextArea from '@/components/ui/TextArea';
 import useGetContact from '@/hooks/useGetContact';
@@ -92,23 +91,5 @@ export default function ContactForm({ contactId }: { contactId: string }) {
         <SubmitButton loading={isPending}>Save</SubmitButton>
       </div>
     </form>
-  );
-}
-
-export function ContactFormSkeleton() {
-  return (
-    <div className="flex max-w-[40rem] flex-col gap-4 @container">
-      <div className="grip-rows-6 grid grid-cols-1 gap-4 @sm:grid-cols-[1fr_4fr]">
-        <div className="hidden flex-col gap-[72px] @sm:flex @sm:gap-8">
-          <span className="flex">Name</span>
-          <div>Position</div>
-          <div>Email</div>
-          <div>Github</div>
-          <div>Avatar URL</div>
-          <div>Notes</div>
-        </div>
-        <Skeleton />
-      </div>
-    </div>
   );
 }
