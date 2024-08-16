@@ -31,17 +31,18 @@ async function SecondComponent() {
 
 export default async function DataFetchingPage() {
   // console.log('Start time: ' + new Date().getSeconds());
-  // // getData(1000) will run first, then getData(2000)
+
+  // // First, getData(1000) will run, then getData(1000)
   // let data1 = await getData(1000);
-  // let data2 = await getData(data1); // waterfall because data2 depends on data1
+  // let data2 = await getData(data1); // Has to be a fetch waterfall because data2 depends on data1
   // console.log('Sequential, time: ' + new Date().getSeconds());
 
-  // // getData(1000) and getData(2000) will run in parallel
+  // // Functions getData(1000) and getData(1000) will run in parallel
   // [data1, data2] = await Promise.all([getData(1000), getData(1000)]);
   // console.log('Parallell, time: ' + new Date().getSeconds());
 
   // Pass down promise to suspended client component
-  // Can do this to a server comp and await but rather just fetch inside it for composition
+  // Can do this also to a server comp with await, but its better to just fetch inside the server comp
   const dataPromise = getData(3000);
 
   // Paralell fetching with suspense. If a suspense wraps the component, it will wait for all promises to resolve, like promise.all().
