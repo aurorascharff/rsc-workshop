@@ -81,7 +81,7 @@ Refer to the [Next.js 13 App Router](https://nextjs.org/docs/app) documentation 
 
 ### Routing
 
-The project uses Next.js file-based routing. However, the route params and search params are not typed by default, so [next-safe-navigation](https://github.com/lukemorales/next-safe-navigation) is used to type the route params and search params. This allows for type-safe navigation and query parameters. All routes are defined in `src/validations/routeSchema.ts` and can be used by calling `routes.<routeName>`.
+The project uses Next.js file-based routing. However, the route params and search params are not typed by default, so [next-safe-navigation](https://github.com/lukemorales/next-safe-navigation) is used to type the route params and search params. This allows for type-safe navigation and query parameters. All routes are defined in `/validations/routeSchema.ts` and can be used by calling `routes.<routeName>`.
 
 In client components, parsing params is done with the hooks `useSafeParams` and `useSafeSearchParams`. For server components, the `pageProps` are passed down as an unknown object and validated with `routes.<routeName>.$parseParams` and `routes.<routeName>.$parseSearchParams`.
 
@@ -93,15 +93,15 @@ Use the `cn` util when merging conditional classes with other classes. Excess st
 
 ### Data Fetching and Mutation
 
-The project uses the `fetch()` API for data fetching. Mutations are done using Next.js Server Actions, skipping the Next.js 12 `/api` convention. Files are stores inside the `/lib` folder, where `/lib/services` is server-side data fetches and `/lib/actions` for are mutations. For more information, refer to the [Server Actions and Mutations](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) documentation.
+Data fetching is done through prisma. Mutations are done using Next.js Server Actions, skipping the Next.js 12 `/api` convention. Files are stores inside the `/lib` folder, where `/lib/services` are server-side data fetches and `/lib/actions` are mutations. For more information, refer to the [Server Actions and Mutations](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) documentation.
 
 When using a form with an action, the loading state is included in the `SubmitButton`-component, and the form is disabled while the action is pending. For other cases, a loading state can be passed to to submit button or other components to handle the loading state.
 
 ### Unit, Component and Integration Testing
 
-The project uses [Vitest](https://vitest.dev) for unit and component testing. Vitest is configured in `vite.config.js`, and set up in `src/setupTests.ts`. Test files are located in the same folder as their corresponding source files, and are named with the `.test.tsx` extension.
+The project uses [Vitest](https://vitest.dev) for unit and component testing. Vitest is configured in `vite.config.js`, and set up in `setupTests.ts`. Test files are located in the same folder as their corresponding source files, and are named with the `.test.tsx` extension.
 
-Note: RTL currently supports a workaround for async or suspended components by using Suspense. Use the helper function `suspenseRender`, located in `src/testUtils.tsx`. When testing async or suspended components, use `await findByTestId` rather than `getByTestId` and equivalent functions. Error messages concerning uncached promises and async/await not being supported can be ignored.
+Note: RTL currently supports a workaround for async or suspended components by using Suspense. Use the helper function `suspenseRender`, located in `/testUtils.tsx`. When testing async or suspended components, use `await findByTestId` rather than `getByTestId` and equivalent functions. Error messages concerning uncached promises and async/await not being supported can be ignored.
 
 Run unit and component tests with:
 
