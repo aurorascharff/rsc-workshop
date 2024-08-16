@@ -1,4 +1,4 @@
-# React Server Components and React 19 i Next.js App Router
+# Next.js 15 "Remix Contacts" Rebuild V2
 
 ## DAY 1
 
