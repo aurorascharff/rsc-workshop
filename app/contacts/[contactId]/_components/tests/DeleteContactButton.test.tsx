@@ -5,8 +5,6 @@ import DeleteContactButton from '../DeleteContactButton';
 
 const mockDeleteContact = vi.fn();
 
-vi.stubGlobal('confirm', vi.fn());
-
 vi.mock('@/lib/actions/deleteContact', () => {
   return {
     deleteContact: async (contactId: string) => {
@@ -15,42 +13,34 @@ vi.mock('@/lib/actions/deleteContact', () => {
   };
 });
 
-beforeEach(() => {
-  vi.resetAllMocks();
-});
-
 describe('DeleteContactButton', () => {
-  it('renders a modal when clicked and calls the update function if confirm is true', () => {
+  it('renders a modal when clicked and calls the update function if confirm is true', async () => {
     render(<DeleteContactButton contactId="0" />);
 
-    (window.confirm as jest.Mock).mockImplementation(() => {
-      return true;
-    });
+    const confirmSpy = vi.spyOn(window, 'confirm').mockReturnValue(true);
 
     const deleteButton = screen.getByRole('button');
     expect(deleteButton).toHaveTextContent('Delete');
-    act(() => {
+    await act(async () => {
       fireEvent.click(deleteButton);
     });
 
-    expect(window.confirm).toHaveBeenCalled();
+    expect(confirmSpy).toHaveBeenCalled();
     expect(mockDeleteContact).toHaveBeenCalledWith('0');
   });
 
-  it('renders a modal when clicked and does not call the update function if confirm is false', () => {
+  it('renders a modal when clicked and does not call the update function if confirm is false', async () => {
     render(<DeleteContactButton contactId="0" />);
 
-    (window.confirm as jest.Mock).mockImplementation(() => {
-      return false;
-    });
+    const confirmSpy = vi.spyOn(window, 'confirm').mockReturnValue(false);
 
     const deleteButton = screen.getByRole('button');
     expect(deleteButton).toHaveTextContent('Delete');
-    act(() => {
+    await act(async () => {
       fireEvent.click(deleteButton);
     });
 
-    expect(window.confirm).toHaveBeenCalled();
+    expect(confirmSpy).toHaveBeenCalled();
     expect(mockDeleteContact).not.toHaveBeenCalled();
   });
 });

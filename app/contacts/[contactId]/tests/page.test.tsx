@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react';
-import { Suspense } from 'react';
+import { screen } from '@testing-library/react';
 import { vi } from 'vitest';
+import { suspenseRender } from '@/test-utils/suspenseRender';
 import ContactPage from '../page';
 import type { Contact } from '@prisma/client';
 
@@ -24,11 +24,7 @@ vi.mock('@/lib/services/getContact', () => {
 
 describe('ContactPage', () => {
   it('render the correct contact info', async () => {
-    render(
-      <Suspense>
-        <ContactPage params={{ contactId: '0' }} />
-      </Suspense>,
-    );
+    suspenseRender(<ContactPage params={{ contactId: '0' }} />);
 
     expect(await screen.findByRole('heading')).toHaveTextContent('Test User');
     expect(await screen.findByRole('button', { name: 'Add to favorites' })).toHaveTextContent('☆');

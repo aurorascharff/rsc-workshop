@@ -1,10 +1,33 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import '@testing-library/jest-dom';
 import { cleanup } from '@testing-library/react';
-import { beforeEach, afterEach } from 'vitest';
+import { beforeEach, afterEach, vi } from 'vitest';
 
 beforeEach(() => {
-  // Mock things
+  vi.resetAllMocks();
+
+  vi.mock('@/validations/routeSchema', () => {
+    return {
+      routes: {
+        contactId: {
+          $parseParams: () => {
+            return {
+              contactId: 'mockedContactId',
+            };
+          },
+          default: () => {
+            return '/contacts/mockedContactId';
+          },
+        },
+        contactIdEdit: () => {
+          return '/contacts/mockedContactId/edit';
+        },
+        contacts: '/contacts',
+        home: '/',
+        intro: '/intro',
+      },
+    };
+  });
 });
 
 afterEach(() => {
