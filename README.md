@@ -1,4 +1,4 @@
-# React Server Components and React 19 in thr Next.js App Router
+# React Server Components and React 19 in the Next.js App Router
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -93,7 +93,7 @@ Use the `cn` util when merging conditional classes with other classes. Excess st
 
 ### Data Fetching and Mutation
 
-Data fetching is done through prisma. Mutations are done using Next.js Server Actions, skipping the Next.js 12 `/api` convention. Files are stores inside the `/lib` folder, where `/lib/services` are server-side data fetches and `/lib/actions` are mutations. For more information, refer to the [Server Actions and Mutations](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) documentation.
+Data fetching is done through prisma. Mutations are done using Next.js Server Actions, skipping the Next.js 12 `/api` convention. Files are stores inside the `/lib` folder, where `/lib/services` are server-side data feth and `/lib/actions` are mutations. For more information, refer to the [Server Actions and Mutations](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) documentation.
 
 When using a form with an action, the loading state is included in the `SubmitButton`-component, and the form is disabled while the action is pending. For other cases, a loading state can be passed to to submit button or other components to handle the loading state.
 
