@@ -246,7 +246,7 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
-- Show example from pages router forms: https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations
+- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 
 ### App: Add caching and Next.js improvements
 
@@ -306,6 +306,7 @@
 - Test Favorite button
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
+- Create suspenseRender helper
 
 ### Show: End-to-end tests with Playwright
 
