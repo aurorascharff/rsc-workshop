@@ -83,7 +83,7 @@
 ## Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne PPR
 - Loading states are hard
