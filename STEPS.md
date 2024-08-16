@@ -1,4 +1,4 @@
-# Next.js 15 "Remix Contacts" Rebuild V2
+# React Server Components and React 19 i Next.js App Router
 
 ## DAY 1
 
@@ -83,7 +83,7 @@
 ## Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler.
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne PPR
 - Loading states are hard
@@ -246,7 +246,7 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
-- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
+- Show example from pages router forms: https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations
 
 ### App: Add caching and Next.js improvements
 
@@ -306,7 +306,6 @@
 - Test Favorite button
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
-- Create suspenseRender helper
 
 ### Show: End-to-end tests with Playwright
 
