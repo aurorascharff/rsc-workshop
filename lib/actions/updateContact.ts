@@ -40,3 +40,17 @@ export async function updateContact(contactId: string, _prevState: State, formDa
   // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   redirect(routes.contactId({ contactId }));
 }
+
+export async function updateContactSimple(contactId: string, formData: FormData) {
+  const contact = Object.fromEntries(formData);
+
+  await prisma.contact.update({
+    data: contact,
+    where: {
+      id: contactId,
+    },
+  });
+
+  revalidatePath(routes.home());
+  redirect(routes.contactId({ contactId }));
+}

@@ -85,7 +85,7 @@
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
 - Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
-- Nevne PPR
+- Nevne [PPR](https://www.partialprerendering.com/)
 - Loading states are hard
 
 ### Intro: What are transitions?
@@ -135,17 +135,17 @@
 
 ### App: Write and use all server actions, make CRUD work
 
-- Create: onClick, revalidate etter visning
-- Update: onClick, add all props prisma
-- Delete: onClick modal
+- Create: CreateContactButton "use client" onClick, revalidate etter visning
+- Update: ContactForm "use client" onSubmit, updateContactSimple
+- Delete: DeleteContactButton "use client" onClick modal
+- Alt dette skal vi jobbe mer med imorgen
 
 ### Slides: TASK 1
 
 ### Show: TASK 1 Solution
 
-- Show the favourite code and example edit loading.tsx
-- Go through the files and solutions
-- Decide what level of polish you want
+- Show edit loading.tsx
+- Show the favourite code and example
 - We will improve the favourite tomorrow med React 19
 
 ### Slides: CSS in Server Components
@@ -156,21 +156,12 @@
 
 ## Slides: Introduksjon til React 19 og React Compiler
 
-### App: Add the React Compiler
-
-- Add the React Compiler to the project
-- Install the React Compiler plugin for Next.js
-- Install the eslint plugin for the React Compiler
-- Enable it in next.config.js
-- Look at devtools
-- Make slow component and show result
-
 ### App: Update CRUD with React 19 form actions and .bind
 
-- Create: form and action-prop, mention onClick and hydration and web standards
+- Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
 - This is an implicit action = async transition
 - Mention again progressive enhancement
-- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh
+- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client"
 - Delete: form and action-prop, .bind, then modal. Prog enh fallback.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Favorite: form and action-prop with .bind or hidden input
@@ -184,6 +175,7 @@
 - Use it in new contact
 - Power of rsc, composability of client/server while mainaining interactivity
 - Add component to update contact
+- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
 - Avfallsdek: submitbutton
 
@@ -246,7 +238,6 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
-- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 
 ### App: Add caching and Next.js improvements
 
