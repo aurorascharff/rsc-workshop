@@ -1,4 +1,4 @@
-# Next.js 15 "Remix Contacts" Rebuild V2
+# React Server Components and React 19 i Next.js App Router
 
 ## DAY 1
 
@@ -16,6 +16,7 @@
 - Talk about eslint and prettier, show setup and rules
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
+- Nested layouts: state in the url, users will awlays see the same thing
 - Introduce the cva() library, show on npm
 
 ### Intro: What are server components?
@@ -31,6 +32,7 @@
 - Async and fetch data prisma or fetch api, data[0]
 - Anything you do here won't add to the bundle size
 - Limitations onclick button, we need client for interactivity or browser stuff
+- How do they work (ikogito console): SSR html, js-bundles for hydration, and rsc payload is the server component in seralizable form, generated in build or on server for dynamic data. Payload is used to create the client tree, and can be refreshed without destroying client state. If they pass props to client that have updated, client updates. Ikke workshoppens focus.
 
 ## Intro: What are client components?
 
@@ -283,6 +285,12 @@
 - Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
 - Formik works as well
 - Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i maler.
+
+### Show: Other libraries
+
+- [Conform](https://conform.guide/)
+- [next-safe-action](https://next-safe-action.dev/)
+- [Tanstack Form](https://tanstack.com/form/latest)
 
 ### Show: Search Param filtering
 
