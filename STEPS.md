@@ -243,6 +243,7 @@
 
 ### App: Add caching and Next.js improvements
 
+- Show metadata root page
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Add staleTimes 30 to cache routes
