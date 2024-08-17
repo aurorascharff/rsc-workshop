@@ -1,4 +1,4 @@
-# React Server Components and React 19 i Next.js App Router
+# React Server Components and React 19 in the Next.js App Router
 
 ## DAY 1
 
@@ -312,6 +312,7 @@
 
 - Show playwright setup and package.json commands
 - Show example test
+- Mention to `npx playwright install`
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 

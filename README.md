@@ -131,6 +131,8 @@ npm run test.e2e.debug
 npm run test.e2e.codegen
 ```
 
+You might have to run `npx playwright install` before running the tests, as prompted by the terminal.
+
 ## Deployment
 
 The app can be built for production using the `npm run build` command. The built files will be generated in the `.next` folder.
