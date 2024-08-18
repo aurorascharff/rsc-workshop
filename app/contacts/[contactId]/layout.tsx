@@ -1,7 +1,7 @@
+import React from 'react';
 import MessageBox from '@/components/message-box/MessageBox';
 import { getContactCache } from '@/lib/services/getContact';
 import { routes } from '@/validations/routeSchema';
-import React from 'react';
 
 type Props = {
   children: React.ReactNode;

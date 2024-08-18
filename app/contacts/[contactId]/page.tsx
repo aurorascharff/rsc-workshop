@@ -5,8 +5,6 @@ import GithubLogo from '@/public/github-mark.svg';
 import { routes } from '@/validations/routeSchema';
 import DeleteContactButton from './_components/DeleteContactButton';
 import Favorite from './_components/Favorite';
-import MessageBox from '../../../components/message-box/MessageBox';
-import { Suspense } from 'react';
 
 type PageProps = {
   params: unknown;
