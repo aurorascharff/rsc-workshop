@@ -7,10 +7,12 @@ import Messages from './Messages';
 import type { Contact } from '@prisma/client';
 
 type Props = {
-  contact: Contact;
+  contactPromise: Promise<Contact>;
 };
 
-export default async function MessageBox({ contact }: Props) {
+export default async function MessageBox({ contactPromise }: Props) {
+  const contact = await contactPromise;
+
   return (
     <details className="group flex flex-col rounded-xl border border-gray bg-white shadow-xl">
       <summary className="flex items-center justify-between gap-4 rounded-b-xl rounded-t-xl border-b border-gray bg-white px-4 py-1 text-lg font-bold text-primary hover:bg-gray-light group-open:rounded-b-none group-open:py-3">
