@@ -141,4 +141,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Note that you cannot use the local SQLite database in production. You will need to configure a production database in the `.env` file and update the Prisma schema accordingly.
+Note that you cannot use the local SQLite database in production. You will need to configure a production database in the `.env` file and update the Prisma schema accordingly. Learn more about it in the [docs](https://pris.ly/d/prisma-schema).

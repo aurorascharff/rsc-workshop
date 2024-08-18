@@ -321,6 +321,11 @@
 
 ### Show: TASK 2 Solution
 
-- Go through the files and solutions
+- Component composition, data fetching
+- Loading state with submitbutton
+- Suspense boundary around messages
+- Error boundary on the input
+- Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be progrehanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
+- I could make this with plain react but I could also make it like this
 
 ### Slides: Deployment
