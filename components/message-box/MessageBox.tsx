@@ -6,10 +6,11 @@ import Messages from './Messages';
 import type { Contact } from '@prisma/client';
 
 type Props = {
-  contact: Contact;
+  contactPromise: Promise<Contact>;
 };
 
-export default async function MessageBox({ contact }: Props) {
+export default async function MessageBox({ contactPromise }: Props) {
+  const contact = await contactPromise;
   const messages = getMessages(contact.id);
   const user = getCurrentUser();
 
