@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Toaster } from 'react-hot-toast';
 import ContactList from '@/components/ContactList';
 import Search from '@/components/Search';
@@ -11,7 +12,6 @@ import { getContacts } from '@/lib/services/getContacts';
 import Logo from '@/public/next-js.svg';
 import { routes } from '@/validations/routeSchema';
 import type { Metadata } from 'next';
-import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 

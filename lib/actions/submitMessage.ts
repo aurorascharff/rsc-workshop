@@ -1,17 +1,17 @@
 'use server';
 
-import { prisma } from '@/db';
 import { revalidatePath } from 'next/cache';
-import { getCurrentUser } from '../services/getCurrentUser';
 import { z } from 'zod';
+import { prisma } from '@/db';
 import { slow } from '@/utils/slow';
+import { getCurrentUser } from '../services/getCurrentUser';
 
 const messageSchema = z.object({
-  content: z.string().min(1, {
-    message: 'Content must be at least 1 characters long',
-  }),
   contactId: z.string().uuid({
     message: 'Invalid user ID',
+  }),
+  content: z.string().min(1, {
+    message: 'Content must be at least 1 characters long',
   }),
 });
 
@@ -28,8 +28,8 @@ export async function submitMessage(_prevState: State, formData: FormData): Prom
   const timestamp = new Date();
 
   const result = messageSchema.safeParse({
-    content: formData.get('content'),
     contactId: formData.get('contactId'),
+    content: formData.get('content'),
   });
 
   if (!result.success) {
@@ -42,8 +42,8 @@ export async function submitMessage(_prevState: State, formData: FormData): Prom
 
   await prisma.message.create({
     data: {
-      content: result.data.content,
       contactId: result.data.contactId,
+      content: result.data.content,
       createdById: currentUser.id,
     },
   });

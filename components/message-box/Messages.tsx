@@ -1,8 +1,8 @@
+import React from 'react';
 import { getCurrentUser } from '@/lib/services/getCurrentUser';
 import { getMessages } from '@/lib/services/getMessages';
-import { Contact } from '@prisma/client';
-import React from 'react';
 import MessageDisplay from './MessageDisplay';
+import type { Contact } from '@prisma/client';
 
 type Props = {
   contact: Contact;

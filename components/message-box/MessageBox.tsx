@@ -1,13 +1,10 @@
-import { getCurrentUser } from '@/lib/services/getCurrentUser';
-import { getMessages } from '@/lib/services/getMessages';
 import React, { Suspense } from 'react';
-import MessageDisplay from './MessageDisplay';
-import MessageInput from './MessageInput';
-import { Contact } from '@prisma/client';
-import AutomaticScroller from '@/components/AutomaticScroller';
 import { ErrorBoundary } from 'react-error-boundary';
-import Messages from './Messages';
+import AutomaticScroller from '@/components/AutomaticScroller';
 import Skeleton from '../ui/Skeleton';
+import MessageInput from './MessageInput';
+import Messages from './Messages';
+import type { Contact } from '@prisma/client';
 
 type Props = {
   contact: Contact;
