@@ -23,7 +23,7 @@ export default async function ContactsLayout({ children, params }: Props) {
       }
     >
       {children}
-      <div className="fixed bottom-8 right-8 ml-8">
+      <div className="fixed bottom-0 right-8 ml-8">
         <MessageBox contactPromise={contact} />
       </div>
     </Suspense>
