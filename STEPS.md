@@ -77,7 +77,7 @@
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features. Prog-enh works.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
 - Excalidraw tree
 
 ### BREAK 1
@@ -109,13 +109,14 @@
 ### Intro: What is suspense?
 
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
-- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
+- Used for lazy loading, code splitting, data fetching. Typically npmlazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
 - Avfallsdek: suspenses maler.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
+- Have to think about avoiding cumulative layout shift.
 
 ### App: Add suspense to ContactPage
 
