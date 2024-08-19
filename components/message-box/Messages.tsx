@@ -37,7 +37,7 @@ export default function Messages({ contactPromise, messagesPromise, userPromise 
 
   return (
     <>
-      <AutomaticScroller className="grid content-start gap-4 overflow-auto border-b border-gray p-4">
+      <AutomaticScroller className="grid h-80 content-start gap-4 overflow-auto border-b border-gray p-4">
         {optimisticMessages.length === 0 && <span className="text-center text-gray-dark">No messages</span>}
         {optimisticMessages.map(message => {
           return (

@@ -23,8 +23,8 @@ export default async function MessageBox({ contactId }: Props) {
           <span className="hidden text-2xl group-open:flex">-</span>
         </div>
       </summary>
-      <div className="grid h-96 w-full group-open:min-w-[320px] sm:group-open:w-[380px]">
-        <Suspense fallback={<Skeleton className="m-4" />}>
+      <div className="grid w-full group-open:min-w-[320px] sm:group-open:w-[380px]">
+        <Suspense fallback={<Skeleton className="h-[384px] p-4" />}>
           <Messages contactPromise={contact} userPromise={user} messagesPromise={messages} />
         </Suspense>
       </div>
