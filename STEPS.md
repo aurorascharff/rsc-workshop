@@ -109,7 +109,7 @@
 ### Intro: What is suspense?
 
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
-- Used for lazy loading, code splitting, data fetching. Typically npmlazy loading in a React SPA.
+- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
