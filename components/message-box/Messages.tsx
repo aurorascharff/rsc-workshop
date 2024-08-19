@@ -8,7 +8,7 @@ import MessageInput from './MessageInput';
 import type { Contact, Message, User } from '@prisma/client';
 
 type Props = {
-  contact: Contact;
+  contactPromise: Promise<Contact>;
   messagesPromise: Promise<Message[]>;
   userPromise: Promise<User>;
 };
@@ -17,9 +17,10 @@ export type OptimisticMessage = Message & {
   isSending?: boolean;
 };
 
-export default function Messages({ contact, messagesPromise, userPromise }: Props) {
+export default function Messages({ contactPromise, messagesPromise, userPromise }: Props) {
   const messages = use(messagesPromise);
   const user = use(userPromise);
+  const contact = use(contactPromise);
 
   const [optimisticMessages, addOptimisticMessage] = useOptimistic(
     messages,
@@ -35,8 +36,8 @@ export default function Messages({ contact, messagesPromise, userPromise }: Prop
   );
 
   return (
-    <div className="grid w-full group-open:min-w-[320px] sm:group-open:w-[380px]">
-      <AutomaticScroller className="grid h-80 content-start gap-4 overflow-auto border-b border-gray p-4">
+    <>
+      <AutomaticScroller className="grid content-start gap-4 overflow-auto border-b border-gray p-4">
         {optimisticMessages.length === 0 && <span className="text-center text-gray-dark">No messages</span>}
         {optimisticMessages.map(message => {
           return (
@@ -52,6 +53,6 @@ export default function Messages({ contact, messagesPromise, userPromise }: Prop
       <ErrorBoundary fallback={<p className="pb px-6 py-8 text-end">⚠️Something went wrong</p>}>
         <MessageInput addOptimisticMessage={addOptimisticMessage} contactId={contact.id} userId={user.id} />
       </ErrorBoundary>
-    </div>
+    </>
   );
 }
