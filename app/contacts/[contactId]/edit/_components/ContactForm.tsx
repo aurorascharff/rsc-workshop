@@ -30,7 +30,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 
   return (
     <form className="flex max-w-[40rem] flex-col gap-4 @container" action={updateContactAction}>
-      <div className="grip-rows-6 grid grid-cols-1 items-center gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
+      <div className="grip-rows-6 grid grid-cols-1 gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
@@ -82,9 +82,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
           placeholder="https:// media.licdn.com/dms/image/example"
           type="text"
         />
-        <label className="self-start" htmlFor="notes">
-          Notes
-        </label>
+        <label htmlFor="notes">Notes</label>
         <TextArea
           errors={state.errors?.fieldErrors?.notes}
           className="grow"
@@ -106,14 +104,14 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 export function ContactFormSkeleton() {
   return (
     <div className="flex max-w-[40rem] flex-col gap-4 @container">
-      <div className="grip-rows-6 grid grid-cols-1 items-center gap-4 @sm:grid-cols-[1fr_4fr]">
+      <div className="grip-rows-6 grid grid-cols-1 gap-4 @sm:grid-cols-[1fr_4fr]">
         <div className="hidden flex-col gap-[72px] @sm:flex @sm:gap-8">
           <span className="flex">Name</span>
           <span>Position</span>
           <span>Email</span>
           <span>Github</span>
           <span>Avatar URL</span>
-          <span className="self-start">Notes</span>
+          <span>Notes</span>
         </div>
         <Skeleton />
       </div>
