@@ -1,6 +1,18 @@
 import { PrismaClient } from '@prisma/client';
+import type { User } from '@prisma/client';
 
 const prisma = new PrismaClient();
+
+const USERS: User[] = [
+  {
+    id: '2bccacd4-64de-4f1d-97ed-9722cdf99cd9',
+    name: 'Devlin Duldulao',
+  },
+  {
+    id: '3ea4ae6c-adda-40eb-b254-9cfe0c8e8113',
+    name: 'Aurora Scharff',
+  },
+];
 
 const CONTACTS = [
   {
@@ -25,8 +37,8 @@ const CONTACTS = [
   },
 ];
 
-function seedContacts() {
-  Promise.all(
+async function seedContacts() {
+  await Promise.all(
     CONTACTS.map(n => {
       return prisma.contact.create({
         data: {
@@ -46,6 +58,18 @@ function seedContacts() {
     })
     .catch(e => {
       return console.error('[SEED] Failed to create contact records', e);
+    });
+
+  await Promise.all(
+    USERS.map(n => {
+      return prisma.user.create({ data: { id: n.id, name: n.name } });
+    }),
+  )
+    .then(() => {
+      return console.info('[SEED] Succussfully create user records');
+    })
+    .catch(e => {
+      return console.error('[SEED] Failed to create user records', e);
     });
 }
 

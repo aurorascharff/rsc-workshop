@@ -131,6 +131,8 @@ npm run test.e2e.debug
 npm run test.e2e.codegen
 ```
 
+You might have to run `npx playwright install` before running the tests, as prompted by the terminal.
+
 ## Deployment
 
 The app can be built for production using the `npm run build` command. The built files will be generated in the `.next` folder.
@@ -139,4 +141,4 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-Note that you cannot use the local SQLite database in production. You will need to configure a production database in the `.env` file and update the Prisma schema accordingly.
+Note that you cannot use the local SQLite database in production. You will need to configure a production database in the `.env` file and update the Prisma schema accordingly. Learn more about it in the [docs](https://pris.ly/d/prisma-schema).
