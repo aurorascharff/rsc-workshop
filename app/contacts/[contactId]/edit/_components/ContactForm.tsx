@@ -85,7 +85,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
           type="text"
         />
         <label htmlFor="notes">Notes</label>
-        <TextArea error={errors.notes?.message} {...register('position')} className="grow" name="notes" rows={6} />
+        <TextArea error={errors.notes?.message} {...register('notes')} className="grow" name="notes" rows={6} />
       </div>
       <div className="flex gap-2 self-end">
         <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
