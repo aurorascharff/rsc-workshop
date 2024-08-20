@@ -1,4 +1,4 @@
-# React Server Components and React 19 i Next.js App Router
+# React Server Components and React 19 in the Next.js App Router
 
 ## DAY 1
 
@@ -16,6 +16,7 @@
 - Talk about eslint and prettier, show setup and rules
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
+- Nested layouts: state in the url, users will awlays see the same thing
 - Introduce the cva() library, show on npm
 
 ### Intro: What are server components?
@@ -31,6 +32,7 @@
 - Async and fetch data prisma or fetch api, data[0]
 - Anything you do here won't add to the bundle size
 - Limitations onclick button, we need client for interactivity or browser stuff
+- How do they work (ikogito console): SSR html, js-bundles for hydration, and rsc payload is the server component in seralizable form, generated in build or on server for dynamic data. Payload is used to create the client tree, and can be refreshed without destroying client state. If they pass props to client that have updated, client updates. Ikke workshoppens focus.
 
 ## Intro: What are client components?
 
@@ -75,17 +77,22 @@
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features. Prog-enh works.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
 - Excalidraw tree
 
-### BREAK 1
+### LUNCH DAY 1
 
-## Intro: Statiske og dynamiske sider
+### Slides: Core web vitals and performance, CSS in Server Components
+
+- Demo lighthouse in application
+
+### Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
+- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering)
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
-- Nevne PPR
+- Nevne [PPR](https://www.partialprerendering.com/)
 - Loading states are hard
 
 ### Intro: What are transitions?
@@ -114,6 +121,7 @@
 - You need to decide where to wait: in the source or in the destination.
 - Avfallsdek: suspenses maler.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
+- Have to think about avoiding cumulative layout shift.
 
 ### App: Add suspense to ContactPage
 
@@ -133,57 +141,47 @@
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
-### App: Write and use all server actions, make CRUD work
+### App: Write and use all server actions, make CRUD work, pending-states
 
-- Create: onClick, revalidate etter visning
-- Update: onClick, add all props prisma
-- Delete: onClick modal
+- Create: CreateContactButton "use client" onClick, revalidate etter visning, add slow and transition for loading state, "creating" + disabled
+- Update: ContactForm "use client" onSubmit, updateContactSimple, add slow and transition for loading state
+- Delete: DeleteContactButton "use client" onClick modal, add slow and transition for loading state, "deleting" + disabled
 
 ### Slides: TASK 1
 
 ### Show: TASK 1 Solution
 
-- Show the favourite code and example edit loading.tsx
-- Go through the files and solutions
-- Decide what level of polish you want
+- Show edit loading.tsx
+- Show the favourite code and example
+- Fremdeles ikke helt topp
 - We will improve the favourite tomorrow med React 19
-
-### Slides: CSS in Server Components
 
 ## DAY 2
 
-## Slides: Dag 1 plan, hva lærte dere?
+### Slides: Dag 1 plan, hva lærte dere?
 
-## Slides: Introduksjon til React 19 og React Compiler
-
-### App: Add the React Compiler
-
-- Add the React Compiler to the project
-- Install the React Compiler plugin for Next.js
-- Install the eslint plugin for the React Compiler
-- Enable it in next.config.js
-- Look at devtools
-- Make slow component and show result
+### Slides: Introduksjon til React 19 og React Compiler
 
 ### App: Update CRUD with React 19 form actions and .bind
 
-- Create: form and action-prop, mention onClick and hydration and web standards
+- Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
 - This is an implicit action = async transition
 - Mention again progressive enhancement
-- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh
+- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client"
 - Delete: form and action-prop, .bind, then modal. Prog enh fallback.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Favorite: form and action-prop with .bind or hidden input
 
-### App: Add interactivity with transitions and SubmitButton
+### App: Add back interactivity with SubmitButton
 
-- Make all functions slow
-- Use loading boolean for delete button transition
+- Use SubmitButton with loading boolean for delete button transition
 - The other buttons are not client components
 - Add useFormStatus isSubmitting
 - Use it in new contact
 - Power of rsc, composability of client/server while mainaining interactivity
 - Add component to update contact
+- Replace component to delete contact
+- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
 - Avfallsdek: submitbutton
 
@@ -216,7 +214,7 @@
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
-### BREAK 2
+### LUNCH DAY 2
 
 ### Intro: Introduce data fetching patterns
 
@@ -246,15 +244,15 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
-- Show example from pages router forms: https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations
 
 ### App: Add caching and Next.js improvements
 
+- Show metadata root page
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Add staleTimes 30 to cache routes
-- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, show that we dont need to see any edit/loading.tsx. Leave it as a seperate function but dont use it, mention revalidateTag.
-- Add not-found global,  contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
+- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, show that we dont need to see any edit/loading.tsx. Update mutations.
+- Add not-found global, contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
 ### Intro: Implement global error state with Zustand and React Context
 
@@ -293,6 +291,12 @@
 - Formik works as well
 - Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i maler.
 
+### Show: Other libraries
+
+- [Conform](https://conform.guide/)
+- [next-safe-action](https://next-safe-action.dev/)
+- [Tanstack Form](https://tanstack.com/form/latest)
+
 ### Show: Search Param filtering
 
 - [BuildUI](https://buildui.com/posts/instant-search-params-with-react-server-components)
@@ -311,13 +315,23 @@
 
 - Show playwright setup and package.json commands
 - Show example test
+- Mention to `npx playwright install`
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 
 ### Slides: TASK 2
 
+- Vise egen sneak peak, så vise schema som er klart til å bruke
+
 ### Show: TASK 2 Solution
 
-- Go through the files and solutions
+- Vise egen: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
+- Component composition, data fetching
+- Loading state with submitbutton
+- Suspense boundary around messages
+- Error boundary on the input
+- Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be prog enhanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
+- I could make this with plain react but I could also make it like this
+- Vise optimistic senere: use hook
 
 ### Slides: Deployment

@@ -9,13 +9,13 @@ export default function NewContactButton() {
 
   return (
     <Button
+      disabled={isPending}
       theme="secondary"
       onClick={() => {
         startTransition(async () => {
           await createEmptyContact();
         });
       }}
-      disabled={isPending}
       type="submit"
     >
       {isPending ? 'Creating...' : 'New'}

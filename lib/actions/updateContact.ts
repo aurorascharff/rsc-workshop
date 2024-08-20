@@ -1,7 +1,8 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
+import { revalidatePath, revalidateTag } from 'next/cache';
 import { redirect } from 'next/navigation';
+import { cacheKeys } from '@/constants/revalidationKeys';
 import { prisma } from '@/db';
 import { slow } from '@/utils/slow';
 import type { ContactSchemaType } from '@/validations/contactSchema';
@@ -28,8 +29,22 @@ export async function updateContact(contactId: string, data: ContactSchemaType) 
   });
 
   revalidatePath(routes.home());
-  // revalidateTag(cacheKeys.contact); // For unstable-cache
+  revalidateTag(cacheKeys.contact); // For unstable-cache
   // revalidateTag(revalidationKeys.contact(contactId)); // For getContactFetch
   // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
+  redirect(routes.contactId({ contactId }));
+}
+
+export async function updateContactSimple(contactId: string, formData: FormData) {
+  const contact = Object.fromEntries(formData);
+
+  await prisma.contact.update({
+    data: contact,
+    where: {
+      id: contactId,
+    },
+  });
+
+  revalidatePath(routes.home());
   redirect(routes.contactId({ contactId }));
 }

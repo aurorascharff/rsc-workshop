@@ -22,9 +22,8 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["autofix", "react-hooks", "sort-keys-fix", "react-compiler"],
+  "plugins": ["autofix", "react-hooks", "sort-keys-fix"],
   "rules": {
-    "react-compiler/react-compiler": "error",
     "sort-keys-fix/sort-keys-fix": "warn"
   },
   "overrides": [
