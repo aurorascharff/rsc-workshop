@@ -71,7 +71,7 @@ export default async function ContactPage({ params }: PageProps) {
         {contact.github ? (
           <div className="flex items-center gap-2">
             <div>
-              <Image width={16} height={16} src={GithubLogo} alt="Github Logo" />
+              <Image width={16} height={16} src={GithubLogo} alt="Github logo" />
             </div>
             <p className="text-xl text-primary">
               <a target="_blank" className="no-underline hover:underline" href={`https://github.com/${contact.github}`}>
