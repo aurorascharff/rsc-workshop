@@ -30,7 +30,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 
   return (
     <form className="flex max-w-[40rem] flex-col gap-4 @container" action={updateContactAction}>
-      <div className="grip-rows-6 grid grid-cols-1 gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
+      <div className="grip-rows-6 grid grid-cols-1 items-center gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
@@ -82,7 +82,9 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
           placeholder="https:// media.licdn.com/dms/image/example"
           type="text"
         />
-        <label htmlFor="notes">Notes</label>
+        <label className="self-start" htmlFor="notes">
+          Notes
+        </label>
         <TextArea
           errors={state.errors?.fieldErrors?.notes}
           className="grow"
