@@ -80,10 +80,15 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
 - Excalidraw tree
 
-### BREAK 1
+### LUNCH DAY 1
 
-## Intro: Statiske og dynamiske sider
+### Slides: Core web vitals and performance, CSS in Server Components
 
+- Demo lighthouse in application
+
+### Intro: Statiske og dynamiske sider
+
+- Excalidraw: TODO
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
 - Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
@@ -151,13 +156,11 @@
 - Fremdeles ikke helt topp
 - We will improve the favourite tomorrow med React 19
 
-### Slides: CSS in Server Components
-
 ## DAY 2
 
-## Slides: Dag 1 plan, hva lærte dere?
+### Slides: Dag 1 plan, hva lærte dere?
 
-## Slides: Introduksjon til React 19 og React Compiler
+### Slides: Introduksjon til React 19 og React Compiler
 
 ### App: Update CRUD with React 19 form actions and .bind
 
@@ -211,7 +214,7 @@
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
-### BREAK 2
+### LUNCH DAY 2
 
 ### Intro: Introduce data fetching patterns
 
