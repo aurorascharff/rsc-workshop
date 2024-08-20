@@ -80,12 +80,17 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
 - Excalidraw tree
 
-### BREAK 1
+### LUNCH DAY 1
 
-## Intro: Statiske og dynamiske sider
+### Slides: Core web vitals and performance, CSS in Server Components
+
+- Demo lighthouse in application
+
+### Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
 - Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
+- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering)
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne [PPR](https://www.partialprerendering.com/)
 - Loading states are hard
@@ -109,7 +114,7 @@
 ### Intro: What is suspense?
 
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
-- Used for lazy loading, code splitting, data fetching. Typically npmlazy loading in a React SPA.
+- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
@@ -136,12 +141,11 @@
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
-### App: Write and use all server actions, make CRUD work
+### App: Write and use all server actions, make CRUD work, pending-states
 
-- Create: CreateContactButton "use client" onClick, revalidate etter visning
-- Update: ContactForm "use client" onSubmit, updateContactSimple
-- Delete: DeleteContactButton "use client" onClick modal
-- Alt dette skal vi jobbe mer med imorgen
+- Create: CreateContactButton "use client" onClick, revalidate etter visning, add slow and transition for loading state, "creating" + disabled
+- Update: ContactForm "use client" onSubmit, updateContactSimple, add slow and transition for loading state
+- Delete: DeleteContactButton "use client" onClick modal, add slow and transition for loading state, "deleting" + disabled
 
 ### Slides: TASK 1
 
@@ -149,15 +153,14 @@
 
 - Show edit loading.tsx
 - Show the favourite code and example
+- Fremdeles ikke helt topp
 - We will improve the favourite tomorrow med React 19
-
-### Slides: CSS in Server Components
 
 ## DAY 2
 
-## Slides: Dag 1 plan, hva lærte dere?
+### Slides: Dag 1 plan, hva lærte dere?
 
-## Slides: Introduksjon til React 19 og React Compiler
+### Slides: Introduksjon til React 19 og React Compiler
 
 ### App: Update CRUD with React 19 form actions and .bind
 
@@ -169,16 +172,15 @@
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Favorite: form and action-prop with .bind or hidden input
 
-### App: Add interactivity with transitions and SubmitButton
+### App: Add back interactivity with SubmitButton
 
-- Make all functions slow
-- Use loading boolean for delete button transition
+- Use SubmitButton with loading boolean for delete button transition
 - The other buttons are not client components
 - Add useFormStatus isSubmitting
 - Use it in new contact
 - Power of rsc, composability of client/server while mainaining interactivity
 - Add component to update contact
-- Add component to delete contact
+- Replace component to delete contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
 - Avfallsdek: submitbutton
@@ -212,7 +214,7 @@
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
-### BREAK 2
+### LUNCH DAY 2
 
 ### Intro: Introduce data fetching patterns
 
@@ -320,17 +322,17 @@
 
 ### Slides: TASK 2
 
-- Vise egen: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
-- Schema er klart, vise
+- Vise egen sneak peak, så vise schema som er klart til å bruke
 
 ### Show: TASK 2 Solution
 
+- Vise egen: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
 - Component composition, data fetching
 - Loading state with submitbutton
 - Suspense boundary around messages
 - Error boundary on the input
-- Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be progrehanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
+- Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be prog enhanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
 - I could make this with plain react but I could also make it like this
-- Optimistic: use hook
+- Vise optimistic senere: use hook
 
 ### Slides: Deployment
