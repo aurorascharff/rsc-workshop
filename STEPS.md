@@ -69,8 +69,6 @@
 - Fetch data in edit contact page
 - Discuss composability and compare with React Query
 - Show excalidraw, cache functions
-- Add slow functions
-- Show suspense and streaming, nextjs caching happening
 - Excalidraw tree so far
 
 ### App: code client component logic
