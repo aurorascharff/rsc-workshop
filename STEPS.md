@@ -90,7 +90,7 @@
 ### Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek prod arbeidsflate. Skal bruke denne til eksempel idag.
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering)
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne [PPR](https://www.partialprerendering.com/)
@@ -120,7 +120,7 @@
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
-- Avfallsdek: suspenses maler.
+- Avfallsdek: suspenses arbeidsflate.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 - Have to think about avoiding cumulative layout shift.
 
@@ -184,7 +184,7 @@
 - Replace component to delete contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
-- Avfallsdek: submitbutton
+- Avfallsdek: submitbutton slett deklarasjon
 
 ### App: Use useActionState for form validation
 
@@ -225,7 +225,7 @@
 - Suspense strategy: wait for all or stream independently
 - use() hook: unblock a by making suspenses around client components because we cant await inside them
 - Use hook can resolve any promise but this is not recommended inside client components because they are recreated on every render
-- Avfallsdek: use() eksempel i maler
+- Avfallsdek: use() eksempel i statustabs
 
 ### App: Use the use() hook in contacts
 
@@ -290,7 +290,7 @@
 - Show implementation
 - Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
 - Formik works as well
-- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i maler.
+- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon.
 
 ### Show: Other libraries
 
