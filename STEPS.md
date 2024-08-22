@@ -263,7 +263,7 @@
 
 ### App: Add typed params with next-safe-navigation
 
-- Show library on npm
+- Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
 - Next.js doesnt have type safety for params, show example with wrong param
 - Show config file
 - Add routes to a a few application pages href and router.push
@@ -273,6 +273,14 @@
 - Mention server/client hook and functions
 - Bruker i avfallsdek
 
+### Show: React Hook Form
+
+- Checkout new branch i completed repo
+- Show implementation
+- Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
+- Formik works as well
+- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon.
+
 ### Show: React Query
 
 - Checkout new branch i completed repo
@@ -281,14 +289,6 @@
 - If you have an external API its faster of course
 - But if youre using prisma you need to define your own api routes because you shouldnt use server actions because are queued
 - Use case: polling, if you prefer it
-
-### Show: React Hook Form
-
-- Checkout new branch i completed repo
-- Show implementation
-- Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
-- Formik works as well
-- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon.
 
 ### Show: Other libraries
 
