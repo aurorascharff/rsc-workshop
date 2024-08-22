@@ -17,6 +17,7 @@
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing
+- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints
 - Introduce the cva() library, show on npm
 
 ### Intro: What are server components?
