@@ -171,6 +171,7 @@
 ### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
+- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button router.onpush if we dont have to. Good for a11y as well. Progressive enhancement.
 - This is an implicit action = async transition
 - Mention again progressive enhancement
 - Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client"
