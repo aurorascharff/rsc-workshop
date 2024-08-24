@@ -161,6 +161,13 @@
 
 ### Slides: Introduksjon til React 19 og React Compiler
 
+## Enable React Compiler and look in devtools
+
+- Show package.json plugin and eslint-plugin
+- Add to next.config.js
+- See devtools
+- See eslint error
+
 ### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
