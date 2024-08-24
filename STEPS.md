@@ -164,9 +164,9 @@
 ## Enable React Compiler and look in devtools
 
 - Show package.json plugin and eslint-plugin
+- Show eslint config
 - Add to next.config.js
 - See devtools
-- See eslint error
 
 ### App: Update CRUD with React 19 form actions and .bind
 
