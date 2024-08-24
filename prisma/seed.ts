@@ -6,11 +6,11 @@ const prisma = new PrismaClient();
 const USERS: User[] = [
   {
     id: '2bccacd4-64de-4f1d-97ed-9722cdf99cd9',
-    name: 'Devlin Duldulao',
+    name: 'Jane Doe',
   },
   {
     id: '3ea4ae6c-adda-40eb-b254-9cfe0c8e8113',
-    name: 'Aurora Scharff',
+    name: 'John Doe',
   },
 ];
 
@@ -34,6 +34,15 @@ const CONTACTS = [
     github: 'aurorascharff',
     last: 'Scharff',
     position: 'Konsulent',
+  },
+  {
+    avatar:
+      'https://media.licdn.com/dms/image/v2/C5103AQEW-xbR-2s5UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516466254031?e=1729728000&v=beta&t=5VlIci2ZTpJZx0HJ1-RkK0-QP4aHlztY8rcwyzYS8uk',
+    email: 'caspar.hoegh@inmeta.no',
+    favorite: false,
+    first: 'Caspar',
+    last: 'Høegh',
+    position: 'Seniorkonsulent / Arkitekt',
   },
 ];
 
