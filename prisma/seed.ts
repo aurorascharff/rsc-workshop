@@ -23,6 +23,8 @@ const CONTACTS = [
     first: 'Devlin',
     github: 'webmasterdevlin',
     last: 'Duldulao',
+    notes:
+      'Recognized as a Microsoft MVP for developer technologies for five consecutive years, Devlin is a seasoned full-stack web developer specializing in front-end technologies. With broad experience encompassing mobile development and cloud technology, he stands as an authority in his field, which is showcased by his accomplishments as a conference speaker and author of three developer-focused books published by Packt and Apress. In 2022, his educational contribution to JavaScript was acknowledged when he received the prestigious jsAwards as JavaScript Hero of Education.',
     position: 'Chief Consultant',
   },
   {
@@ -33,6 +35,8 @@ const CONTACTS = [
     first: 'Aurora',
     github: 'aurorascharff',
     last: 'Scharff',
+    notes:
+      'Aurora er en dyktig frontend-utvikler og konsulent hos Inmeta. Hun har en solid akademisk bakgrunn med en bachelorgrad i robotikk og intelligente systemer fra UiO, som inkluderer kunnskap om ingeniørmatematikk, robotikk, algoritmer, datastrukturer og datamaskinarkitektur. Med flere års erfaring fra arbeidslivet har hun håndtert komplekse prosjekter og jobbet med et bredt spekter av teknologier, inkludert håndtering av store datamengder og fokus på skalerbarhet. Aurora har også tatt initiativ til å standardisere kodebasen og optimalisere arbeidsmetodene på prosjektene.',
     position: 'Konsulent',
   },
   {
@@ -42,6 +46,8 @@ const CONTACTS = [
     favorite: false,
     first: 'Caspar',
     last: 'Høegh',
+    notes:
+      'Caspar er en erfaren arkitekt, utvikler og fagleder i MSDev avdelingen i Inmeta, med 13 års arbeidserfaring som fullstack-utvikler og en BcS fra HiBu (2013).',
     position: 'Seniorkonsulent / Arkitekt',
   },
 ];
@@ -57,6 +63,7 @@ async function seedContacts() {
           first: n.first,
           github: n.github,
           last: n.last,
+          notes: n.notes,
           position: n.position,
         },
       });
