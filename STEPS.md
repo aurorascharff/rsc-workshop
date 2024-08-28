@@ -76,7 +76,7 @@
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Excalidraw tree
 
 ### LUNCH DAY 1
