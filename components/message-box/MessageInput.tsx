@@ -3,7 +3,7 @@
 import React, { useActionState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import SubmitButton from '@/components/ui/SubmitButton';
-import { submitMessage } from '@/lib/actions/submitMessage';
+import { submitMessage } from '@/data/actions/submitMessage';
 
 type Props = {
   contactId: string;

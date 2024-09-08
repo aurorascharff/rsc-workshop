@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import MessageBox from '@/components/message-box/MessageBox';
 import Skeleton from '@/components/ui/Skeleton';
-import { getContactCache } from '@/lib/services/getContact';
+import { getContactCache } from '@/data/services/getContact';
 import { routes } from '@/validations/routeSchema';
 
 type Props = {

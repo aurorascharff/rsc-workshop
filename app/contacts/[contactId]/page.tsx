@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import LinkButton from '@/components/ui/LinkButton';
-import { getContactCache } from '@/lib/services/getContact';
+import { getContactCache } from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import { routes } from '@/validations/routeSchema';
 import DeleteContactButton from './_components/DeleteContactButton';

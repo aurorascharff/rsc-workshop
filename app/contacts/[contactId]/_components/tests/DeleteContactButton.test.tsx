@@ -5,7 +5,7 @@ import DeleteContactButton from '../DeleteContactButton';
 
 const mockDeleteContact = vi.fn();
 
-vi.mock('@/lib/actions/deleteContact', () => {
+vi.mock('@/data/actions/deleteContact', () => {
   return {
     deleteContact: async (contactId: string) => {
       return mockDeleteContact(contactId);
