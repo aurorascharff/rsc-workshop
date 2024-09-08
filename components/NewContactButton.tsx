@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useTransition } from 'react';
-import { createEmptyContact } from '@/lib/actions/createEmptyContact';
+import { createEmptyContact } from '@/data/actions/createEmptyContact';
 import Button from './ui/Button';
 
 export default function NewContactButton() {

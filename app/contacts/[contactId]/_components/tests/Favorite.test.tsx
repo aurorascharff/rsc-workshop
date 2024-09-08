@@ -6,7 +6,7 @@ import type { Contact } from '@prisma/client';
 
 const mockFavoriteContact = vi.fn();
 
-vi.mock('@/lib/actions/favoriteContact', () => {
+vi.mock('@/data/actions/favoriteContact', () => {
   return {
     favoriteContact: async (contactId: string, isFavorite: boolean) => {
       return mockFavoriteContact(contactId, isFavorite);
