@@ -1,7 +1,7 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { queryKeys } from '@/constants/revalidationKeys';
-import { createEmptyContact } from '@/lib/actions/createEmptyContact';
+import { createEmptyContact } from '@/data/actions/createEmptyContact';
 import { routes } from '@/validations/routeSchema';
 import type { Contact } from '@prisma/client';
 

@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { queryKeys } from '@/constants/revalidationKeys';
-import { favoriteContact } from '@/lib/actions/favoriteContact';
+import { favoriteContact } from '@/data/actions/favoriteContact';
 import type { Contact } from '@prisma/client';
 
 export default function useFavoriteContact() {
