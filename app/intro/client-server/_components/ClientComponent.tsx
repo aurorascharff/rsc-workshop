@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Button from '@/components/ui/Button';
-import { mutateData } from '@/lib/actions/intro/mutateData';
+import { mutateData } from '@/data/actions/intro/mutateData';
 
 type Props = {
   children: React.ReactNode;

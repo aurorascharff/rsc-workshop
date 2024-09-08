@@ -17,6 +17,7 @@
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing
+- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints
 - Introduce the cva() library, show on npm
 
 ### Intro: What are server components?
@@ -68,8 +69,6 @@
 - Fetch data in edit contact page
 - Discuss composability and compare with React Query
 - Show excalidraw, cache functions
-- Add slow functions
-- Show suspense and streaming, nextjs caching happening
 - Excalidraw tree so far
 
 ### App: code client component logic
@@ -77,7 +76,7 @@
 - Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Concurrent features, useDefferedValue other uses. Prog-enh works.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Excalidraw tree
 
 ### LUNCH DAY 1
@@ -89,7 +88,7 @@
 ### Intro: Statiske og dynamiske sider
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
-- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek maler. Skal bruke denne til eksempel idag.
+- Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek prod arbeidsflate. Skal bruke denne til eksempel idag.
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering)
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne [PPR](https://www.partialprerendering.com/)
@@ -119,7 +118,7 @@
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
-- Avfallsdek: suspenses maler.
+- Avfallsdek: suspenses arbeidsflate.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 - Have to think about avoiding cumulative layout shift.
 
@@ -162,9 +161,17 @@
 
 ### Slides: Introduksjon til React 19 og React Compiler
 
+## Enable React Compiler and look in devtools
+
+- Show package.json plugin and eslint-plugin
+- Show eslint config
+- Add to next.config.js
+- See devtools
+
 ### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
+- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button router.onpush if we dont have to. Good for a11y as well. Progressive enhancement.
 - This is an implicit action = async transition
 - Mention again progressive enhancement
 - Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client"
@@ -183,7 +190,7 @@
 - Replace component to delete contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
-- Avfallsdek: submitbutton
+- Avfallsdek: submitbutton slett deklarasjon
 
 ### App: Use useActionState for form validation
 
@@ -224,7 +231,7 @@
 - Suspense strategy: wait for all or stream independently
 - use() hook: unblock a by making suspenses around client components because we cant await inside them
 - Use hook can resolve any promise but this is not recommended inside client components because they are recreated on every render
-- Avfallsdek: use() eksempel i maler
+- Avfallsdek: use() eksempel i statustabs
 
 ### App: Use the use() hook in contacts
 
@@ -264,7 +271,7 @@
 
 ### App: Add typed params with next-safe-navigation
 
-- Show library on npm
+- Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
 - Next.js doesnt have type safety for params, show example with wrong param
 - Show config file
 - Add routes to a a few application pages href and router.push
@@ -274,6 +281,14 @@
 - Mention server/client hook and functions
 - Bruker i avfallsdek
 
+### Show: React Hook Form
+
+- Checkout new branch i completed repo
+- Show implementation
+- Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
+- Formik works as well
+- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon.
+
 ### Show: React Query
 
 - Checkout new branch i completed repo
@@ -282,14 +297,6 @@
 - If you have an external API its faster of course
 - But if youre using prisma you need to define your own api routes because you shouldnt use server actions because are queued
 - Use case: polling, if you prefer it
-
-### Show: React Hook Form
-
-- Checkout new branch i completed repo
-- Show implementation
-- Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
-- Formik works as well
-- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i maler.
 
 ### Show: Other libraries
 

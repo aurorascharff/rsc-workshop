@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { getContactCache } from '@/lib/services/getContact';
+import { getContactCache } from '@/data/services/getContact';
 import { routes } from '@/validations/routeSchema';
 import ContactForm, { ContactFormSkeleton } from './_components/ContactForm';
 

@@ -4,9 +4,9 @@ import { suspenseRender } from '@/test-utils/suspenseRender';
 import ContactPage from '../page';
 import type { Contact } from '@prisma/client';
 
-vi.mock('@/lib/services/getContact', () => {
+vi.mock('@/data/services/getContact', () => {
   return {
-    getContact: async (id: string) => {
+    getContactCache: async (id: string) => {
       return {
         avatar: 'https://example.com/avatar.jpg',
         email: 'test@test.com',
