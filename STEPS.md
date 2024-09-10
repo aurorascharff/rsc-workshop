@@ -89,7 +89,7 @@
 
 - Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
 - Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek prod arbeidsflate. Skal bruke denne til eksempel idag.
-- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#dynamic-rendering)
+- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#server-rendering-strategies)
 - Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne [PPR](https://www.partialprerendering.com/)
 - Loading states are hard
@@ -251,6 +251,7 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
+- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
 
 ### App: Add caching and Next.js improvements
 
@@ -308,7 +309,7 @@
 
 - [BuildUI](https://buildui.com/posts/instant-search-params-with-react-server-components)
 - Avfallsdek: filter-komponent
-- [Lee Robinson Vercel](https://next-books-search.vercel.app/)
+- [Lee Robinson Vercel](https://github.com/vercel-labs/book-inventory)
 
 ### App: Unit and Component tests with Vitest
 
@@ -341,5 +342,6 @@
 - Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be prog enhanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
 - I could make this with plain react but I could also make it like this
 - Vise optimistic senere: use hook
+- [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 ### Slides: Deployment
