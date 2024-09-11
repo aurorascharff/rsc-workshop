@@ -8,13 +8,19 @@
 
 - Create a new Next.js app with `npx create-next-app@latest`
 - Go through Next.js 14 boilerplate file structure and basics
+- Rootlayout, children prop page, Image
+
+### Show: Setup the repository
+
+- Github: Fork / copy files for starter project
+- README.md show commands and run together npm install
+- CRUD app for managing contacts
+- Talk about eslint and prettier, show setup and rules, verify its working
+- Talk about Prisma and the database, show schema
+- README.md prisma seed together
 
 ### Show: Go through the repository
 
-- Fork / copy files for starter project
-- CRUD app for managing contacts
-- Talk about eslint and prettier, show setup and rules
-- Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
