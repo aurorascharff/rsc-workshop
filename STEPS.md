@@ -81,7 +81,7 @@
 
 ### LUNCH DAY 1
 
-### Slides: Core web vitals and performance, CSS in Server Components
+### Slides: Core web vitals and performance
 
 - Demo lighthouse in application
 
@@ -227,6 +227,8 @@
 
 ### LUNCH DAY 2
 
+### Slides: CSS in Server Components & Deployment
+
 ### Intro: Introduce data fetching patterns
 
 - Fetch in an efficient way
@@ -286,6 +288,23 @@
 - Mention server/client hook and functions
 - Bruker i avfallsdek
 
+### App: Unit and Component tests with Vitest
+
+- Show vitest setup and package.json commands
+- Run example test and other commands
+- Test Favorite button
+- Test DeleteContactButton
+- Test ContactPage, show that it fails without suspense
+- Create suspenseRender helper
+
+### Show: End-to-end tests with Playwright
+
+- Show playwright setup and package.json commands
+- Show example test
+- Mention to `npx playwright install`
+- Run example test and other commands
+- Talk about the benefits of e2e tests and why I´m not spending more time on it
+
 ### Show: React Hook Form
 
 - Checkout new branch i completed repo
@@ -315,23 +334,6 @@
 - Avfallsdek: filter-komponent
 - [Lee Robinson Vercel](https://github.com/vercel-labs/book-inventory)
 
-### App: Unit and Component tests with Vitest
-
-- Show vitest setup and package.json commands
-- Run example test and other commands
-- Test Favorite button
-- Test DeleteContactButton
-- Test ContactPage, show that it fails without suspense
-- Create suspenseRender helper
-
-### Show: End-to-end tests with Playwright
-
-- Show playwright setup and package.json commands
-- Show example test
-- Mention to `npx playwright install`
-- Run example test and other commands
-- Talk about the benefits of e2e tests and why I´m not spending more time on it
-
 ### Slides: TASK 2
 
 - Vise egen sneak peak, så vise schema som er klart til å bruke
@@ -348,4 +350,4 @@
 - Vise optimistic senere: use hook
 - [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
-### Slides: Deployment
+### Slides: Ressurser og avslutning
