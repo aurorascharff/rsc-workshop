@@ -16,7 +16,7 @@
 - Talk about eslint and prettier, show setup and rules
 - Talk about Prisma and the database, show schema, README.md show commands and run together so verify everything is working
 - Introduce the structure and the components
-- Nested layouts: state in the url, users will awlays see the same thing
+- Nested layouts: state in the url, users will awlays see the same thing. Benefits.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
 - Introduce the cva() library, show on npm
 
@@ -155,6 +155,8 @@
 - Fremdeles ikke helt topp
 - We will improve the favourite tomorrow med React 19
 
+## Slides: Plan for dag 2
+
 ## DAY 2
 
 ### Slides: Dag 1 plan, hva lærte dere?
@@ -166,7 +168,9 @@
 - Show package.json plugin and eslint-plugin
 - Show eslint config
 - Add to next.config.js
-- See devtools
+- See devtools, remember to install [React DevTools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
+- Generate error with useEffect and ref
+- Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting
 
 ### App: Update CRUD with React 19 form actions and .bind
 
@@ -297,7 +301,7 @@
 - Show all api routes and fetch calls
 - If you have an external API its faster of course
 - But if youre using prisma you need to define your own api routes because you shouldnt use server actions because are queued
-- Use case: polling, if you prefer it
+- Use case: polling, if you prefer it. You can still use React query, do things the "old way". Not learning this today because we are focusing on React 19.
 
 ### Show: Other libraries
 
