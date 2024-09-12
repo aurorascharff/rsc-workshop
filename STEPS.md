@@ -21,6 +21,7 @@
 ### Show: Go through the repository
 
 - CRUD app for managing contacts
+- Vise next.js server side rendering console
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
@@ -191,6 +192,7 @@
 
 ### App: Add back interactivity with SubmitButton
 
+- Analyze SubmitButton
 - Use SubmitButton with loading boolean for delete button transition
 - The other buttons are not client components
 - Add useFormStatus isSubmitting
