@@ -75,15 +75,13 @@
 - Fetch data in contact page: getContact inside lib/services
 - Fetch data in edit contact page
 - Discuss composability and compare with React Query
-- Show excalidraw, cache functions
+- Show excalidraw
 - Excalidraw tree so far
 
 ### App: code client component logic
 
-- Search component: mention web standard way to search and progressive enhancement already working.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Excalidraw tree
 
 ### LUNCH DAY 1
@@ -111,7 +109,13 @@
 - All state updates are executes once they are all done, show example with setCount
 - Explain next.js navigations are transitions, can always be cancelled
 
-### App: Add transition to ContactButton sidebar
+### App: Add transition to Search
+
+- Search component: mention web standard way to search and progressive enhancement already working.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
+- Excalidraw tree
+
+### App: Add transition and ContactButton sidebar
 
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
