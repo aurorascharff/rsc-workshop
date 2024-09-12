@@ -20,33 +20,33 @@
 
 ### Show: Go through the repository
 
-- CRUD app for managing contacts
+- CRUD app for managing contacts: quick demo
 - Vise next.js server side rendering console
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
-- Introduce the cva() library, show on npm
+- Introduce the cva() library
+- Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
 
 ### Intro: What are server components?
 
-- Server components are a new feature in React 19, that allows you to run React components on the server. Differ from SSR because they never re-render, only run once on the server to generate UI. Js never shipped to client, never hydrated.
+- Excalidraw: Server components are a new feature in React 19, that allows you to run React components on the server. Differ from SSR because they never re-render, only run once on the server to generate UI. Js never shipped to client, never hydrated.
 - Excalidraw: "the server" fullstack framework, rendered in build or request time
 - Excalidraw: never hydrated, partially hydrated, exclude js from the client
-- Kommentere kode
 - Next.js is a React metaframework that includes server components, server component by default.
+- Console.log page.tsx
+- No js in the browser for page.js
 - Make servercomponents inside /components/intro and give it styles
 - ServerComponent console log
-- No js in the browser for page.js
-- Async and fetch data prisma or fetch api, data[0]
 - Anything you do here won't add to the bundle size
-- Limitations onclick button, we need client for interactivity or browser stuff
-- How do they work (ikogito console): SSR html, js-bundles for hydration, and rsc payload is the server component in seralizable form, generated in build or on server for dynamic data. Payload is used to create the client tree, and can be refreshed without destroying client state. If they pass props to client that have updated, client updates. Ikke workshoppens focus.
+- Async and fetch data prisma or fetch api, data[0]
+- Limitations onclick button, we need client for interactivity or browser stuff or js on the client
 
 ## Intro: What are client components?
 
+- Make ClientComponent inside /components/intro and give it styles
 - Normal react components are marked with "use client"
 - They are rendered on the server and then hydrated on the client like with normal SSR
-- Kommentere kode
 - onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
@@ -56,9 +56,10 @@
 
 ## Intro: Client/server composition
 
-- Now we need to compose them
+- Now we need to compose them: split view
 - Client in server: all good
-- Server in client: server becomes client, fails and console.log
+- Server in client: server becomes client, fails because imported
+- Donut pattern: children and content, works because it´s a reference
 - Excalidraw: donut pattern and fetch data again, use cases collapsible sidebar or autoscrolling-chat
 
 ### Intro: Benefits and drawbacks
@@ -66,6 +67,7 @@
 - Excalidraw: benefits and drawbacks
 - Benefits: data fetching, access to backend, caching, bundle size, streaming, DX
 - Drawbacks: needs framework like nextjs, complexity, learning curve
+- How do they work (ikogito console): SSR html, js-bundles for hydration, and rsc payload is the server component in seralizable form, generated in build or on server for dynamic data. Payload is used to create the client tree, and can be refreshed without destroying client state. If they pass props to client that have updated, client updates. Ikke workshoppens focus.
 
 ### App: code all data fetching
 
@@ -129,7 +131,7 @@
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
-- Avfallsdek: suspenses arbeidsflate.
+- Avfallsdek: suspenses arbeidsflate og maler.
 - Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 - Have to think about avoiding cumulative layout shift.
 
@@ -206,7 +208,7 @@
 - Replace component to delete contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
-- Avfallsdek: submitbutton slett deklarasjon
+- Avfallsdek: submitbutton slett mal.
 
 ### App: Use useActionState for form validation
 
