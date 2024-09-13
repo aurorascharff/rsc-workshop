@@ -181,8 +181,11 @@
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Delete: deleteContact (kopier create), DeleteContactButton "use client" onClick modal
 - Vi skal rydde litt i dette imorgen med React 19, nå er det litt mange filer
+- PAUSE?
 
 ### Slides: TASK 1
+
+## Utføre TASK 1 Selv
 
 ### Show: TASK 1 Solution
 
@@ -206,19 +209,21 @@
 - Show eslint config
 - Add to next.config.js
 - See devtools, remember to install [React DevTools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
-- Generate error with useEffect and ref
+- Generate error with useEffect and console log ref.current, får dere error?
 - Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting
 
 ### App: Update CRUD with React 19 form actions and .bind
 
-- Create: form and action-prop, mention onClick and hydration and web standards, move it back into the layout
-- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button router.onpush if we dont have to. Good for a11y as well. Progressive enhancement.
-- This is an implicit action = async transition
+- Create: form and action-prop, mention onClick and hydration and web standards. Show works without js. No more loading feedback, fix later.
+- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well. Progressive enhancement.
+- This is an implicit action = async transition, automatisk "post"
 - Mention again progressive enhancement
-- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client"
-- Delete: form and action-prop, .bind, then modal. Prog enh fallback.
+- Move it back into the layout, delete component
+- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client". No more feedback.
+- Delete: form and action-prop, .bind. OnSubmit is prog enh fallback.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
 - Favorite: form and action-prop with .bind or hidden input
+- PAUSE?
 
 ### App: Add back interactivity with SubmitButton
 
@@ -297,6 +302,7 @@
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
+- PAUSE?
 
 ### App: Add caching and Next.js improvements
 
@@ -325,6 +331,7 @@
 - Use in redirect and revalidatePath
 - Mention server/client hook and functions
 - Bruker i avfallsdek
+- PAUSE?
 
 ### App: Unit and Component tests with Vitest
 
@@ -342,6 +349,7 @@
 - Mention to `npx playwright install`
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
+- PAUSE?
 
 ### Show: React Hook Form
 
