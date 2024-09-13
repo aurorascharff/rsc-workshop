@@ -138,48 +138,55 @@
 ### Intro: What is suspense?
 
 - Add a Link to the suspense page and create suspense/page.tsx
+- Hva forbinder dere med suspense?
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
-- Create the example
+- Create the example: first loading.tsx, then extra Suspense
+- Unblocke hver del
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
+- Explain when to pick what: Is there something to show in the source? Use transitions. Is there something to show in the destination? Use suspense.
 - Avfallsdek: suspenses arbeidsflate og maler.
-- Explain when to pick what: Is there something to show in the destination? Use suspense. Is there something to show in the source? Use transitions.
 - Have to think about avoiding cumulative layout shift.
 
 ### App: Add suspense to ContactPage
 
-- Undo transition in ContactButton, copy to new button ContactButtonTransition
-- Await slow i getContact
-- Add suspense loading.tsx to ContactPage
-- Create skeleton by copy-pasting the component and filling in the content
+- Comment out transition in ContactButton
+- Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx)
+- Create skeleton by copy-pasting the top (image) of the component cleaning it up
+- Hva foretrekker dere her? Suspense eller transition? Hvorfor?
+- Disse tingene er litt vanskelig og tok meg tid å forstå.
 - PAUSE?
 
 ### Intro: Introduce Server Actions
 
-- Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
+- Som dere sikkert merket er det mange av knappene som ikke funker, vi er kommet til datamutasjoner
+- Hva vil man gjør en mutering? Sende noe fra client til server.
+- Excalidraw: Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
 - We cant pass functions over the network, serializable
+- Har noen brukt pages router?
 - Pages router: you created API endpoints and used for example trpc
 - Type safety and creates a hidden api-endpoint
 - Excalidraw: "use server" mutateData.ts, back to the server
-- Kommentere kode
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
 ### App: Write and use all server actions, make CRUD work, pending-states
 
+- La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
-- Create: CreateContactButton "use client" onClick, revalidate etter visning, add slow and transition for loading state, "creating" + disabled
-- Update: ContactForm "use client" onSubmit, updateContactSimple, add slow and transition for loading state
-- Add ErrorBoundary, contactId/edit/error.tsx
-- Delete: DeleteContactButton "use client" onClick modal, add slow and transition for loading state, "deleting" + disabled
+- Create: createEmptyContact.ts, view, make slow and add transition for loading state, "creating" + disabled
+- Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
+- Delete: deleteContact (kopier create), DeleteContactButton "use client" onClick modal
+- Vi skal rydde litt i dette imorgen med React 19, nå er det litt mange filer
 
 ### Slides: TASK 1
 
 ### Show: TASK 1 Solution
 
+- Show the loading states in update and delete
 - Show edit loading.tsx, mention that you can also use a transition
 - Show the favourite code and example
 - Fremdeles ikke helt topp
@@ -232,6 +239,7 @@
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url.
 - Don´t trust client input
 - Add validation to the form in updateContact.ts, throw error, then with useActionState and Zod, use result.data
+- Add ErrorBoundary, contactId/edit/error.tsx
 - Per-field errors coming back
 - Move await to page.tsx
 - Use errors, then test, then set defaultValue

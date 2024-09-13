@@ -5,7 +5,7 @@ import ServerComponent from './_components/ServerComponent';
 
 export default function ClientServerPage() {
   // The function will have a hidden API endpoint created and can be called from the client
-  async function mutateData(): Promise<string> {
+  async function mutateData() {
     'use server';
 
     const data = await prisma.contact.findMany();

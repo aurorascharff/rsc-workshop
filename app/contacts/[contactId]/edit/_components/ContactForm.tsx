@@ -29,7 +29,15 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
   });
 
   return (
-    <form className="flex max-w-[40rem] flex-col gap-4 @container" action={updateContactAction}>
+    <form
+      // onSubmit={async event => {
+      //   event.preventDefault();
+      //   const formData = new FormData(event.currentTarget);
+      //   await updateContactSimple(contact.id, formData);
+      // }}
+      className="flex max-w-[40rem] flex-col gap-4 @container"
+      action={updateContactAction}
+    >
       <div className="grip-rows-6 grid grid-cols-1 gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
         <span className="flex">Name</span>
         <div className="flex gap-4">
