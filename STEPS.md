@@ -36,8 +36,10 @@
 - Excalidraw: never hydrated, partially hydrated, exclude js from the client
 - Next.js is a React metaframework that includes server components, server component by default.
 - Console.log page.tsx
-- No js in the browser for page.js
-- Make servercomponents inside /components/intro and give it styles
+- No js in the browser for page.tsx
+- Make (intro)/client-server/page.tsx
+- Link to client-server in page.tsx
+- Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
 - Anything you do here won't add to the bundle size
 - Async and fetch data prisma or fetch api, data[0]
@@ -45,7 +47,7 @@
 
 ## Intro: What are client components?
 
-- Make ClientComponent inside /components/intro and give it styles
+- Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
 - Normal react components are marked with "use client"
 - They are rendered on the server and then hydrated on the client like with normal SSR
 - onClick alert, onclick state change
@@ -86,10 +88,10 @@
 
 ### App: code client component logic
 
-- Search component: mention web standard way to search already working. Show that it works and works without js.
+- Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Excalidraw tree
 
 ### LUNCH DAY 1
@@ -111,6 +113,8 @@
 
 - Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
 - Create a slow page and Tabs component
+- Create a layout for (intro) and add a Link to the transitions page, create page.tsx
+- Code the demo
 - Show unresponsive app
 - Add transition: responsive app
 - UseTransition: pending state
@@ -134,6 +138,8 @@
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
+- Add a Link to the suspense page and create suspense/page.tsx
+- Create the example
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
 - Avfallsdek: suspenses arbeidsflate og maler.
@@ -161,6 +167,7 @@
 
 ### App: Write and use all server actions, make CRUD work, pending-states
 
+- Data access layer actions, prefer extracting the actions
 - Create: CreateContactButton "use client" onClick, revalidate etter visning, add slow and transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" onSubmit, updateContactSimple, add slow and transition for loading state
 - Add ErrorBoundary, contactId/edit/error.tsx
