@@ -8,6 +8,7 @@ export default function DeleteContactButton({ contactId }: { contactId: string }
   const deleteContactById = deleteContact.bind(null, contactId);
   const [isPending, startTransition] = useTransition();
 
+  // Dag 1: bruk onClick
   return (
     <form
       action={deleteContactById}
