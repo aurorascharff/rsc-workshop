@@ -120,16 +120,19 @@
 - All state updates are executes once they are all done, show example with setCount
 - Explain next.js navigations are transitions, can always be cancelled
 
-### App: Add transition to Search
-
-- Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
-- Add transition for spinner to the search. Batching, we dont need to debounce.
-
 ### App: Add transition and ContactButton sidebar
 
+- Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
+- Make it slow to see the freeze
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
-- Add transition to ContactButton as new button ContactButtonTransition
+- Add transition to ContactButton, isPending
+
+### App: Add transition to Search
+
+- Nå har søket vårt blitt tregt, destination has again a slow await
+- Full page reload, no client side nav. View request in server log.
+- Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
 - PAUSE?
 
 ### Intro: What is suspense?
@@ -148,7 +151,7 @@
 
 ### App: Add suspense to ContactPage
 
-- Undo usage of ContactButtonTransition
+- Undo transition in ContactButton, copy to new button ContactButtonTransition
 - Await slow i getContact
 - Add suspense loading.tsx to ContactPage
 - Create skeleton by copy-pasting the component and filling in the content
