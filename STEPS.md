@@ -139,7 +139,7 @@
 
 - Add a Link to the suspense page and create suspense/page.tsx
 - Hva forbinder dere med suspense?
-- Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
+- Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
