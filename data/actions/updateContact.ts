@@ -36,6 +36,8 @@ export async function updateContact(contactId: string, data: ContactSchemaType) 
 }
 
 export async function updateContactSimple(contactId: string, formData: FormData) {
+  await slow();
+
   const contact = Object.fromEntries(formData);
 
   await prisma.contact.update({

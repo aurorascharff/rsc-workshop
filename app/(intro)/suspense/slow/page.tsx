@@ -1,6 +1,11 @@
 import React, { Suspense } from 'react';
 import { slow } from '@/utils/slow';
-import SlowComponent from '../_components/SlowComponent';
+
+async function SlowComponent() {
+  await slow();
+
+  return <div>SlowComponent</div>;
+}
 
 export default async function SlowPage() {
   // While we are awaiting this, loading.tsx displays

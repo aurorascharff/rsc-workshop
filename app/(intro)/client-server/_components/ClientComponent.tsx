@@ -2,14 +2,14 @@
 
 import React from 'react';
 import Button from '@/components/ui/Button';
-import { mutateData } from '@/data/actions/intro/mutateData';
 
 type Props = {
   children: React.ReactNode;
   content: React.ReactNode;
+  mutateData: () => Promise<string>;
 };
 
-export default function ClientComponent({ children, content }: Props) {
+export default function ClientComponent({ children, content, mutateData }: Props) {
   console.log('ClientComponent');
 
   // Without "use client" we cannot use onClick, useState, useEffect, etc.
