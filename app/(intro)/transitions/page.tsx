@@ -11,15 +11,16 @@ function SlowComponent() {
   return <div>Slow Component</div>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const items: any[] = [];
+for (let i = 0; i < 500; i++) {
+  items.push(<SlowComponent />);
+}
+
 export default function TransitionsPage() {
   const [tab, setTab] = useState(1);
   const [isPending, startTransition] = useTransition();
   const [count, setCount] = useState(0);
-
-  const items = [];
-  for (let i = 0; i < 500; i++) {
-    items.push(<SlowComponent />);
-  }
 
   const onTabChange = (tab: number) => {
     // Without startTransition, the UI will freeze while the slow component is rendering
@@ -33,7 +34,7 @@ export default function TransitionsPage() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <>
       <h1>Transitions</h1>
       {count}
       <div className="flex gap-4">
@@ -68,6 +69,6 @@ export default function TransitionsPage() {
           {items}
         </div>
       )}
-    </div>
+    </>
   );
 }

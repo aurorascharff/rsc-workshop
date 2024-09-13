@@ -47,7 +47,7 @@ export default async function DataFetchingPage() {
 
   // Paralell fetching with suspense. If a suspense wraps the component, it will wait for all promises to resolve, like promise.all().
   return (
-    <div className="flex flex-col gap-8">
+    <>
       <h1>Data Fetching</h1>
       <Suspense fallback={<div>Loading...</div>}>
         <FirstComponent />
@@ -58,6 +58,6 @@ export default async function DataFetchingPage() {
       <Suspense fallback={<div>Loading...</div>}>
         <ClientComponent dataPromise={dataPromise} />
       </Suspense>
-    </div>
+    </>
   );
 }

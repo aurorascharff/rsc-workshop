@@ -10,6 +10,9 @@ import type { Contact } from '@prisma/client';
 export default function ContactButton({ contact }: { contact: Contact }) {
   const pathName = usePathname();
   const isActive = pathName.includes(routes.contactId({ contactId: contact.id }));
+  // const isActive = pathName.includes(`contacts/${contact.id}`);
+  // const searchParams = useSearchParams();
+  // const q = searchParams.get('q') || '';
   const { q } = useSafeSearchParams('home');
 
   return (
@@ -19,6 +22,7 @@ export default function ContactButton({ contact }: { contact: Contact }) {
         isActive ? 'bg-primary text-white' : 'hover:bg-gray',
         'flex w-full items-center justify-between gap-4 overflow-hidden whitespace-pre rounded-lg p-2 hover:no-underline',
       )}
+      // href={`contacts/${contact.id}?q=${q}`}
       href={routes.contactId({ contactId: contact.id, search: { q } })}
     >
       {contact.first || contact.last ? (

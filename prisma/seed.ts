@@ -24,7 +24,7 @@ const CONTACTS = [
     github: 'webmasterdevlin',
     last: 'Duldulao',
     notes:
-      'Recognized as a Microsoft MVP for developer technologies for five consecutive years, Devlin is a seasoned full-stack web developer specializing in front-end technologies. With broad experience encompassing mobile development and cloud technology, he stands as an authority in his field, which is showcased by his accomplishments as a conference speaker and author of three developer-focused books published by Packt and Apress. In 2022, his educational contribution to JavaScript was acknowledged when he received the prestigious jsAwards as JavaScript Hero of Education.',
+      'Recognized as a Microsoft MVP for developer technologies for five consecutive years, Devlin is a seasoned full-stack web developer specializing in front-end technologies. With broad experience encompassing mobile development and cloud technology, he stands as an authority in his field, which is showcased by his accomplishments as a conference speaker and author of three developer-focused books published by Packt and Apress.',
     position: 'Chief Consultant',
   },
   {
@@ -36,7 +36,7 @@ const CONTACTS = [
     github: 'aurorascharff',
     last: 'Scharff',
     notes:
-      'Aurora er en dyktig frontend-utvikler og konsulent hos Inmeta. Hun har en solid akademisk bakgrunn med en bachelorgrad i robotikk og intelligente systemer fra UiO, som inkluderer kunnskap om ingeniørmatematikk, robotikk, algoritmer, datastrukturer og datamaskinarkitektur. Med flere års erfaring fra arbeidslivet har hun håndtert komplekse prosjekter og jobbet med et bredt spekter av teknologier, inkludert håndtering av store datamengder og fokus på skalerbarhet. Aurora har også tatt initiativ til å standardisere kodebasen og optimalisere arbeidsmetodene på prosjektene.',
+      'Aurora er en dyktig frontend-utvikler og konsulent hos Inmeta. Med flere års erfaring fra arbeidslivet har hun håndtert komplekse prosjekter og jobbet med et bredt spekter av teknologier, inkludert håndtering av store datamengder og fokus på skalerbarhet.',
     position: 'Konsulent',
   },
   {
