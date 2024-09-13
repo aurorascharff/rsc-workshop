@@ -117,7 +117,7 @@
 - Show unresponsive app
 - Add transition: responsive app
 - UseTransition: pending state
-- All state updates are executes once they are all done, show example with setCount
+- All state updates are executes once they are all done, show example with setCount, click multiple on slow batches
 - Explain next.js navigations are transitions, can always be cancelled
 
 ### App: Add transition and ContactButton sidebar
