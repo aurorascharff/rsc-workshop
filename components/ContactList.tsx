@@ -19,6 +19,8 @@ export default function ContactList({ contacts }: { contacts: Contact[] }) {
   // }, []);
 
   const { q } = useSafeSearchParams('home');
+  // const searchParams = useSearchParams();
+  // const q = searchParams.get('q') || '';
 
   const filteredContacts = q
     ? matchSorter(contacts, q, {

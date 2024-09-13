@@ -8,6 +8,8 @@ import { SearchIcon, SpinnerIcon } from './ui/icons';
 export default function Search() {
   const router = useRouter();
   const { q } = useSafeSearchParams('home');
+  // const searchParams = useSearchParams();
+  // const q = searchParams.get('q') || '';
   const [searching, startTransition] = useTransition();
 
   return (

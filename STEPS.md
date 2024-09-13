@@ -23,8 +23,8 @@
 - CRUD app for managing contacts: quick demo
 - Vise next.js server side rendering console
 - Introduce the structure and the components
-- Nested layouts: state in the url, users will awlays see the same thing. Benefits.
-- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
+- Nested layouts: state in the url, users will awlays see the same thing. Benefits?
+- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
 - Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
 - PAUSE?
@@ -61,7 +61,7 @@
 
 - Now we need to compose them: split view
 - Client in server: all good
-- Server in client: server becomes client, fails because imported
+- Server in client: any imported to client, like server, becomes client, fails
 - Donut pattern: children and content, works because it´s a reference
 - Excalidraw: donut pattern and fetch data again, use cases collapsible sidebar or autoscrolling-chat
 
@@ -88,11 +88,11 @@
 
 ### App: code client component logic
 
-- Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault.
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
-- Kode contact list: extract to property and move await
-- Kode contact button: dont need to mark as use client
-- Excalidraw tree
+- Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
+- Kode contact list: extract to property and move await, filter, could do this on the server
+- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel.
+- Excalidraw tree, minimalt med JS på client.
 
 ### LUNCH DAY 1
 
@@ -123,7 +123,7 @@
 
 ### App: Add transition to Search
 
-- Add transition for spinner to the search. Batching, we dont need to debounce.
+- Add transition for spinner to the search. Batching, we dont need to debounce. Prog-enh works.
 
 ### App: Add transition and ContactButton sidebar
 
