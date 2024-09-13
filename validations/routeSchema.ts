@@ -24,6 +24,5 @@ export const { routes, useSafeParams, useSafeSearchParams } = createNavigationCo
     home: defineRoute('/', {
       search: searchParamsSchema,
     }),
-    intro: defineRoute('/intro'),
   };
 });

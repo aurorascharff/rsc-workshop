@@ -24,7 +24,6 @@ beforeEach(() => {
         },
         contacts: '/contacts',
         home: '/',
-        intro: '/intro',
       },
     };
   });

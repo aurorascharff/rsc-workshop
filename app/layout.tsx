@@ -15,7 +15,7 @@ import { routes } from '@/validations/routeSchema';
 import type { Metadata } from 'next';
 const inter = Inter({ subsets: ['latin'] });
 
-// // Tell Next.js to always generate this page on the server (dynamic rather than static), enable for production
+// Tell Next.js to always generate this page on the server (dynamic rather than static), enable for production to make the sidebar dynamic
 // export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {

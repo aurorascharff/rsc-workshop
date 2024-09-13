@@ -8,6 +8,8 @@ import { SearchIcon, SpinnerIcon } from './ui/icons';
 export default function Search() {
   const router = useRouter();
   const { q } = useSafeSearchParams('home');
+  // const searchParams = useSearchParams();
+  // const q = searchParams.get('q') || '';
   const [searching, startTransition] = useTransition();
 
   return (
@@ -16,7 +18,7 @@ export default function Search() {
         className="w-full pl-8 outline-offset-1"
         onChange={e => {
           startTransition(() => {
-            router.replace(`?q=${e.target.value}`);
+            router.push(`?q=${e.target.value}`);
           });
         }}
         defaultValue={q}
