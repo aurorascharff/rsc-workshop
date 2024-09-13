@@ -33,7 +33,7 @@ export default function TransitionsPage() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
+    <>
       <h1>Transitions</h1>
       {count}
       <div className="flex gap-4">
@@ -68,6 +68,6 @@ export default function TransitionsPage() {
           {items}
         </div>
       )}
-    </div>
+    </>
   );
 }

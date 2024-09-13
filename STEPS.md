@@ -21,7 +21,7 @@
 ### Show: Go through the repository
 
 - CRUD app for managing contacts: quick demo
-- Vise next.js server side rendering console
+- Vise next.js server side rendering console, turn off js
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits?
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
@@ -92,7 +92,7 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
 - Kode contact list: extract to property and move await, filter, could do this on the server
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel.
-- Excalidraw tree, minimalt med JS på client.
+- Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ### LUNCH DAY 1
 
@@ -102,19 +102,18 @@
 
 ### Intro: Statiske og dynamiske sider
 
-- Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Elkjøp. Inmeta.no. Nevne ISR og generateStaticParams.
+- Statiske sider: bygget en gang, serveret til alle, ingen data fetching. Eksempel: Inmeta.no. Nevne ISR.
 - Dynamiske sider: data fetching, serveret til brukeren, data kan endres. Eksempel: Avfallsdeklarering. Vis avfallsdek prod arbeidsflate. Skal bruke denne til eksempel idag.
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/rendering/server-components#server-rendering-strategies)
-- Vise build output: statisk og dynamisk. Default database og route: dynamisk. Cookies() vil også gjøre det dynamisk. Resten statisk.
+- Vise build output: statisk og dynamisk. Default database og route: dynamisk. Dynamisk fordi paramter, kan bruke generateStaticParams. Cookies() vil også gjøre det dynamisk. Resten statisk.
 - Nevne [PPR](https://www.partialprerendering.com/)
 - Loading states are hard
 
 ### Intro: What are transitions?
 
-- Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
-- Create a slow page and Tabs component
 - Create a layout for (intro) and add a Link to the transitions page, create page.tsx
-- Code the demo
+- Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
+- Create the demo
 - Show unresponsive app
 - Add transition: responsive app
 - UseTransition: pending state
@@ -123,7 +122,8 @@
 
 ### App: Add transition to Search
 
-- Add transition for spinner to the search. Batching, we dont need to debounce. Prog-enh works.
+- Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
+- Add transition for spinner to the search. Batching, we dont need to debounce.
 
 ### App: Add transition and ContactButton sidebar
 
@@ -134,11 +134,11 @@
 
 ### Intro: What is suspense?
 
+- Add a Link to the suspense page and create suspense/page.tsx
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18.
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Also used for progressive hydration, meaning priorotizing what to hydrate first.
 - In our case: mark content as non-urgent, show fallback, refer back whenever app is not busy.
-- Add a Link to the suspense page and create suspense/page.tsx
 - Create the example
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
