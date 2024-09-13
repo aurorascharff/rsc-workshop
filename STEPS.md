@@ -27,6 +27,7 @@
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing
 - Introduce the cva() library
 - Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
+- PAUSE?
 
 ### Intro: What are server components?
 
@@ -71,19 +72,24 @@
 
 ### App: code all data fetching
 
-- Fetch data in contactList: getContacts inside lib/services
+- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
-- Fetch data in contact page: getContact inside lib/services
+- Fetch data in contact page: getContact inside data/services
+- Add contactId/not-found.tsx og throw fra contactId, contactId/edit/page.
+- Add not-found.tsx global
 - Fetch data in edit contact page
 - Discuss composability and compare with React Query
 - Show excalidraw
 - Excalidraw tree so far
+- Alt er på server, ikke noe JS på client ennå
 
 ### App: code client component logic
 
+- Search component: mention web standard way to search already working. Show that it works and works without js.
 - Kode contact list: extract to property and move await
 - Kode contact button: dont need to mark as use client
+- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
 - Excalidraw tree
 
 ### LUNCH DAY 1
@@ -113,15 +119,14 @@
 
 ### App: Add transition to Search
 
-- Search component: mention web standard way to search and progressive enhancement already working.
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. UseTransition and batching, don't need to debounce. Prog-enh works.
-- Excalidraw tree
+- Add transition for spinner to the search. Batching, we dont need to debounce.
 
 ### App: Add transition and ContactButton sidebar
 
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
 - Add transition to ContactButton as new button ContactButtonTransition
+- PAUSE?
 
 ### Intro: What is suspense?
 
@@ -141,6 +146,7 @@
 - Await slow i getContact
 - Add suspense loading.tsx to ContactPage
 - Create skeleton by copy-pasting the component and filling in the content
+- PAUSE?
 
 ### Intro: Introduce Server Actions
 
@@ -157,6 +163,7 @@
 
 - Create: CreateContactButton "use client" onClick, revalidate etter visning, add slow and transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" onSubmit, updateContactSimple, add slow and transition for loading state
+- Add ErrorBoundary, contactId/edit/error.tsx
 - Delete: DeleteContactButton "use client" onClick modal, add slow and transition for loading state, "deleting" + disabled
 
 ### Slides: TASK 1
@@ -280,7 +287,6 @@
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Add staleTimes 30 to cache routes
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, show that we dont need to see any edit/loading.tsx. Update mutations.
-- Add not-found global, contactId/not-found.tsx og throw fra contactId, contactId/edit/page.ts ErrorBoundary, contactId/edit/error.tsx
 
 ### Intro: Implement global error state with Zustand and React Context
 
