@@ -30,7 +30,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="en">
       <body className={inter.className}>
         <div className="flex w-full flex-col sm:flex-row">
-          <div className="flex h-1/3 w-full flex-col border-r border-gray bg-gray-light sm:h-auto sm:w-[16rem] md:w-[22rem]">
+          <div className="flex h-1/3 w-full flex-col border-r border-gray bg-gray-light sm:w-[16rem] md:w-[22rem]">
             <Toaster position="top-right" />
             <Suspense>
               <div className="flex items-center gap-2 border-b border-gray px-8 py-4">
