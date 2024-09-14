@@ -17,12 +17,12 @@ type State = {
 export async function updateContact(contactId: string, _prevState: State, formData: FormData): Promise<State> {
   await slow();
 
-  const contact = Object.fromEntries(formData);
-  const result = contactSchema.safeParse(contact);
+  const data = Object.fromEntries(formData);
+  const result = contactSchema.safeParse(data);
 
   if (!result.success) {
     return {
-      data: contact as ContactSchemaType,
+      data: data as ContactSchemaType,
       errors: result.error.formErrors,
     };
   }
@@ -44,10 +44,10 @@ export async function updateContact(contactId: string, _prevState: State, formDa
 export async function updateContactSimple(contactId: string, formData: FormData) {
   await slow();
 
-  const contact = Object.fromEntries(formData);
+  const data = Object.fromEntries(formData);
 
   await prisma.contact.update({
-    data: contact,
+    data,
     where: {
       id: contactId,
     },

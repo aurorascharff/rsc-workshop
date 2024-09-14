@@ -177,19 +177,16 @@
 
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
-- Create: createEmptyContact.ts, view, make slow and add transition for loading state, "creating" + disabled
+- Create: createEmptyContact.ts, NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
-- Delete: deleteContact (kopier create), DeleteContactButton "use client" onClick modal
-- Vi skal rydde litt i dette imorgen med React 19, nå er det litt mange filer
-- PAUSE?
 
 ### Slides: TASK 1
 
-## Utføre TASK 1 Selv
+### Utføre TASK 1 Selv
 
 ### Show: TASK 1 Solution
 
-- Show the loading states in update and delete
+- Show the loading states in update and delete implementation
 - Show edit loading.tsx, mention that you can also use a transition
 - Show the favourite code and example
 - Fremdeles ikke helt topp
@@ -198,6 +195,8 @@
 ## Slides: Plan for dag 2
 
 ## DAY 2
+
+### Første 15 min: Gjennomgang task dag 1 og få alle klare
 
 ### Slides: Dag 1 plan, hva lærte dere?
 
