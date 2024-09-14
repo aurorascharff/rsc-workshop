@@ -183,7 +183,7 @@
 
 ### Slides: TASK 1
 
-### Utføre TASK 1 Selv
+### Utføre TASK 1 Selv copy paste push
 
 ### Show: TASK 1 Solution
 
@@ -309,6 +309,7 @@
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Comment metadata locally, it's not working locally. Add comment.
+- Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root.
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
 
 ### App: Unit and Component tests with Vitest
@@ -399,7 +400,9 @@
 
 - Vise egen sneak peak, så vise schema som er klart til å bruke, så vise slides igjen
 
-### Show: TASK 2 Solution
+### Utføre TASK 2 Selv copy paste
+
+### Show: TASK 2 Solution non-optimistic
 
 - Vise egen: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
 - Component composition, data fetching
@@ -408,6 +411,11 @@
 - Error boundary on the input
 - Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be prog enhanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
 - I could make this with plain react but I could also make it like this
+
+### Utføre TASK 2 Selv copy paste optimistic
+
+### Show: TASK 2 Solution optimistic
+
 - Vise optimistic senere: use hook
 - [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 - Vise at det funker på mobilen
