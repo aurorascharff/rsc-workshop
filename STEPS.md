@@ -304,25 +304,12 @@
 
 ### App: Add caching and Next.js improvements
 
-- Add staleTimes 30 to cache routes, show before after
+- Add staleTimes dynamic 30 to cache routes, show before after
 - Show metadata root page
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
 - Comment metadata locally, it's not working locally. Add comment.
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
-
-### App: Add typed params with next-safe-navigation
-
-- Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
-- Next.js doesnt have type safety for params, show example with wrong param
-- Show config file
-- Add routes to a a few application pages href and router.push
-- Add useSafeSearchParams to ContactButton and Search
-- Add parseParams to all pageProps, i.e ContactPage
-- Use in redirect and revalidatePath createEmptyContact
-- Mention server/client hook and functions
-- Bruker i avfallsdek
-- PAUSE?
 
 ### App: Unit and Component tests with Vitest
 
@@ -344,6 +331,19 @@
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 - PAUSE?
 
+### App: Add typed params with next-safe-navigation
+
+- Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
+- Next.js doesnt have type safety for params, show example with wrong param
+- Show config file
+- Add routes to a a few application pages href and router.push
+- Add useSafeSearchParams to ContactButton and Search
+- Add parseParams to all pageProps, i.e ContactPage
+- Use in redirect and revalidatePath createEmptyContact
+- Mention server/client hook and functions
+- Bruker i avfallsdek
+- PAUSE?
+
 ### (App): Use Fetch API and /api-routes
 
 - Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
@@ -353,6 +353,7 @@
 - Create revalidationkeys and attach to getContacts
 - Use revalidationKeys in updateContact instead of revalidatePath("/)
 - Use fetch directly in client component with useEffect, but we need the API
+- This is in the react query example
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
 
 ### (Show): Implement global error state with Zustand and React Context
