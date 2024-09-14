@@ -215,44 +215,48 @@
 
 ### App: Update CRUD with React 19 form actions and .bind
 
-- Create: form and action-prop, mention onClick and hydration and web standards. Show works without js. No more loading feedback, fix later.
-- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
+- Create: form and action-prop, mention onClick and hydration and web standards.
+- Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
+- Hvis direkte server action: show works without js. No more loading feedback, fix later.
 - This is an implicit action = async transition, automatisk "post"
+- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Move it back into the layout, delete component
-- Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client". No more feedback.
+- Update: form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.enh, remove "use client".
 - Delete: form and action-prop, .bind. OnSubmit is fallback wiouth js.
-- Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards. Kan noen forklare hva som skjer?
 - Dette er altså et progressive enhancement.
+- Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
 - Favorite: form and action-prop with .bind or hidden input.
 - PAUSE?
 
 ### App: Add back interactivity with SubmitButton
 
-- Analyze SubmitButton
+- Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
 - Use SubmitButton with loading boolean for delete button transition
-- Hva skal vi gjøre med de andre knappene?
-- Add useFormStatus isSubmitting
+- Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
+- Add useFormStatus isSubmitting. Bruker parent form som kontekst.
 - Use it in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composability of client/server while mainaining interactivity.
 - Add component to update contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
-- Delete suspense boundaries and show it works without JS
+- Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
 - Avfallsdek: submitbutton slett mal. UseFormStatus fungerer også med onSubmit.
 
 ### App: Use useActionState for form validation
 
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
-- Don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
+- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 - Add validation to the form in updateContact.ts, throw error
 - Add ErrorBoundary, contactId/edit/error.tsx
-- Then with useActionState, "use client" and Zod, use result.data
+- Return in updateContact, then useActionState, "use client" and Zod
 - Per-field errors coming back
-- Use errors, then test, then set defaultValue
+- Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
+- Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 - Delete suspense boundaries and show it works without JS
+- PAUSE?
 
 ### App: Use useOptimistic on favorite button
 
@@ -340,6 +344,7 @@
 - Add routes to a a few application pages href and router.push
 - Add useSafeSearchParams to ContactButton and Search
 - Add parseParams to all pageProps, i.e ContactPage
+- Les gjerne README.md mer om dette
 - Use in redirect and revalidatePath createEmptyContact
 - Mention server/client hook and functions
 - Bruker i avfallsdek

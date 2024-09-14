@@ -14,7 +14,7 @@ type State = {
   errors?: ContactSchemaErrorType;
 };
 
-export async function updateContact(contactId: string, _prevState: State, formData: FormData): Promise<State> {
+export async function updateContact(contactId: string, _prevState: State, formData: FormData) {
   await slow();
 
   const data = Object.fromEntries(formData);

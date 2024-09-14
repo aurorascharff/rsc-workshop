@@ -17,13 +17,13 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 
   const [state, updateContactAction] = useActionState(updateContactById, {
     data: {
-      avatar: contact.avatar || '',
-      email: contact.email || '',
-      first: contact.first || '',
-      github: contact.github || '',
-      last: contact.last || '',
-      notes: contact.notes || '',
-      position: contact.position || '',
+      avatar: contact.avatar,
+      email: contact.email,
+      first: contact.first,
+      github: contact.github,
+      last: contact.last,
+      notes: contact.notes,
+      position: contact.position,
     },
     errors: {} as ContactSchemaErrorType,
   });
