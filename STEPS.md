@@ -256,7 +256,8 @@
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 - Delete suspense boundaries and show it works without JS
-- PAUSE?
+
+### LUNCH DAY 2
 
 ### App: Use useOptimistic on favorite button
 
@@ -275,9 +276,9 @@
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
-### LUNCH DAY 2
-
 ### (Slides): CSS in Server Components & Deployment
+
+- PAUSE?
 
 ### Intro: Introduce data fetching patterns
 
@@ -316,7 +317,7 @@
 - Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root.
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
 
-### App: Unit and Component tests with Vitest
+### (App): Unit and Component tests with Vitest
 
 - Talk about uncertainty in [Next.js docs](https://nextjs.org/docs/app/building-your-application/testing)
 - RTL has [workaround](https://github.com/testing-library/react-testing-library/issues/1209)
@@ -327,7 +328,7 @@
 - Test ContactPage, show that it fails without suspense
 - Create suspenseRender helper
 
-### Show: End-to-end tests with Playwright
+### (Show): End-to-end tests with Playwright
 
 - Show playwright setup and package.json commands
 - Show example test
