@@ -171,6 +171,7 @@
 - Type safety and creates a hidden api-endpoint
 - Excalidraw: "use server" mutateData.ts, back to the server
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
+- Show type safety RPC
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
 ### App: Write and use all server actions, make CRUD work, pending-states
@@ -209,14 +210,13 @@
 - Add to next.config.js
 - See devtools, remember to install [React DevTools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - Generate error with useEffect and console log ref.current, får dere error?
-- Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting
+- Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting. Hva synes dere om compiler?
 
 ### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards. Show works without js. No more loading feedback, fix later.
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well. Progressive enhancement.
 - This is an implicit action = async transition, automatisk "post"
-- Mention again progressive enhancement
 - Move it back into the layout, delete component
 - Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client". No more feedback.
 - Delete: form and action-prop, .bind. OnSubmit is prog enh fallback.
@@ -228,24 +228,24 @@
 
 - Analyze SubmitButton
 - Use SubmitButton with loading boolean for delete button transition
-- The other buttons are not client components
+- Hva skal vi gjøre med de andre knappene?
 - Add useFormStatus isSubmitting
 - Use it in new contact
-- Power of rsc, composability of client/server while mainaining interactivity
+- Hva er fordelene med dette?
+- Power of rsc, composability of client/server while mainaining interactivity.
 - Add component to update contact
-- Replace component to delete contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
 - Avfallsdek: submitbutton slett mal.
 
 ### App: Use useActionState for form validation
 
-- Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url.
-- Don´t trust client input
-- Add validation to the form in updateContact.ts, throw error, then with useActionState and Zod, use result.data
+- Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
+- Don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
+- Add validation to the form in updateContact.ts, throw error
 - Add ErrorBoundary, contactId/edit/error.tsx
+- Then with useActionState and Zod, use result.data
 - Per-field errors coming back
-- Move await to page.tsx
 - Use errors, then test, then set defaultValue
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
@@ -258,7 +258,7 @@
 - Add hook useOptimistic, explain and show different use cases
 - Add onSubmit, mention you could use action directly, action is now a fallback
 - Show it works without JS
-- Show server delay
+- Show server delay in layout
 - UseOptimistic kan legges i provider for å bruke i flere komponenter, jeg har et eksempel på dette på github
 
 ### Show: Final application
@@ -266,6 +266,7 @@
 - Excalidraw: final trees
 - Performant, interactive, applications with good developer experience, even be prog.enh
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
+- Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
 ### LUNCH DAY 2
@@ -290,34 +291,16 @@
 - Move skeleton to contactForm skeleton component
 - Explicit suspense
 - Delete loading.tsx
-
-### App: Use Fetch API and /api-routes
-
-- Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
-- Explain fetch API and build-in dedupe, we dont have this with prisma by the way.
-- Create new GET api endpoint /contacts/route.ts, we are writing our own api route here to display the use.
-- Call the fetch API inside getContacts, no type safety anymore. Next tags.
-- Create revalidationkeys and attach to getContacts
-- Use revalidationKeys in updateContact instead of revalidatePath("/)
-- Use fetch directly in client component with useEffect, but we need the API
-- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
 - PAUSE?
 
 ### App: Add caching and Next.js improvements
 
+- Add staleTimes 30 to cache routes, show before after
 - Show metadata root page
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
-- Add staleTimes 30 to cache routes
-- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, show that we dont need to see any edit/loading.tsx. Update mutations.
-
-### Intro: Implement global error state with Zustand and React Context
-
-- You might want to use this to share state accross the component tree. Common for React apps. Error store, theme store.
-- Create new page gobal-state
-- Show the context and the provider
-- Context works because it has children, doesn't convert to a client component, has more uses
-- Use the provider and create Error.tsx component, implement with store and provider
+- Comment metadata locally, it's not working locally. Add comment.
+- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
 
 ### App: Add typed params with next-safe-navigation
 
@@ -336,7 +319,7 @@
 
 - Show vitest setup and package.json commands
 - Run example test and other commands
-- Test Favorite button
+<!-- - Test Favorite button -->
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
 - Create suspenseRender helper
@@ -350,13 +333,34 @@
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 - PAUSE?
 
+### App: Use Fetch API and /api-routes
+
+- Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
+- Explain fetch API and build-in dedupe, we dont have this with prisma by the way.
+- Create new GET api endpoint /contacts/route.ts, we are writing our own api route here to display the use.
+- Call the fetch API inside getContacts, no type safety anymore. Next tags.
+- Create revalidationkeys and attach to getContacts
+- Use revalidationKeys in updateContact instead of revalidatePath("/)
+- Use fetch directly in client component with useEffect, but we need the API
+- Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
+
+### Show: Implement global error state with Zustand and React Context
+
+- Show code in completed repo
+- You might want to use this to share state accross the component tree. Common for React apps. Error store, theme store.
+- Create new page gobal-state
+- Show the context and the provider
+- Context works because it has children, doesn't convert to a client component, has more uses
+- Use the provider and create Error.tsx component, implement with store and provider
+- PAUSE?
+
 ### Show: React Hook Form
 
 - Checkout new branch i completed repo
 - Show implementation
 - Client-side things are fine, whatever you need for you app. UseActionState has benefits like prog.enh and less js.
 - Formik works as well
-- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon.
+- Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon. Vi trenger ikke prog-enh på de formsene vi bruker Formik til.
 
 ### Show: React Query
 
@@ -381,7 +385,7 @@
 
 ### Slides: TASK 2
 
-- Vise egen sneak peak, så vise schema som er klart til å bruke
+- Vise egen sneak peak, så vise schema som er klart til å bruke, så vise slides igjen
 
 ### Show: TASK 2 Solution
 
