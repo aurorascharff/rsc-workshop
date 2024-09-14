@@ -197,7 +197,7 @@
 
 ## DAY 2
 
-### Første 15 min: Gjennomgang task dag 1 og få alle klare
+### Første 15 min: Gjennomgang task dag 1 og få alle klare, bruk in-progress-repo til å fullføre task, fiks eslint
 
 ### Slides: Dag 1 plan, hva lærte dere?
 
@@ -210,18 +210,20 @@
 - Add to next.config.js
 - See devtools, remember to install [React DevTools](https://chromewebstore.google.com/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi)
 - Generate error with useEffect and console log ref.current, får dere error?
-- Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting. Hva synes dere om compiler?
+- Når man bruker dette vil man kunne få skrudd på Compiler og optimalisert alt uten å fikse masse ting.
+- Hva synes dere om compiler?
 
 ### App: Update CRUD with React 19 form actions and .bind
 
 - Create: form and action-prop, mention onClick and hydration and web standards. Show works without js. No more loading feedback, fix later.
-- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well. Progressive enhancement.
+- Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - This is an implicit action = async transition, automatisk "post"
 - Move it back into the layout, delete component
 - Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client". No more feedback.
-- Delete: form and action-prop, .bind. OnSubmit is prog enh fallback.
+- Delete: form and action-prop, .bind. OnSubmit is fallback wiouth js.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards. Kan noen forklare hva som skjer?
-- Favorite: form and action-prop with .bind or hidden input
+- Dette er altså et progressive enhancement.
+- Favorite: form and action-prop with .bind or hidden input.
 - PAUSE?
 
 ### App: Add back interactivity with SubmitButton
@@ -236,7 +238,7 @@
 - Add component to update contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Delete suspense boundaries and show it works without JS
-- Avfallsdek: submitbutton slett mal.
+- Avfallsdek: submitbutton slett mal. UseFormStatus fungerer også med onSubmit.
 
 ### App: Use useActionState for form validation
 
@@ -271,12 +273,12 @@
 
 ### LUNCH DAY 2
 
-### Slides: CSS in Server Components & Deployment
+### (Slides): CSS in Server Components & Deployment
 
 ### Intro: Introduce data fetching patterns
 
 - Fetch in an efficient way
-- Data fetching page
+- Data fetching page: new route and page.tsx and link from root page.tsx
 - Sequential, parallel, suspenses receiving data
 - Suspense strategy: wait for all or stream independently
 - use() hook: unblock a by making suspenses around client components because we cant await inside them
@@ -400,5 +402,6 @@
 - I could make this with plain react but I could also make it like this
 - Vise optimistic senere: use hook
 - [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
+- Vise at det funker på mobilen
 
 ### Slides: Ressurser og avslutning
