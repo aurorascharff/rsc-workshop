@@ -333,7 +333,7 @@
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 - PAUSE?
 
-### App: Use Fetch API and /api-routes
+### (App): Use Fetch API and /api-routes
 
 - Inside getContacts, use fetch instead of prisma. Could talk to any external API like BFF pattern.
 - Explain fetch API and build-in dedupe, we dont have this with prisma by the way.
@@ -344,7 +344,7 @@
 - Use fetch directly in client component with useEffect, but we need the API
 - Docs [nextjs](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching)
 
-### Show: Implement global error state with Zustand and React Context
+### (Show): Implement global error state with Zustand and React Context
 
 - Show code in completed repo
 - You might want to use this to share state accross the component tree. Common for React apps. Error store, theme store.
@@ -354,7 +354,7 @@
 - Use the provider and create Error.tsx component, implement with store and provider
 - PAUSE?
 
-### Show: React Hook Form
+### (Show): React Hook Form
 
 - Checkout new branch i completed repo
 - Show implementation
@@ -362,7 +362,7 @@
 - Formik works as well
 - Avfallsdek: vi bruker Formik fordi md-components ikke funker bra med react-hook. Formik funker kjempebra med RSC og og kan wrappe server components. Vise app i produsent arbeidsflate -> deklarasjon. Vi trenger ikke prog-enh på de formsene vi bruker Formik til.
 
-### Show: React Query
+### (Show): React Query
 
 - Checkout new branch i completed repo
 - Show implementation of React Query with hydration boundary
@@ -371,13 +371,13 @@
 - But if youre using prisma you need to define your own api routes because you shouldnt use server actions because are queued
 - Use case: polling, if you prefer it. You can still use React query, do things the "old way". Not learning this today because we are focusing on React 19.
 
-### Show: Other libraries
+### (Show): Other libraries
 
 - [Conform](https://conform.guide/)
 - [next-safe-action](https://next-safe-action.dev/)
 - [Tanstack Form](https://tanstack.com/form/latest)
 
-### Show: Search Param filtering
+### (Show): Search Param filtering
 
 - [BuildUI](https://buildui.com/posts/instant-search-params-with-react-server-components)
 - Avfallsdek: filter-komponent
