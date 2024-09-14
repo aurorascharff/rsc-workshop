@@ -220,7 +220,7 @@
 - Move it back into the layout, delete component
 - Update: form and action-prop, hidden inputs or .bind to ensure prog.enh, remove "use client". No more feedback.
 - Delete: form and action-prop, .bind. OnSubmit is prog enh fallback.
-- Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards
+- Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards. Kan noen forklare hva som skjer?
 - Favorite: form and action-prop with .bind or hidden input
 - PAUSE?
 
@@ -244,7 +244,7 @@
 - Don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 - Add validation to the form in updateContact.ts, throw error
 - Add ErrorBoundary, contactId/edit/error.tsx
-- Then with useActionState and Zod, use result.data
+- Then with useActionState, "use client" and Zod, use result.data
 - Per-field errors coming back
 - Use errors, then test, then set defaultValue
 - By the way, we could use the isPending from useActionState for the loading state
@@ -308,18 +308,20 @@
 - Next.js doesnt have type safety for params, show example with wrong param
 - Show config file
 - Add routes to a a few application pages href and router.push
-- Add useSafeSearchParams to contactButton and Search
-- Add parseParams to all pageProps
-- Use in redirect and revalidatePath
+- Add useSafeSearchParams to ContactButton and Search
+- Add parseParams to all pageProps, i.e ContactPage
+- Use in redirect and revalidatePath createEmptyContact
 - Mention server/client hook and functions
 - Bruker i avfallsdek
 - PAUSE?
 
 ### App: Unit and Component tests with Vitest
 
+- Talk about uncertainty in [Next.js docs](https://nextjs.org/docs/app/building-your-application/testing)
+- RTL has [workaround](https://github.com/testing-library/react-testing-library/issues/1209)
 - Show vitest setup and package.json commands
 - Run example test and other commands
-<!-- - Test Favorite button -->
+- (Test Favorite button)
 - Test DeleteContactButton
 - Test ContactPage, show that it fails without suspense
 - Create suspenseRender helper
