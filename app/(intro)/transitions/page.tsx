@@ -32,14 +32,14 @@ export default function TransitionsPage() {
             setTab(1);
           }}
         >
-          Tab 1 {tab === 1 && '(Active)'}
+          Tab 1 {tab === 1 && '👈'}
         </Button>
         <Button
           onClick={() => {
             setTab(2);
           }}
         >
-          Tab 2 {tab === 2 && '(Active)'}
+          Tab 2 {tab === 2 && '👈'}
         </Button>
         <Button
           className={isPending ? 'opacity-50' : ''}
@@ -53,7 +53,7 @@ export default function TransitionsPage() {
             });
           }}
         >
-          Tab 3 {tab === 3 && '(Active)'}
+          Tab 3 {tab === 3 && '👈'}
         </Button>
       </div>
       {tab === 1 && <div>Tab 1 Content</div>}
