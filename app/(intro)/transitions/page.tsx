@@ -22,17 +22,6 @@ export default function TransitionsPage() {
   const [isPending, startTransition] = useTransition();
   const [count, setCount] = useState(0);
 
-  const onTabChange = (tab: number) => {
-    // Without startTransition, the UI will freeze while the slow component is rendering
-    startTransition(() => {
-      setTab(tab);
-      // Count will update once all state updates inside the transition complete, allowing them to be batched
-      setCount(count => {
-        return count + 1;
-      });
-    });
-  };
-
   return (
     <>
       <h1>Transitions</h1>
@@ -40,14 +29,14 @@ export default function TransitionsPage() {
       <div className="flex gap-4">
         <Button
           onClick={() => {
-            onTabChange(1);
+            setTab(1);
           }}
         >
           Tab 1 {tab === 1 && '(Active)'}
         </Button>
         <Button
           onClick={() => {
-            onTabChange(2);
+            setTab(2);
           }}
         >
           Tab 2 {tab === 2 && '(Active)'}
@@ -55,7 +44,13 @@ export default function TransitionsPage() {
         <Button
           className={isPending ? 'opacity-50' : ''}
           onClick={() => {
-            onTabChange(3);
+            startTransition(() => {
+              setTab(3);
+              // Count will update once all state updates inside the transition complete, allowing them to be batched
+              setCount(count => {
+                return count + 1;
+              });
+            });
           }}
         >
           Tab 3 {tab === 3 && '(Active)'}

@@ -1,7 +1,6 @@
 'use client';
 
 import { matchSorter } from 'match-sorter';
-
 import React from 'react';
 import { useSafeSearchParams } from '@/validations/routeSchema';
 import ContactButton from './ContactButton';

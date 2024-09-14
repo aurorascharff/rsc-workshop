@@ -36,11 +36,11 @@
 - Excalidraw: never hydrated, partially hydrated, exclude js from the client
 - Next.js is a React metaframework that includes server components, server component by default.
 - Console.log page.tsx
-- No js in the browser for page.tsx
 - Make (intro)/client-server/page.tsx
 - Link to client-server in page.tsx
 - Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
+- No js in the browser for page.tsx
 - Anything you do here won't add to the bundle size
 - Async and fetch data prisma or fetch api, data[0]
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
@@ -80,7 +80,7 @@
 - Fetch data in contact page: getContact inside data/services
 - Add contactId/not-found.tsx og throw fra contactId, contactId/edit/page.
 - Add not-found.tsx global
-- Fetch data in edit contact page
+- Fetch data in ContactForm
 - Discuss composability and compare with React Query
 - Show excalidraw
 - Excalidraw tree so far
