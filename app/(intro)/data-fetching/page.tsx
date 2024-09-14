@@ -11,22 +11,22 @@ async function getData(delay: number) {
 async function FirstComponent() {
   const delay = await getData(1000);
 
-  // Sequential fetching. SecondComponent will not start fetching until FirstComponent is done.
-  return (
-    <div>
-      FirstComponent
-      <Suspense fallback={<div>Loading...</div>}>
-        <SecondComponent />
-      </Suspense>
-      {delay}
-    </div>
-  );
+  return <div>FirstComponent {delay}</div>;
 }
 
 async function SecondComponent() {
   const delay = await getData(2000);
 
-  return <div>SecondComponent {delay}</div>;
+  // Sequential fetching. SecondComponent will not start fetching until FirstComponent is done.
+  return (
+    <div>
+      SecondComponent
+      <Suspense fallback={<div>Loading...</div>}>
+        <FirstComponent />
+      </Suspense>
+      {delay}
+    </div>
+  );
 }
 
 export default async function DataFetchingPage() {
@@ -45,10 +45,16 @@ export default async function DataFetchingPage() {
   // Can do this also to a server comp with await, but its better to just fetch inside the server comp
   const dataPromise = getData(3000);
 
-  // Paralell fetching with suspense. If a suspense wraps the component, it will wait for all promises to resolve, like promise.all().
   return (
     <>
       <h1>Data Fetching</h1>
+      {/* This will wait for all components to finish fetching before rendering, but fetches in parallel */}
+      {/* Like promise.all */}
+      {/* <Suspense>
+        <FirstComponent />
+        <SecondComponent />
+      </Suspense> */}
+      {/* Paralell fetching with suspense */}
       <Suspense fallback={<div>Loading...</div>}>
         <FirstComponent />
       </Suspense>

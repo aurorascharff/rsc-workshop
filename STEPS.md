@@ -279,20 +279,27 @@
 
 - Fetch in an efficient way
 - Data fetching page: new route and page.tsx and link from root page.tsx
-- Sequential, parallel, suspenses receiving data
-- Suspense strategy: wait for all or stream independently
-- use() hook: unblock a by making suspenses around client components because we cant await inside them
+- Sequential await, vise, turn off eslint autofix, 2sek
+- Kommentere ut, parallel awaits, 1sek
+- Det samme kan vi tenkte om suspense: wait for all or stream independently
+- Suspense: first og second component, en suspense, paralellt
+- Suspense: first og second i hver sin, kommentere ut, det er bedre
+- FirstComponent inni second: seqviensielt
+- ClientComponent: fetch data for this. We dont want to block this with await. Send as dataPromise.
+- use() hook: read promise
+- Unblock a by making suspenses around client components because we cant await inside them
 - Use hook can resolve any promise but this is not recommended inside client components because they are recreated on every render
 - Avfallsdek: use() eksempel i statustabs
+- Svaret til Arja: ikke await i layout, vi kan enten bruke use() eller fetche i neste server component
 
 ### App: Use the use() hook in contacts
 
-- Instead of loading.tsx lets try to use the use() hook
+- Instead of loading.tsx lets try to use the use() hook, copy content and delete loading.tsx
+- Explicit suspense
 - Dont await getContact, just pass as promise
 - Use() hook in contactForm
-- Move skeleton to contactForm skeleton component
-- Explicit suspense
-- Delete loading.tsx
+- Mention move skeleton to contactForm skeleton component
+- Hva foretrekker dere, loading.tsx eller use her?
 - PAUSE?
 
 ### App: Add caching and Next.js improvements
