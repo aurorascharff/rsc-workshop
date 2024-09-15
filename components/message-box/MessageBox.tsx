@@ -1,17 +1,17 @@
 import React, { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import AutomaticScroller from '@/components/AutomaticScroller';
+import { getContactCache } from '@/data/services/getContact';
 import Skeleton from '../ui/Skeleton';
 import MessageInput from './MessageInput';
 import Messages from './Messages';
-import type { Contact } from '@prisma/client';
 
 type Props = {
-  contactPromise: Promise<Contact>;
+  contactId: string;
 };
 
-export default async function MessageBox({ contactPromise }: Props) {
-  const contact = await contactPromise;
+export default async function MessageBox({ contactId }: Props) {
+  const contact = await getContactCache(contactId);
 
   return (
     <details className="group flex flex-col rounded-t-lg border border-gray bg-white shadow-xl">

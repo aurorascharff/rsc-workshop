@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import MessageBox from '@/components/message-box/MessageBox';
 import Skeleton from '@/components/ui/Skeleton';
-import { getContactCache } from '@/data/services/getContact';
 import { routes } from '@/validations/routeSchema';
 
 type Props = {
@@ -11,7 +10,6 @@ type Props = {
 
 export default async function ContactsLayout({ children, params }: Props) {
   const { contactId } = routes.contactId.$parseParams(params);
-  const contact = getContactCache(contactId);
 
   return (
     <Suspense
@@ -24,7 +22,7 @@ export default async function ContactsLayout({ children, params }: Props) {
     >
       {children}
       <div className="fixed bottom-0 right-8 ml-8">
-        <MessageBox contactPromise={contact} />
+        <MessageBox contactId={contactId} />
       </div>
     </Suspense>
   );
