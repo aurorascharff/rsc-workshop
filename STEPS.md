@@ -341,9 +341,10 @@
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 - PAUSE?
 
-### App: Add typed params with next-safe-navigation
+### (App): Add typed params with next-safe-navigation
 
 - Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
+- Sjekk readme
 - Next.js doesnt have type safety for params, show example with wrong param
 - Show config file
 - Add routes to a a few application pages href and router.push
@@ -353,7 +354,6 @@
 - Use in redirect and revalidatePath createEmptyContact
 - Mention server/client hook and functions
 - Bruker i avfallsdek
-- PAUSE?
 
 ### (App): Use Fetch API and /api-routes
 
@@ -375,7 +375,6 @@
 - Show the context and the provider
 - Context works because it has children, doesn't convert to a client component, has more uses
 - Use the provider and create Error.tsx component, implement with store and provider
-- PAUSE?
 
 ### (Show): React Hook Form
 
