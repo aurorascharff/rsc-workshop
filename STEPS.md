@@ -255,7 +255,6 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-- Delete suspense boundaries and show it works without JS
 
 ### LUNCH DAY 2
 
