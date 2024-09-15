@@ -1,15 +1,16 @@
 import React from 'react';
+import { getContactCache } from '@/data/services/getContact';
 import { getCurrentUser } from '@/data/services/getCurrentUser';
 import { getMessages } from '@/data/services/getMessages';
 import MessageDisplay from './MessageDisplay';
-import type { Contact } from '@prisma/client';
 
 type Props = {
-  contact: Contact;
+  contactId: string;
 };
 
-export default async function Messages({ contact }: Props) {
-  const messages = await getMessages(contact.id);
+export default async function Messages({ contactId }: Props) {
+  const messages = await getMessages(contactId);
+  const contact = await getContactCache(contactId);
   const user = await getCurrentUser();
 
   return (

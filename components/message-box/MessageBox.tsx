@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import AutomaticScroller from '@/components/AutomaticScroller';
-import { getContactCache } from '@/data/services/getContact';
 import Skeleton from '../ui/Skeleton';
 import MessageInput from './MessageInput';
 import Messages from './Messages';
@@ -11,8 +10,6 @@ type Props = {
 };
 
 export default async function MessageBox({ contactId }: Props) {
-  const contact = await getContactCache(contactId);
-
   return (
     <details className="group flex flex-col rounded-t-lg border border-gray bg-white shadow-xl">
       <summary className="flex items-center justify-between gap-4 rounded-t-lg border-b border-gray bg-white px-4 py-1 text-lg font-bold text-primary hover:bg-gray-light group-open:py-3">
@@ -25,11 +22,11 @@ export default async function MessageBox({ contactId }: Props) {
       <div className="grid w-full group-open:min-w-[320px] sm:group-open:w-[380px]">
         <AutomaticScroller className="grid h-80 content-start gap-4 overflow-auto border-b border-gray p-4">
           <Suspense fallback={<Skeleton />}>
-            <Messages contact={contact} />
+            <Messages contactId={contactId} />
           </Suspense>
         </AutomaticScroller>
         <ErrorBoundary fallback={<p className="pb px-6 py-8 text-end">⚠️Something went wrong</p>}>
-          <MessageInput contactId={contact.id} />
+          <MessageInput contactId={contactId} />
         </ErrorBoundary>
       </div>
     </details>
