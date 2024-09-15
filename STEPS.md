@@ -262,11 +262,14 @@
 ### App: Use useOptimistic on favorite button
 
 - Show slow favorite button
+- Er det noe fra React 19 vi kan bruke?
 - Add hook useOptimistic, explain and show different use cases
+- Forklare useoptimistic. State to show when no action is pending, rollback because it does not exists in client state, different from making a backup.
 - Add onSubmit, mention you could use action directly, action is now a fallback
 - Show it works without JS
 - Show server delay in layout
 - UseOptimistic kan legges i provider for å bruke i flere komponenter, jeg har et eksempel på dette på github
+- Skal du ha hele appen optimistisk kan du nok gå tilbake til React Query, eller kanskje noen implementerer dette inn i biblioteker i fremtiden.
 
 ### Show: Final application
 
@@ -316,6 +319,7 @@
 - Comment metadata locally, it's not working locally. Add comment.
 - Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root.
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
+- Jeg tror vi kunne fikset dette med paralell routes, men jeg har ikke prøvd ennå og det er litt komplisert så det passer ikke kurset.
 
 ### (App): Unit and Component tests with Vitest
 
