@@ -17,7 +17,7 @@ async function FirstComponent() {
 async function SecondComponent() {
   const delay = await getData(2000);
 
-  // Sequential fetching. SecondComponent will not start fetching until FirstComponent is done.
+  // Sequential fetching. FirstComponent will not start fetching until SecondComponent is done.
   return (
     <div>
       SecondComponent

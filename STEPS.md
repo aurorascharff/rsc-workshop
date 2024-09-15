@@ -180,6 +180,7 @@
 - Data access layer actions, prefer extracting the actions
 - Create: createEmptyContact.ts, NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
+- Forklare formdata
 
 ### Slides: TASK 1
 
@@ -234,6 +235,7 @@
 - Use SubmitButton with loading boolean for delete button transition
 - Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
 - Add useFormStatus isSubmitting. Bruker parent form som kontekst.
+- Delete loading boolean from deletebutton
 - Use it in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composability of client/server while mainaining interactivity.
@@ -249,20 +251,21 @@
 - Add validation to the form in updateContact.ts, throw error
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
-- Per-field errors coming back
+- Per-field errors coming back, result.data
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-
-### LUNCH DAY 2
+- Show it works without js?
+- PAUSE?
 
 ### App: Use useOptimistic on favorite button
 
 - Show slow favorite button
 - Er det noe fra React 19 vi kan bruke?
 - Add hook useOptimistic, explain and show different use cases
+- Await slow vis rollback
 - Forklare useoptimistic. State to show when no action is pending, rollback because it does not exists in client state, different from making a backup.
 - Add onSubmit, mention you could use action directly, action is now a fallback
 - Show it works without JS
@@ -278,15 +281,16 @@
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 - After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
-### (Slides): CSS in Server Components & Deployment
+### LUNCH DAY 2
 
-- PAUSE?
+### Slides: CSS in Server Components & Deployment
 
 ### Intro: Introduce data fetching patterns
 
 - Fetch in an efficient way
 - Data fetching page: new route and page.tsx and link from root page.tsx
 - Sequential await, vise, turn off eslint autofix, 2sek
+- Kan vi gjøre det raskere?
 - Kommentere ut, parallel awaits, 1sek
 - Det samme kan vi tenkte om suspense: wait for all or stream independently
 - Suspense: first og second component, en suspense, paralellt
@@ -315,12 +319,14 @@
 - Show metadata root page
 - Add metadata to contactId page
 - Add cache() to getContact since it´s a dynamic page with metadata, log the result and show it´s only once per render
+- Depuplicated, react query uses this
 - Comment metadata locally, it's not working locally. Add comment.
-- Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root.
+- Hvorfor er ikke tregt?
+- Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root. Det er også cachet.
 - Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
 - Jeg tror vi kunne fikset dette med paralell routes, men jeg har ikke prøvd ennå og det er litt komplisert så det passer ikke kurset.
 
-### (App): Unit and Component tests with Vitest
+### App: Unit and Component tests with Vitest
 
 - Talk about uncertainty in [Next.js docs](https://nextjs.org/docs/app/building-your-application/testing)
 - RTL has [workaround](https://github.com/testing-library/react-testing-library/issues/1209)
@@ -331,16 +337,16 @@
 - Test ContactPage, show that it fails without suspense
 - Create suspenseRender helper
 
-### (Show): End-to-end tests with Playwright
+### Show: End-to-end tests with Playwright
 
 - Show playwright setup and package.json commands
 - Show example test
-- Mention to `npx playwright install`
+- Mention to `npx playwright install` if failure
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
 - PAUSE?
 
-### (App): Add typed params with next-safe-navigation
+### App: Add typed params with next-safe-navigation
 
 - Show library on [npm](https://www.npmjs.com/package/next-safe-navigation)
 - Sjekk readme
