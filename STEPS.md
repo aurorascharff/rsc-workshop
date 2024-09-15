@@ -182,7 +182,7 @@
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Forklare formdata
 
-### Slides: TASK 1
+### Slides: TASK 1 (30m)
 
 ### Utføre TASK 1 Selv copy paste push
 
@@ -356,7 +356,7 @@
 - Add useSafeSearchParams to ContactButton and Search
 - Add parseParams to all pageProps, i.e ContactPage
 - Les gjerne README.md mer om dette
-- Use in redirect and revalidatePath createEmptyContact
+- Mention use in redirect and revalidatePath createEmptyContact
 - Mention server/client hook and functions
 - Bruker i avfallsdek
 
@@ -410,28 +410,27 @@
 - Avfallsdek: filter-komponent
 - [Lee Robinson Vercel](https://github.com/vercel-labs/book-inventory)
 
-### Slides: TASK 2
+### Slides: TASK 2 (1.5t)
 
-- Vise egen sneak peak, så vise schema som er klart til å bruke, så vise slides igjen
-
-### Utføre TASK 2 Selv copy paste
+- Vise egen sneak peak, så vise schema som er klart til å bruke med 2 brukere i seed, så vise slides igjen
+- Pause når dere vil
+- Vise litt og litt: getMessages, getCurrentUser, fixed bottom, details, side-by-side kode og app, slides iblant
 
 ### Show: TASK 2 Solution non-optimistic
 
-- Vise egen: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
+- Vise egen kode: auto scroll og all datahenting er med await, blanding av server og client, fake bruker vise
 - Component composition, data fetching
 - Loading state with submitbutton
 - Suspense boundary around messages
 - Error boundary on the input
 - Key takeways: the component is fully composable. It handles it's own data and mutations. It works without javascript, and will be prog enhanced. It reduces the amount of js on the client using specific client components with automatic scroller, message input and submitButton, utilizing the details pane.
 - I could make this with plain react but I could also make it like this
-
-### Utføre TASK 2 Selv copy paste optimistic
+- Du finner den i completed repo, test i deployed
+- [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 
 ### Show: TASK 2 Solution optimistic
 
 - Vise optimistic senere: use hook
-- [Details component](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)
 - Vise at det funker på mobilen
 
 ### Slides: Ressurser og avslutning
