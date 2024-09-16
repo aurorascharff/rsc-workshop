@@ -115,6 +115,7 @@
 - Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx)
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
 - We can add another one inside /edit if we want
+- Turn on staletimes 30 to avoid dynamic fetching every time
 - PAUSE?
 
 ## Slides: Introduksjon til React 19

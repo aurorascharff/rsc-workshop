@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { PrismaClient } from '@prisma/client';
 import type { User } from '@prisma/client';
 
@@ -73,7 +74,7 @@ const MESSAGES = [
   },
 ];
 
-async function seedContacts() {
+async function seed() {
   await Promise.all(
     CONTACTS.map(contact => {
       return prisma.contact.create({
@@ -129,4 +130,4 @@ async function seedContacts() {
     });
 }
 
-seedContacts();
+seed();
