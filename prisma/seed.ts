@@ -27,8 +27,8 @@ const CONTACTS = [
     id: '1cd89022-64e8-4a76-aec6-43433478e32f',
     last: 'Scharff',
     notes:
-      'Aurora er en dyktig frontend-utvikler og konsulent hos Inmeta. Med flere års erfaring fra arbeidslivet har hun håndtert komplekse prosjekter og jobbet med et bredt spekter av teknologier, inkludert håndtering av store datamengder og fokus på skalerbarhet.',
-    position: 'Konsulent',
+      'Aurora is a skilled frontend developer and consultant at Inmeta. With several years of experience in the workforce, she has handled complex projects and worked with a wide range of technologies, including handling large amounts of data and focusing on scalability.',
+    position: 'Consultant',
   },
   {
     avatar:
@@ -39,8 +39,8 @@ const CONTACTS = [
     id: '2b3b3b3b-64e8-4a76-aec6-43433478e32f',
     last: 'Høegh',
     notes:
-      'Caspar er en erfaren arkitekt, utvikler og fagleder i MSDev avdelingen i Inmeta, med 13 års arbeidserfaring som fullstack-utvikler og en BcS fra HiBu (2013).',
-    position: 'Seniorkonsulent / Arkitekt',
+      'Caspar is an experienced architect, developer, and technical lead in the MSDev department at Inmeta, with 13 years of work experience as a full-stack developer and a BcS from HiBu (2013).',
+    position: 'Senior Consultant / Architect',
   },
 ];
 
