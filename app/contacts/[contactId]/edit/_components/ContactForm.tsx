@@ -17,13 +17,13 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 
   const [state, updateContactAction] = useActionState(updateContactById, {
     data: {
-      avatar: contact.avatar || '',
-      email: contact.email || '',
-      first: contact.first || '',
-      github: contact.github || '',
-      last: contact.last || '',
-      notes: contact.notes || '',
-      position: contact.position || '',
+      avatar: contact.avatar,
+      email: contact.email,
+      first: contact.first,
+      github: contact.github,
+      last: contact.last,
+      notes: contact.notes,
+      position: contact.position,
     },
     errors: {} as ContactSchemaErrorType,
   });
@@ -38,7 +38,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
       className="flex max-w-[40rem] flex-col gap-4 @container"
       action={updateContactAction}
     >
-      <div className="grip-rows-6 grid grid-cols-1 gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
+      <div className="grip-rows-6 grid gap-2 @sm:grid-cols-[1fr_4fr] @sm:gap-4">
         <span className="flex">Name</span>
         <div className="flex gap-4">
           <Input
@@ -112,7 +112,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
 export function ContactFormSkeleton() {
   return (
     <div className="flex max-w-[40rem] flex-col gap-4 @container">
-      <div className="grip-rows-6 grid grid-cols-1 gap-4 @sm:grid-cols-[1fr_4fr]">
+      <div className="grip-rows-6 grid gap-4 @sm:grid-cols-[1fr_4fr]">
         <div className="hidden flex-col gap-[72px] @sm:flex @sm:gap-8">
           <span className="flex">Name</span>
           <span>Position</span>

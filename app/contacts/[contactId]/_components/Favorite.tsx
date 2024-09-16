@@ -6,7 +6,7 @@ import { cn } from '@/utils/cn';
 import type { Contact } from '@prisma/client';
 
 export default function Favorite({ contact }: { contact: Contact }) {
-  const favoriteContactById = favoriteContact.bind(null, contact.id, contact.favorite);
+  const favoriteContactById = favoriteContact.bind(null, contact.id);
   const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(contact.favorite);
   const [, startTransition] = useTransition();
 
@@ -14,7 +14,7 @@ export default function Favorite({ contact }: { contact: Contact }) {
     e.preventDefault();
     startTransition(async () => {
       addOptimisticFavorite(!optimisticFavorite);
-      await favoriteContactById();
+      await favoriteContactById(new FormData(e.currentTarget));
     });
   };
 
@@ -30,6 +30,7 @@ export default function Favorite({ contact }: { contact: Contact }) {
       >
         {optimisticFavorite ? '★' : '☆'}
       </button>
+      <input type="hidden" name="favorite" value={optimisticFavorite.toString()} />
     </form>
   );
 }
