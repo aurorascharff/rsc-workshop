@@ -12,7 +12,7 @@
 
 ### Show: Setup the repository
 
-- Github: Fork / copy files for starter project, code-workspace
+- Github: Fork / copy files for starter project, code-workspace and install extensions
 - README.md show commands and run together npm install, npm run dev, verify running
 - Talk about eslint and prettier, show setup and rules, check code-workspace, verify its working
 - Talk about Prisma and the database, show schema
@@ -72,7 +72,7 @@
 - Drawbacks: needs framework like nextjs, complexity, learning curve
 - How do they work (ikogito console): SSR html, js-bundles for hydration, and rsc payload is the server component in seralizable form, generated in build or on server for dynamic data. Payload is used to create the client tree, and can be refreshed without destroying client state. If they pass props to client that have updated, client updates. Ikke workshoppens focus.
 
-### App: code all data fetching
+### App: Code all data fetching
 
 - Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
@@ -86,7 +86,7 @@
 - Excalidraw tree so far
 - Alt er på server, ikke noe JS på client ennå
 
-### App: code client component logic
+### App: Code client component logic
 
 - Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
@@ -182,7 +182,7 @@
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Forklare formdata
 
-### Slides: TASK 1 (30m)
+### Slides: TASK 1 (30m), fullføre CRUD
 
 ### Utføre TASK 1 Selv copy paste push
 
@@ -257,7 +257,6 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-- Show it works without js?
 - PAUSE?
 
 ### App: Use useOptimistic on favorite button
@@ -410,7 +409,7 @@
 - Avfallsdek: filter-komponent
 - [Lee Robinson Vercel](https://github.com/vercel-labs/book-inventory)
 
-### Slides: TASK 2 (1.5t)
+### Slides: TASK 2 (1.5t), MessageBox
 
 - Vise egen sneak peak, så vise schema som er klart til å bruke med 2 brukere i seed, så vise slides igjen
 - Pause når dere vil
