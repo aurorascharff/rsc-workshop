@@ -2,6 +2,8 @@
 
 ## DAY 1
 
+## Ask attendees position, first name, experience/what type of project and tech stack
+
 ## Slides: Introduksjon til Rendering on the Web and Next.js App Router
 
 ### Intro: Create a Next.js app

@@ -1,5 +1,7 @@
 # React Server Components, Server act
 
+## Ask attendees position, first name, experience/what type of project and tech stack
+
 ## Slides: Introduksjon til Rendering on the Web
 
 ## Show: Setup the repository
@@ -137,7 +139,7 @@
 ## App: Finish CRUD with React 19 form actions and .bind
 
 - La oss fullføre CRUD her
-- Create: createEmptyContact.ts, form and action-prop, mention onClick and hydration and web standards. Dont need to extract to "use client"
+- Create: createEmptyContact.ts, form and action-prop, mention onClick and hydration and web standards. Dont need to extract to "use client".
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
 - Hvis direkte server action: show works without js. No more loading feedback, fix later.
 - This is an implicit action = async transition, automatisk "post"
@@ -163,7 +165,6 @@
 - Add component to update contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
-- Avfallsdek: submitbutton slett mal. UseFormStatus fungerer også med onSubmit.
 
 ## App: Use useActionState for form validation
 
