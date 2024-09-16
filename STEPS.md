@@ -333,8 +333,8 @@
 - Show vitest setup and package.json commands
 - Run example test and other commands
 - (Test Favorite button)
-- Test DeleteContactButton
-- Test ContactPage, show that it fails without suspense
+- Test DeleteContactButton, fix error with mock, then write the rest
+- Test ContactPage, fix error with mock, then show that it fails without suspense, then add suspense
 - Create suspenseRender helper
 
 ### Show: End-to-end tests with Playwright
