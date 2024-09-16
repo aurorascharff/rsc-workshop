@@ -3,12 +3,12 @@
 import { prisma } from '@/db';
 import { slow } from '@/utils/slow';
 
-export async function favoriteContact(contactId: string, isFavorite: boolean) {
+export async function favoriteContact(contactId: string, formData: FormData) {
   await slow();
 
   return prisma.contact.update({
     data: {
-      favorite: !isFavorite,
+      favorite: !(formData.get('favorite') === 'true'),
     },
     where: {
       id: contactId,
