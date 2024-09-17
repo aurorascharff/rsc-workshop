@@ -99,7 +99,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
           rows={6}
         />
       </div>
-      <div className="flex gap-2 self-end">
+      <div className="flex gap-2 self-start @sm:self-end">
         <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
           Cancel
         </LinkButton>
