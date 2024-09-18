@@ -72,12 +72,11 @@
 - Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
-- Fetch data in contact page: getContact inside data/services
-- Add contactId/not-found.tsx og throw fra contactId, contactId/edit/page.
+- Fetch data in contact page: getContact inside data/services, then page.tsx. Mention next-safe-navigation and show schema.
+- Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
 - Fetch data in ContactForm
 - Discuss composability and compare with React Query
-- Show excalidraw
 - Excalidraw tree so far
 - Alt er på server, ikke noe JS på client ennå
 
@@ -86,7 +85,7 @@
 - Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
 - Kode contact list: extract to property and move await, filter, could do this on the server
-- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel.
+- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Husk å fikse href med q.
 - Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ## App: Add transition and ContactButton sidebar
@@ -94,12 +93,12 @@
 - Have you ever used a transition?
 - Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
 - Explain next.js navigations are transitions, can always be cancelled
-- All state updates are executes once they are all done, show example with setCount, click multiple on slow batches
+- All state updates are executes once they are all done
 - Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
 - Make it slow to see the freeze
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
-- Add transition to ContactButton, isPending
+- Add transition to ContactButton, isPending, preventdefault link behavior and run our own
 
 ## App: Add transition to Search
 
@@ -113,6 +112,7 @@
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
 - Have to think about avoiding cumulative layout shift.
+- We can use this to handle the frozen app in a different way
 - Comment out transition in ContactButton
 - Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx)
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
