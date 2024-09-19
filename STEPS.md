@@ -179,7 +179,7 @@
 
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
-- Create: createEmptyContact.ts, NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
+- Create: createEmptyContact.ts, uten revalidate, så med revalidate,  NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Forklare formdata
 
@@ -236,8 +236,8 @@
 - Use SubmitButton with loading boolean for delete button transition
 - Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
 - Add useFormStatus isSubmitting. Bruker parent form som kontekst.
-- Delete loading boolean from deletebutton
-- Use it in new contact
+- Delete loading and disabled boolean from deletebutton
+- Use SubmitButton in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composability of client/server while mainaining interactivity.
 - Add component to update contact

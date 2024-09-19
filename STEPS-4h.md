@@ -1,7 +1,5 @@
 # React Server Components, Server act
 
-## Ask attendees position, first name, experience/what type of project and tech stack
-
 ## Slides: Introduksjon til Rendering on the Web
 
 ## Show: Setup the repository
@@ -139,27 +137,28 @@
 ## App: Finish CRUD with React 19 form actions and .bind
 
 - La oss fullføre CRUD her
-- Create: createEmptyContact.ts, form and action-prop, mention onClick and hydration and web standards. Dont need to extract to "use client".
+- Create: createEmptyContact.ts. How can we use this in the layout?
+- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
-- Hvis direkte server action: show works without js. No more loading feedback, fix later.
+- Hvis direkte server action: show works without js.
 - This is an implicit action = async transition, automatisk "post"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
-- Move it back into the layout, delete component
-- Update: form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.enh.
+- Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en, updateContactSimple.
 - Forklare formdata
-- Delete: først form action and deleteContact, then DeleteContactButton for modal, form and action-prop, .bind. OnSubmit is fallback wiouth js. Could also use hidden input.
+- Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
 - Dette er altså et progressive enhancement.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
 - PAUSE?
 
 ## App: Add interactivity with SubmitButton
 
+- Make all mutations slow. Lets make this realistic.
 - Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
 - Use SubmitButton with loading boolean for delete button transition
 - Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
 - Add useFormStatus isSubmitting. Bruker parent form som kontekst.
-- Delete loading boolean from deletebutton
-- Use it in new contact
+- Delete loading and disabled boolean from deletebutton
+- Use SubmitButton in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composability of client/server while mainaining interactivity.
 - Add component to update contact
@@ -187,8 +186,9 @@
 - Performant, interactive, applications with good developer experience, even be prog.enh
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
-- After break: improving it with data fetching patterns, global state, typed params, testing, deployment
 
 ## TASK: Implement favorite, make it prog enh and optimistic
+
+## TASK (bonus): Message box
 
 ## Slides: Ressurser og avslutning
