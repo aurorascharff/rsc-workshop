@@ -70,7 +70,7 @@
 - Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
-- Fetch data in contact page: getContact inside data/services, then page.tsx. Mention next-safe-navigation and show schema.
+- Fetch data in contact page: getContact inside data/services, then page.tsx. Mention next-safe-navigation and show schema. Could be just href.
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
 - Fetch data in ContactForm
