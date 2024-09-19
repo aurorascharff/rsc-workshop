@@ -12,7 +12,7 @@
 
 ## Show: Go through the repository
 
-- CRUD app for managing contacts: quick demo
+- CRUD app for managing contacts: quick demo, maybe you saw this earlier in Devlins workshop, it's the official react router tutorial but this version is completely converted into Next.js so its quite different. And uses tailwind.
 - Vise next.js server side rendering console, turn off js
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits?
