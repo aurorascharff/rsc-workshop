@@ -50,7 +50,7 @@
 ## Intro: What are client components?
 
 - Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
-- Normal react components are marked with "use client"
+- Normal react components are marked with "use client", a react 19 directive
 - They are rendered on the server and then hydrated on the client like with normal SSR
 - onClick alert, onclick state change
 - Console log client
@@ -171,7 +171,7 @@
 - Har noen brukt pages router?
 - Pages router: you created API endpoints and used for example trpc
 - Type safety and creates a hidden api-endpoint
-- Excalidraw: "use server" mutateData.ts, back to the server
+- Excalidraw: "use server", a react 19 directive, mutateData.ts, back to the server
 - Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
 - Show type safety RPC
 - Not recommended for data fetching unless specific use cases such as infinite scroll
