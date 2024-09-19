@@ -12,7 +12,8 @@
 
 ## Show: Go through the repository
 
-- CRUD app for managing contacts: quick demo, maybe you saw this earlier in Devlins workshop, it's the official react router tutorial but this version is completely converted into Next.js so its quite different. And uses tailwind.
+- CRUD app for managing contacts: quick demo
+- We have no JS here in this app. Turn off js. Show SSR in console.
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits?
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
@@ -65,7 +66,6 @@
 
 ## App: Code all data fetching
 
-- We have no JS here in this app. Turn off js. Show SSR in console.
 - Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
@@ -85,8 +85,9 @@
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Husk å fikse href med q.
 - Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
-## App: Add transition and ContactButton sidebar
+## (App): Add transition and ContactButton sidebar
 
+- Make getContact slow
 - Have you ever used a transition?
 - Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
 - Explain next.js navigations are transitions, can always be cancelled
@@ -103,7 +104,7 @@
 - Full page reload, no client side nav. View request in server log.
 - Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
 
-## App: Add suspense to ContactPage
+## (App): Add suspense to ContactPage
 
 - What is your experience with suspense?
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
