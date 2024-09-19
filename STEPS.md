@@ -23,7 +23,7 @@
 ### Show: Go through the repository
 
 - CRUD app for managing contacts: quick demo
-- Vise next.js server side rendering console, turn off js
+- Vise next.js server side rendering console.
 - Introduce the structure and the components
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits?
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
@@ -76,6 +76,7 @@
 
 ### App: Code all data fetching
 
+- We have no JS here in this app. Turn off js.
 - Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
