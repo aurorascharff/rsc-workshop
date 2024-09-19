@@ -12,7 +12,6 @@
 
 ## Show: Go through the repository
 
-- Next.js is a meta-framework made by Vercel that includes server components with features such as file system routing, image optimization, nested layouts, and more.
 - CRUD app for managing contacts: quick demo
 - Vise next.js server side rendering console, turn off js
 - Introduce the structure and the components
@@ -185,6 +184,7 @@
 - Excalidraw: final trees
 - Performant, interactive, applications with good developer experience, even be prog.enh
 - React 19 hooks ties it together, and there is alot more to come from these. They will be primitives for libraries simpliying things for developers, focus on building apps.
+- Theres alot more we could do here with the App Router but our topic is quite specific today.
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 
 ## TASK: Implement favorite, make it prog enh and optimistic
