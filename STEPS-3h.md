@@ -140,6 +140,21 @@
 - Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to avoid client-comp, updateContactSimple.
 - Forklare formdata
 
+## (App): Add interactivity with SubmitButton
+
+- Make all mutations slow. Lets make this realistic.
+- Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
+- Use SubmitButton with loading boolean for delete button transition
+- Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
+- Add useFormStatus isSubmitting. Bruker parent form som kontekst.
+- Delete loading and disabled boolean from deletebutton
+- Use SubmitButton in new contact
+- Hva er fordelene med dette?
+- Power of rsc, composability of client/server while mainaining interactivity.
+- Add component to update contact
+- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
+- Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
+
 ## Show: Final application
 
 - Excalidraw: final trees
@@ -148,7 +163,7 @@
 - Theres alot more we could do here with the App Router but our topic is quite specific today.
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 
-## TASK: Implement delete and handle loading states
+## TASK: Implement delete (and handle loading states)
 
 ## TASK (bonus): Implement favorite, make it prog enh and optimistic
 
