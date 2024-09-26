@@ -24,12 +24,11 @@
 
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
-- Introduce the structure and the components
+- Introduce the structure and the components: remember dynamic route
 - Nested layouts: state in the url, users will awlays see the same thing. Benefits?
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
 - Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
-- PAUSE?
 
 ### Intro: What are server components?
 
@@ -39,6 +38,7 @@
 - Next.js is a React metaframework that includes server components, server component by default.
 - Console.log page.tsx
 - Make (intro)/client-server/page.tsx
+- What are these synaxes? Route group, could be used for authenticated routes for example.
 - Link to client-server in page.tsx
 - Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
@@ -134,7 +134,6 @@
 - Nå har søket vårt blitt tregt, destination has again a slow await
 - Full page reload, no client side nav. View request in server log.
 - Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
-- PAUSE?
 
 ### Intro: What is suspense?
 
@@ -159,7 +158,6 @@
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
 - Hva foretrekker dere her? Suspense eller transition? Hvorfor?
 - Disse tingene er litt vanskelig og tok meg tid å forstå.
-- PAUSE?
 
 ### Intro: Introduce Server Actions
 
@@ -223,12 +221,11 @@
 - This is an implicit action = async transition, automatisk "post"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Move it back into the layout, delete component
-- Update: form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.enh, remove "use client".
+- Update: form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, remove "use client".
 - Delete: form and action-prop, .bind. OnSubmit is fallback wiouth js.
 - Dette er altså et progressive enhancement.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
 - Favorite: form and action-prop with .bind or hidden input.
-- PAUSE?
 
 ### App: Add back interactivity with SubmitButton
 
@@ -258,7 +255,6 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-- PAUSE?
 
 ### App: Use useOptimistic on favorite button
 
@@ -311,7 +307,6 @@
 - Use() hook in contactForm
 - Mention move skeleton to contactForm skeleton component
 - Hva foretrekker dere, loading.tsx eller use her?
-- PAUSE?
 
 ### App: Add caching and Next.js improvements
 
@@ -344,7 +339,6 @@
 - Mention to `npx playwright install` if failure
 - Run example test and other commands
 - Talk about the benefits of e2e tests and why I´m not spending more time on it
-- PAUSE?
 
 ### App: Add typed params with next-safe-navigation
 

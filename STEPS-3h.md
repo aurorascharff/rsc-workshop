@@ -114,8 +114,6 @@
 - We can add another one inside /edit if we want
 - Turn on staletimes 30 to avoid dynamic fetching every time
 
-## Slides: Introduksjon til React 19
-
 ## Intro: Introduce Server Actions
 
 - Som dere sikkert merket er det mange av knappene som ikke funker, vi er kommet til datamutasjoner
@@ -139,41 +137,8 @@
 - Hvis direkte server action: show works without js.
 - This is an implicit action = async transition, automatisk "post"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
-- Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, updateContactSimple.
+- Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to avoid client-comp, updateContactSimple.
 - Forklare formdata
-- Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
-- Dette er altså et progressive enhancement.
-- Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
-
-## App: Add interactivity with SubmitButton
-
-- Make all mutations slow. Lets make this realistic.
-- Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
-- Use SubmitButton with loading boolean for delete button transition
-- Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
-- Add useFormStatus isSubmitting. Bruker parent form som kontekst.
-- Delete loading and disabled boolean from deletebutton
-- Use SubmitButton in new contact
-- Hva er fordelene med dette?
-- Power of rsc, composability of client/server while mainaining interactivity.
-- Add component to update contact
-- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
-- Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
-
-## (App): Use useActionState for form validation
-
-- Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
-- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
-- Add validation to the form in updateContact.ts, throw error
-- Add ErrorBoundary, contactId/edit/error.tsx
-- Return in updateContact, then useActionState, "use client" and Zod
-- Move data fetching one level up
-- Per-field errors coming back, result.data
-- Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
-- Used to react hook form and formik?
-- By the way, we could use the isPending from useActionState for the loading state
-- Mention ways to use useActionState, toast on error or success
-- Mention React hook form and other libraries to come building ontop of this, react query because of hooks
 
 ## Show: Final application
 
@@ -183,8 +148,8 @@
 - Theres alot more we could do here with the App Router but our topic is quite specific today.
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 
-## TASK: Implement favorite, make it prog enh and optimistic
+## TASK: Implement delete and handle loading states
 
-## TASK (bonus): Message box
+## TASK (bonus): Implement favorite, make it prog enh and optimistic
 
 ## Slides: Ressurser og avslutning

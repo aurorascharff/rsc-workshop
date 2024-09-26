@@ -86,10 +86,9 @@
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Husk å fikse href med q.
 - Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
-## App: Add transition to Search
+## App: Add transition and ContactButton sidebar
 
 - Make getContact slow
-- Nå har søket vårt blitt tregt, destination has again a slow await
 - Have you ever used a transition?
 - Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
 - Explain next.js navigations are transitions, can always be cancelled
@@ -98,6 +97,11 @@
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to.
 - Make it slow to see the freeze
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
+- Add transition to ContactButton, isPending, preventdefault link behavior and run our own
+
+## App: Add transition to Search
+
+- Nå har søket vårt blitt tregt, destination has again a slow await
 - Full page reload, no client side nav. View request in server log.
 - Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
 
@@ -160,7 +164,7 @@
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
 
-## (App): Use useActionState for form validation
+## App: Use useActionState for form validation
 
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
 - Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
