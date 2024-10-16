@@ -15,7 +15,7 @@
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
 - Introduce the structure and the components: remember dynamic route
-- Nested layouts: state in the url, users will always see the same thing. Benefits?
+- Nested layouts: state in the url, users will always see the same thing. Benefits? Shareable, reloadable, bookmarkable.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
 - Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
@@ -103,7 +103,8 @@
 
 - Nå har søket vårt blitt tregt, destination has again a slow await
 - Full page reload, no client side nav. View request in server log.
-- Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
+- Add a progressive enhancement to the search on top of the no-js base-case. When hydrated with js, this will run rather.
+- Add transition for spinner to the search. Batching as mentioned, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
 
 ## App: Add suspense to ContactPage
 
