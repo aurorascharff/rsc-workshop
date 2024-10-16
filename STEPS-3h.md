@@ -136,7 +136,7 @@
 - Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
 - Hvis direkte Server Function: show works without js.
-- This is an implicit action = async transition, automatisk "post"
+- This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to avoid client-comp, updateContactSimple.
 - Forklare formdata

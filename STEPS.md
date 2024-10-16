@@ -219,7 +219,7 @@
 - Create: form and action-prop, mention onClick and hydration and web standards.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
 - Hvis direkte Server Function: show works without js. No more loading feedback, fix later.
-- This is an implicit action = async transition, automatisk "post"
+- This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Move it back into the layout, delete component
 - Update: form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, remove "use client".
