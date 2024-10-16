@@ -122,11 +122,11 @@
 
 ## Slides: Introduksjon til React 19
 
-## Intro: Introduce Server Actions
+## Intro: Introduce Server Functions
 
 - Som dere sikkert merket er det mange av knappene som ikke funker, vi er kommet til datamutasjoner
 - Hva vil man gjør en mutering? Sende noe fra client til server.
-- Excalidraw: Server actions are a new feature in React 19, that allows you to create server code that can be called from the client
+- Excalidraw: Server Functions are a new feature in React 19, that allows you to create server code that can be called from the client
 - We cant pass functions over the network, serializable
 - Har noen brukt pages router?
 - Pages router: you created API endpoints and used for example trpc
@@ -144,7 +144,7 @@
 - Create: createEmptyContact.ts. How can we use this in the layout?
 - Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
-- Hvis direkte server action: show works without js.
+- Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, updateContactSimple.
