@@ -163,6 +163,7 @@
 
 ## (App): Use useActionState for form validation
 
+- (If no time for this: mention blog post.)
 - Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
 - Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 - Add validation to the form in updateContact.ts, throw error
