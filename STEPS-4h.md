@@ -15,8 +15,8 @@
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
 - Introduce the structure and the components: remember dynamic route
-- Nested layouts: state in the url, users will awlays see the same thing. Benefits?
-- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo dissapearing. Hvem har brukt tailwind før?
+- Nested layouts: state in the url, users will always see the same thing. Benefits?
+- We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
 - Vi skal bli bedre kjent med dette over workshoppen, poenget er at vi skal lage noe som fungerer uten å bruke for mye tid på css og html
 
@@ -28,7 +28,7 @@
 - Next.js is a React metaframework that includes server components, server component by default.
 - Console.log page.tsx
 - Make (intro)/client-server/page.tsx
-- What are these synaxes? Route group, could be used for authenticated routes for example.
+- What are these syntaxes? Route group, could be used for authenticated routes for example.
 - Link to client-server in page.tsx
 - Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
