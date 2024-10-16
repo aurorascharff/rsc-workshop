@@ -44,7 +44,8 @@
 - ServerComponent console log
 - No js in the browser for page.tsx
 - Anything you do here won't add to the bundle size
-- Async and fetch data prisma or fetch api, data[0]
+- Async and fetch data prisma, data[0]
+- Mention that you can use fetch api to call endpoints
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
 
 ## Intro: What are client components?
