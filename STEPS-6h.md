@@ -116,6 +116,8 @@
 - Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx)
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
 - We can add another one inside /edit if we want
+- You need to decide where to wait: in the source or in the destination.
+- Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
 - Turn on staletimes 30 to avoid dynamic fetching every time
 
 ## Slides: Introduksjon til React 19
@@ -137,6 +139,8 @@
 ## App: Finish CRUD with React 19 form actions and .bind
 
 - La oss fullføre CRUD her
+- Data access layer actions, prefer extracting the actions
+- You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
 - Create: createEmptyContact.ts. How can we use this in the layout?
 - Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.

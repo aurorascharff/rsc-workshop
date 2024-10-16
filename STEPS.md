@@ -147,7 +147,7 @@
 - Unblocke hver del
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
-- Explain when to pick what: Is there something to show in the source? Use transitions. Is there something to show in the destination? Use suspense.
+- Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
 - Avfallsdek: suspenses arbeidsflate og maler.
 - Have to think about avoiding cumulative layout shift.
 
@@ -177,6 +177,7 @@
 
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
+- You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
 - Create: createEmptyContact.ts, uten revalidate, så med revalidate,  NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Forklare formdata
