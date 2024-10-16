@@ -319,7 +319,7 @@
 - Comment metadata locally, it's not working locally. Add comment.
 - Hvorfor er ikke tregt?
 - Forresten, grunnen til at søket er tregt er pge getContact. Det er ikke tregt på root. Det er også cachet.
-- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because they are changing it.
+- Mention unstable cache and show example fixing the search: we are refetching the contact because this page is dynamic, lets cache this. Show unstable-cache and mention revalidation, mention that we dont need to see any edit/loading.tsx. Don't use it because in the future there will be a better way to do this with a new "use cache" directive announced at next.js Conf.
 - Jeg tror vi kunne fikset dette med paralell routes, men jeg har ikke prøvd ennå og det er litt komplisert så det passer ikke kurset.
 
 ### App: Unit and Component tests with Vitest
