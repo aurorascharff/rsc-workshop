@@ -75,7 +75,7 @@
 - Add not-found.tsx global
 - Fetch data in ContactForm
 - Discuss composability and compare with React Query
-- Excalidraw tree so far
+- Excalidraw: tree so far
 - Alt er på server, ikke noe JS på client ennå
 
 ## App: Code client component logic
@@ -84,7 +84,7 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
 - Kode contact list: extract to property and move await, filter, could do this on the server
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Husk å fikse href med q.
-- Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
+- Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ## App: Add transition and ContactButton sidebar
 
