@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 const CONTACTS = [
   {
     avatar:
-      'https://media.licdn.com/dms/image/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_200_200/0/1668631096577?e=1728518400&v=beta&t=xkw5B7ynjHXcosrUKipY2Y8NqWs0MtvyqhE2HvMBbhE',
+      'https://media.licdn.com/dms/image/v2/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1668631096577?e=1734566400&v=beta&t=zZI4J5sh3n2sFK1ojbD3JzmMonaYprIcfvf2rijO3wQ',
     email: 'devlin.duldulao@inmeta.no',
     favorite: true,
     first: 'Devlin',
