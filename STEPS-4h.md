@@ -74,7 +74,7 @@
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
 - Fetch data in ContactForm
-- Discuss composability and compare with React Query
+- Discuss composition and compare with React Query
 - Excalidraw: tree so far
 - Alt er på server, ikke noe JS på client ennå
 
@@ -155,7 +155,7 @@
 - Delete loading and disabled boolean from deletebutton
 - Use SubmitButton in new contact
 - Hva er fordelene med dette?
-- Power of rsc, composability of client/server while mainaining interactivity.
+- Power of rsc, composition of client/server while mainaining interactivity.
 - Add component to update contact
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
