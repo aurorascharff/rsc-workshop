@@ -32,6 +32,7 @@
 - Link to client-server in page.tsx
 - Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
+- Check React Devtools and see the server component
 - No js in the browser for page.tsx
 - Anything you do here won't add to the bundle size
 - Async and fetch data prisma, data[0].first
@@ -46,6 +47,7 @@
 - onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
+- Check React Devtools and see the client component
 - Excalidraw: show tree server and client and discuss hydration
 - Basically, try to put client code in the leaves to optimize performance, but dont worry too much about it
 - Next.js [docs](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns) client/server components
