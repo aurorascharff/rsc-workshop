@@ -1,8 +1,7 @@
 'use server';
 
-import { revalidatePath, revalidateTag } from 'next/cache';
+import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { cacheKeys } from '@/constants/revalidationKeys';
 import { prisma } from '@/db';
 import { slow } from '@/utils/slow';
 import type { ContactSchemaErrorType, ContactSchemaType } from '@/validations/contactSchema';
@@ -34,8 +33,6 @@ export async function updateContact(contactId: string, _prevState: State, formDa
     },
   });
 
-  revalidatePath(routes.home());
-  revalidateTag(cacheKeys.contact); // For unstable-cache
   // revalidateTag(revalidationKeys.contact(contactId)); // For getContactFetch
   // revalidateTag(revalidationKeys.contacts); // For getContactsFetch
   redirect(routes.contactId({ contactId }));

@@ -6,7 +6,7 @@ import type { Contact } from '@prisma/client';
 
 vi.mock('@/data/services/getContact', () => {
   return {
-    getContactCache: async (id: string) => {
+    getContactDedupe: async (id: string) => {
       return {
         avatar: 'https://example.com/avatar.jpg',
         email: 'test@test.com',
@@ -22,9 +22,11 @@ vi.mock('@/data/services/getContact', () => {
   };
 });
 
+const paramsPromise = Promise.resolve({ contactId: '0' });
+
 describe('ContactPage', () => {
   it('render the correct contact info', async () => {
-    suspenseRender(<ContactPage params={{ contactId: '0' }} />);
+    suspenseRender(<ContactPage params={paramsPromise} />);
 
     expect(await screen.findByRole('heading')).toHaveTextContent('Test User');
     expect(await screen.findByRole('button', { name: 'Add to favorites' })).toHaveTextContent('☆');

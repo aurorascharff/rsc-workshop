@@ -1,6 +1,5 @@
 import 'server-only';
 
-import { unstable_cache } from 'next/cache';
 import { notFound } from 'next/navigation';
 import { cache } from 'react';
 import { revalidationKeys } from '@/constants/revalidationKeys';
@@ -24,16 +23,6 @@ export async function getContact(contactId: string) {
 export const getContactDedupe = cache(async (contactId: string) => {
   return getContact(contactId);
 });
-
-export const getContactCache = unstable_cache(
-  async (contactId: string) => {
-    return getContactDedupe(contactId);
-  },
-  ['contact'],
-  {
-    tags: ['contact'],
-  },
-);
 
 export async function getContactFetch(contactId: string) {
   const apiURL = process.env.NEXT_PUBLIC_API_URL;

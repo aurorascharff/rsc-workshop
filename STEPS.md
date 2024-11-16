@@ -179,7 +179,7 @@
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
-- Create: createEmptyContact.ts, uten revalidate, så med revalidate,  NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled
+- Create: createEmptyContact.ts, uten revalidate, så med revalidate,  NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled. Redirect also does a revalidatePath. So we can replace it.
 - Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
 - Forklare formdata
 

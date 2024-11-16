@@ -4,15 +4,16 @@ import { prisma } from '@/db';
 import type { NextRequest } from 'next/server';
 
 type Params = {
-  params: {
+  params: Promise<{
     contactId: string;
-  };
+  }>;
 };
 
 export async function GET(_request: NextRequest, { params }: Params) {
+  const contactId = (await params).contactId;
   const contact = await prisma.contact.findUnique({
     where: {
-      id: params.contactId,
+      id: contactId,
     },
   });
   if (!contact) {

@@ -1,19 +1,19 @@
 import Image from 'next/image';
 import LinkButton from '@/components/ui/LinkButton';
-import { getContactCache } from '@/data/services/getContact';
+import { getContactDedupe } from '@/data/services/getContact';
 import GithubLogo from '@/public/github-mark.svg';
 import { routes } from '@/validations/routeSchema';
 import DeleteContactButton from './_components/DeleteContactButton';
 import Favorite from './_components/Favorite';
 
 type PageProps = {
-  params: unknown;
+  params: Promise<unknown>;
 };
 
 // // In local development, the `generateMetadata` will not be streamed and will block the page until it resolves, hindering the suspense boundary from showing.
 // export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-//   const { contactId } = routes.contactId.$parseParams(params);
-//   const contact = await getContactCache(contactId);
+//   const { contactId } = routes.contactId.$parseParams(await params);
+//   const contact = await getContactDedupe(contactId);
 
 //   return contact && contact.first && contact.last
 //     ? {
@@ -27,8 +27,8 @@ type PageProps = {
 // }
 
 export default async function ContactPage({ params }: PageProps) {
-  const { contactId } = routes.contactId.$parseParams(params);
-  const contact = await getContactCache(contactId);
+  const { contactId } = routes.contactId.$parseParams(await params);
+  const contact = await getContactDedupe(contactId);
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row">

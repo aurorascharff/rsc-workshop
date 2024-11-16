@@ -14,7 +14,7 @@ function SlowComponent() {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const items: any[] = [];
 for (let i = 0; i < 500; i++) {
-  items.push(<SlowComponent />);
+  items.push(<SlowComponent key={i} />);
 }
 
 export default function TransitionsPage() {

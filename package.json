@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prisma.studio": "npx prisma studio",
-    "prisma.seed": "npx prisma db seed",
+    "prisma.seed": "tsx prisma/seed.ts",
     "prisma.migrate": "npx prisma migrate dev",
     "prisma.push": "npx prisma db push",
     "test.unit": "vitest run",
@@ -33,7 +33,7 @@
     "eslint": "8.56.0",
     "eslint-config-next": "14.2.5",
     "match-sorter": "^6.3.4",
-    "next": "^15.0.0-rc.0",
+    "next": "^15.0.3",
     "next-safe-navigation": "^0.3.2",
     "postcss": "^8.4.41",
     "react": "^19.0.0-rc-06d0b89e-20240801",
@@ -57,22 +57,19 @@
     "@testing-library/react": "^16.0.0",
     "@types/eslint": "^8.56.1",
     "@types/jest": "^29.5.12",
-    "eslint-plugin-react-compiler": "^0.0.0-experimental-72f06b2-20240822",
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-autofix": "^2.1.0",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-72f06b2-20240822",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
     "jsdom": "^24.1.1",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "prisma": "^5.18.0",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "vite-tsconfig-paths": "^5.0.0",
     "vitest": "^2.0.5"
-  },
-  "prisma": {
-    "seed": "ts-node prisma/seed.ts"
   }
 }
