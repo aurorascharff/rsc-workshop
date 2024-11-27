@@ -136,6 +136,8 @@
 
 - Nå har søket vårt blitt tregt, destination has again a slow await
 - Full page reload, no client side nav. View request in server log.
+- Add a progressive enhancement with Form-component to the search on top of the no-js base-case. When hydrated with js, this will run rather. Client-side nav.
+- Add another progressive enhancement with onChange.
 - Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
 
 ### Intro: What is suspense?
