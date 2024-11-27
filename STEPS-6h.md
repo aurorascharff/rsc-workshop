@@ -154,7 +154,7 @@
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, updateContactSimple.
 - Forklare formdata
-- Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
+- Delete (or let it be a task): deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
 - Dette er altså et progressive enhancement.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
 
