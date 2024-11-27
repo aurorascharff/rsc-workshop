@@ -1,5 +1,6 @@
 'use client';
 
+import Form from 'next/form';
 import { useRouter } from 'next/navigation';
 import React, { useTransition } from 'react';
 import { useSafeSearchParams } from '@/validations/routeSchema';
@@ -13,7 +14,7 @@ export default function Search() {
   const [searching, startTransition] = useTransition();
 
   return (
-    <form role="search">
+    <Form action="" role="search">
       <input
         className="w-full pl-8 outline-offset-1"
         onChange={e => {
@@ -36,6 +37,6 @@ export default function Search() {
           <SearchIcon width={16} height={16} className="text-gray-dark" />
         )}
       </div>
-    </form>
+    </Form>
   );
 }

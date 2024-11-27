@@ -91,7 +91,8 @@
 ## App: Add transition to Search
 
 - Doing a full-page reload. Not good UX.
-- Add a progressive enhancement to the search on top of the no-js base-case. When hydrated with js, this will run rather.
+- Add a progressive enhancement with Form-component to the search on top of the no-js base-case. When hydrated with js, this will run rather. Client-side nav.
+- Add another progressive enhancement with onChange.
 - Make getContact slow, see the slow.
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to. That's why our search is slow.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
