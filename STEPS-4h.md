@@ -140,6 +140,7 @@
 - How would you submit a form in react?
 - Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate. Redirect also does a revalidatePath, use redirect instead.
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
+- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
@@ -161,7 +162,6 @@
 - Hva er fordelene med dette?
 - Power of rsc, composition of client/server while mainaining interactivity.
 - Add component to update contact
-- Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Alt funker før JS, litt vanskelig å se med suspense. Veldig fint når vi har bittelitt js.
 
 ## (App): Use useActionState for form validation
@@ -173,7 +173,7 @@
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
 - Move data fetching one level up
-- er-field errors coming back, result.errors
+- Per-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state
