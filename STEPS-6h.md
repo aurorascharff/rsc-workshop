@@ -181,7 +181,7 @@
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
 - Move data fetching one level up
-- Per-field errors coming back, result.data
+- Per-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state

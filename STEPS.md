@@ -255,7 +255,7 @@
 - Add validation to the form in updateContact.ts, throw error
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
-- Per-field errors coming back, result.data
+- er-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state
