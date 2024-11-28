@@ -93,7 +93,7 @@
 ### App: Code client component logic
 
 - Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
-- Kode search component: default full page reload, could be a plain filter but we want to use the url, defaultvalue. Vi skal fikse det litt senere.
+- Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
 - Kode contact list: extract to property and move await, filter, could do this on the server
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Husk å fikse href med q.
 - Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
