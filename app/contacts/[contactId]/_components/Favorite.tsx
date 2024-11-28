@@ -7,13 +7,13 @@ import type { Contact } from '@prisma/client';
 
 export default function Favorite({ contact }: { contact: Contact }) {
   const favoriteContactById = favoriteContact.bind(null, contact.id, contact.favorite);
-  const [optimisticFavorite, addOptimisticFavorite] = useOptimistic(contact.favorite);
+  const [optimisticFavorite, setOptimisticFavorite] = useOptimistic(contact.favorite);
   const [, startTransition] = useTransition();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     startTransition(async () => {
-      addOptimisticFavorite(!optimisticFavorite);
+      setOptimisticFavorite(!optimisticFavorite);
       await favoriteContactById();
     });
   };
