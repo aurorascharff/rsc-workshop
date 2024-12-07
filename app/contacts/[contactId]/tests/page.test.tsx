@@ -30,7 +30,7 @@ describe('ContactPage', () => {
 
     expect(await screen.findByRole('heading')).toHaveTextContent('Test User');
     expect(await screen.findByRole('button', { name: 'Add to favorites' })).toHaveTextContent('☆');
-    expect(await screen.findByText('Software Developer')).toBeInTheDocument;
+    expect(await screen.findByText('Software Developer')).toBeInTheDocument();
     expect(await screen.findByText('test@test.com')).toBeInTheDocument();
     expect(await screen.findByText('testuser')).toBeInTheDocument();
     expect(await screen.findByText('Test notes')).toBeInTheDocument();

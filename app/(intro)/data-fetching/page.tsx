@@ -1,4 +1,3 @@
-/* eslint-disable autofix/no-unused-vars */
 import { Suspense } from 'react';
 import { slow } from '@/utils/slow';
 import ClientComponent from './_components/ClientComponent';
@@ -39,7 +38,7 @@ export default async function DataFetchingPage() {
 
   // // Functions getData(1000) and getData(1000) will run in parallel
   // [data1, data2] = await Promise.all([getData(1000), getData(1000)]);
-  // console.log('Parallell, time: ' + new Date().getSeconds());
+  // console.log('Parallel, time: ' + new Date().getSeconds());
 
   // Pass down promise to suspended client component
   // Can do this also to a server comp with await, but its better to just fetch inside the server comp
@@ -54,7 +53,7 @@ export default async function DataFetchingPage() {
         <FirstComponent />
         <SecondComponent />
       </Suspense> */}
-      {/* Paralell fetching with suspense */}
+      {/* Parallel fetching with suspense */}
       <Suspense fallback={<div>Loading...</div>}>
         <FirstComponent />
       </Suspense>
