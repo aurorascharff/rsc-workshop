@@ -18,7 +18,7 @@
 - README.md show commands and run together npm install, npm run dev, verify running
 - Talk about eslint and prettier, show setup and rules, check code-workspace, verify its working
 - Talk about Prisma and the database, show schema
-- README.md prisma seed together
+- README.md prisma seed together, show data in prisma studio, mention sqlite explorer
 
 ### Show: Go through the repository
 
