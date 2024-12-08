@@ -14,7 +14,8 @@
 
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
-- Introduce the structure and the components: remember dynamic route
+- Introduce the structure and the components: remember dynamic route.
+- Layouts: wrapper around the page shared across subroutes.
 - Nested layouts: state in the url, users will always see the same thing. Benefits? Shareable, reloadable, bookmarkable.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
@@ -114,10 +115,10 @@
 - What is your experience with suspense?
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
-- Have to think about avoiding cumulative layout shift.
+- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
 - We can use this to handle the frozen app in a different way
 - Comment out transition in ContactButton
-- Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx)
+- Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx). Show example with < Suspense around content og page.tsx.
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
 - We can add another one inside /edit if we want
 - You need to decide where to wait: in the source or in the destination.
@@ -147,9 +148,9 @@
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
 - Create: createEmptyContact.ts. How can we use this in the layout?
 - How would you submit a form in react?
-- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate. Redirect also does a revalidatePath, use redirect instead.
-- Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
+- Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
+- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate. Redirect also does a revalidatePath, use redirect instead.
 - Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
@@ -187,6 +188,7 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
+- An example is Conform: show docs.
 
 ## Show: Final application
 

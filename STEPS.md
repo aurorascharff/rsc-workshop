@@ -24,7 +24,8 @@
 
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
-- Introduce the structure and the components: remember dynamic route
+- Introduce the structure and the components: remember dynamic route.
+- Layouts: wrapper around the page shared across subroutes.
 - Nested layouts: state in the url, users will always see the same thing. Benefits?
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
 - Introduce the cva() library
@@ -154,7 +155,7 @@
 - You need to decide where to wait: in the source or in the destination.
 - Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
 - Avfallsdek: suspenses arbeidsflate og maler.
-- Have to think about avoiding cumulative layout shift.
+- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
 
 ### App: Add suspense to ContactPage
 
@@ -261,6 +262,7 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
+- An example is Conform: show docs.
 
 ### App: Use useOptimistic on favorite button
 
