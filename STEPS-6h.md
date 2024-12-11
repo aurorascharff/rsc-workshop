@@ -188,7 +188,7 @@
 - By the way, we could use the isPending from useActionState for the loading state
 - Mention ways to use useActionState, toast on error or success
 - Mention React hook form and other libraries to come building ontop of this, react query because of hooks
-- An example is Conform: show docs.
+- An example is [Conform](https://conform.guide/): show docs.
 
 ## Show: Final application
 
@@ -199,6 +199,8 @@
 - Wide range problems to wide range solutions, need SSR, increase seo and performance, dont need in enterprise, extra code for extra benefits, case-to-case, study your users [source](https://x.com/requestmethod/status/1775948860415734128)
 
 ## TASK: Implement favorite, make it prog enh and optimistic
+
+## TASK: Improve initial page load with use()
 
 ## TASK (bonus): Message box
 
