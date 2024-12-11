@@ -91,9 +91,8 @@
 
 ## App: Add transition to Search
 
-- Doing a full-page reload. Not good UX.
-- Add a progressive enhancement to the search on top of the no-js base-case. When hydrated with js, this will run rather.
 - Make getContact slow, see the slow.
+- Doing a full-page reload. Not good UX.
 - Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to. That's why our search is slow.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
 - Have you ever used a transition?
@@ -101,7 +100,8 @@
 - Explain next.js navigations are transitions, can always be cancelled
 - All state updates are executes once they are all done
 - Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
-- Add transition for spinner to the search. Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken.
+- Add a progressive enhancement to the search on top of the no-js base-case. When hydrated with js, this will run rather.
+- Add transition for spinner to the search. (Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken).
 
 ## App: Add suspense to ContactPage
 
