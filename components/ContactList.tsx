@@ -1,12 +1,12 @@
 'use client';
 
 import { matchSorter } from 'match-sorter';
-import React from 'react';
+import React, { use } from 'react';
 import { useSafeSearchParams } from '@/validations/routeSchema';
 import ContactButton from './ContactButton';
 import type { Contact } from '@prisma/client';
 
-export default function ContactList({ contacts }: { contacts: Contact[] }) {
+export default function ContactList({ contactsPromise }: { contactsPromise: Promise<Contact[]> }) {
   // // Can still fetch data "like normal" if needed, but we need an API for this.
   // const [contacts, setContacts] = useState<Contact[]>([]);
   // useEffect(() => {
@@ -17,6 +17,7 @@ export default function ContactList({ contacts }: { contacts: Contact[] }) {
   //     .then(setContacts);
   // }, []);
 
+  const contacts = use(contactsPromise);
   const { q } = useSafeSearchParams('home');
   // const searchParams = useSearchParams();
   // const q = searchParams.get('q') || '';

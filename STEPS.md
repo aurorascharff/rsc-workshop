@@ -309,12 +309,12 @@
 
 ### App: Use the use() hook in contacts
 
-- Instead of loading.tsx lets try to use the use() hook, copy content and delete loading.tsx
-- Explicit suspense
-- Dont await getContact, just pass as promise
-- Use() hook in contactForm
-- Mention move skeleton to contactForm skeleton component
-- Hva foretrekker dere, loading.tsx eller use her?
+- Make getContacts slow(), show default browser spinner and bad inital page load
+- Measure it in lighthouse
+- Remove await from layout, and pass down as promise
+- Lets try to use the use() hook
+- Read the promise in contactList with use()
+- Explicit suspense around the ContactList with skeleton
 
 ### App: Add caching and Next.js improvements
 
