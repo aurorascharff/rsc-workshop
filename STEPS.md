@@ -80,7 +80,7 @@
 
 ### App: Code all data fetching
 
-- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
+- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering. Type safety with prisma schema automatically.
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
 - Fetch data in contact page: getContact inside data/services

@@ -70,10 +70,11 @@
 
 ## App: Code all data fetching
 
-- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
+- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering. Type safety with prisma schema automatically.
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
-- Fetch data in contact page: getContact inside data/services, then page.tsx. Mention next-safe-navigation and show schema. Could be just href. Next.js does not have type safe routes like i.e tanstack router. Make the props unknown.
+- Fetch data in contact page: getContact inside data/services, then page.tsx.
+- Next.js does not have type safe routes like i.e tanstack router. Make the props unknown. Mention next-safe-navigation and show schema. And the await params was a breaking change with next.js 15.
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
 - Fetch data in ContactForm

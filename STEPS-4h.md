@@ -36,6 +36,7 @@
 - Check React Devtools and see the server component
 - No js in the browser for page.tsx
 - Anything you do here won't add to the bundle size
+- Comment code:
 - Async and fetch data prisma, data[0].first
 - Mention that you can use fetch api to call endpoints
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
@@ -45,6 +46,7 @@
 - Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
 - Normal react components are marked with "use client", "a react 19 directive"
 - They are rendered on the server and then hydrated on the client like with normal SSR
+- Comment code:
 - onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
@@ -70,10 +72,11 @@
 
 ## App: Code all data fetching
 
-- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering
+- Fetch data in contactList: first inside the component, then getContacts inside data/services med sortering. Type safety with prisma schema automatically.
 - Nevne setup her, kan ha 1 fil for hver “feature” osv, smak og behag
 - Nevne server-only
-- Fetch data in contact page: getContact inside data/services, then page.tsx. Mention next-safe-navigation and show schema. Could be just href. Next.js does not have type safe routes like i.e tanstack router. Make the props unknown.
+- Fetch data in contact page: getContact inside data/services, then page.tsx.
+- Next.js does not have type safe routes like i.e tanstack router. Make the props unknown. Mention next-safe-navigation and show schema. And the await params was a breaking change with next.js 15.
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
 - Fetch data in ContactForm
