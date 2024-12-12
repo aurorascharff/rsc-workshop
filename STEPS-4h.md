@@ -153,7 +153,7 @@
 - UpdateContactSimple: forklare formdata.
 - Validation. We allow empty data but maybe you don't want that. And there are some things we can validate!
 - Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
-- Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
+- Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input. You could also use the action prop directly.
 - Dette er altså et progressive enhancement.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
 
