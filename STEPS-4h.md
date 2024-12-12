@@ -140,16 +140,19 @@
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
-- Create: createEmptyContact.ts. How can we use this in the layout? Don't revalidate.
+- Create: createEmptyContact.ts. Don't revalidate.
+- How can we use this in the layout? onClick? Would have needed a new component.
 - How would you submit a form in react?
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
-- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Add revalidate. Redirect also does a revalidatePath, use redirect instead.
+- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Add revalidate. Redirect also does a revalidatePath, use redirect instead.
 - Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
-- Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp, updateContactSimple.
-- Forklare formdata
+- Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp.
+- UpdateContactSimple: forklare formdata.
+- Validation. We allow empty data but maybe you don't want that. And there are some things we can validate!
+- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 - Delete: deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input.
 - Dette er altså et progressive enhancement.
 - Show fast 3g network prog enh search in ikognito waterfall, show modal shows up afterwards.
@@ -171,9 +174,7 @@
 ## (App): Use useActionState for form validation
 
 - (If no time for this: mention blog post.)
-- Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
-- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
-- Add validation to the form in updateContact.ts, throw error
+- We want to return validation to the form in updateContact.ts, change to safeParse and throw error.
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
 - Move data fetching one level up

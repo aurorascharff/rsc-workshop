@@ -185,8 +185,10 @@
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
 - Create: createEmptyContact.ts, uten revalidate, så med revalidate, så med kun redirect. NewContactButton, implement then view, make slow and add transition for loading state, "creating" + disabled. Redirect also does a revalidatePath. So we can replace it.
-- Update: ContactForm "use client" move data fetch, onSubmit, updateContactSimple slow (kopier create)
-- Forklare formdata
+- Update: ContactForm "use client" move data fetch, onSubmit.
+- UpdateContactSimple slow (kopier create): forklare formdata.
+- Validation. We allow empty data but maybe you don't want that. And there are some things we can validate!
+- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 
 ### Slides: TASK 1 (30m), fullføre CRUD
 
@@ -251,9 +253,7 @@
 
 ### App: Use useActionState for form validation
 
-- Whats missing? Validation. We allow empty data but maybe you don't want that. Show invalid image url. We're doomed.
-- Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
-- Add validation to the form in updateContact.ts, throw error
+- We want to return validation to the form in updateContact.ts, change to safeParse and throw error.
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
 - Per-field errors coming back, result.errors
