@@ -86,7 +86,7 @@
 
 - Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
-- Kode contact list: extract to property and move await to layout.tsx, filter, could do this on the server.
+- Kode contact list: searchParams, extract to property and move await to layout.tsx, filter, could do this on the server.
 - There is actually another solution to this problem with is a task at the end.
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q.
 - Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
@@ -147,11 +147,11 @@
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
-- Create: createEmptyContact.ts. How can we use this in the layout?
+- Create: createEmptyContact.ts. How can we use this in the layout? Don't revalidate.
 - How would you submit a form in react?
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
-- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate. Redirect also does a revalidatePath, use redirect instead.
+- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Add revalidate. Redirect also does a revalidatePath, use redirect instead.
 - Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.

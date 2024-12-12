@@ -88,36 +88,36 @@
 
 - Search component: Does anybody know whats happening here? Comment out piece by piece, Discuss web standard way to search already working. Show that it works and works without js. Preventdefault. [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
-- Kode contact list: extract to property and move await to layout.tsx, filter, could do this on the server.
+- Kode contact list: searchParams, extract to property and move await to layout.tsx, filter, could do this on the server.
 - There is actually another solution to this problem with is a task at the end.
 - Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q.
 - Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
-## App: Add transition to Search
+## App: Add suspense to ContactPage
 
 - Make getContact slow, see the slow.
-- Doing a full-page reload. Not good UX.
-- Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to. That's why our search is slow.
+- Awaiting a contact db call. Need to show this somehow or the app will not feel good. Awaiting the server on the page we´re navigating to. That's why our search is slow and our navigations are slow.
 - Since this is dynamic, we are running the await on the server. With static content, it has already run in the build and we don´t have to worry about loading states.
+- What is your experience with suspense?
+- Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
+- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
+- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
+- We can use this to suspend an async component and show a fallback.
+- Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx). Show example with < Suspense around content og page.tsx.
+- Create skeleton by copy-pasting the top (image) of the component cleaning it up
+- We can add another one inside /edit if we want
+- (Turn on staletimes 30 to avoid dynamic fetching every time)
+
+## App: Add transition to Search
+
+- Search is now also slow for the same reason. And doing a full-page reload. Not good UX.
+- Add a progressive enhancement to the search with onChange on top of the no-js base-case. When hydrated with js, this will run rather. Client-side nav.
 - Have you ever used a transition?
 - Transitions mark a state update as non urgent and allow the app to handle other actions while it´s happening. Concurrent feature in React 18.
 - Explain next.js navigations are transitions, can always be cancelled
 - All state updates are executes once they are all done
 - Transitions can be added to navigations explicitly to track the state of it. The destination has an "await" which the app is transitioning to.
-- Add a progressive enhancement to the search with onChange on top of the no-js base-case. When hydrated with js, this will run rather. Client-side nav.
 - Add transition for spinner to the search. (Batching, we dont need to debounce fordi transitions gjør alt etter alt er ferdig. Kun ett søk i historikken).
-
-## App: Add suspense to ContactPage
-
-- What is your experience with suspense?
-- Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
-- Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
-- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
-- We can use this to handle the frozen app in a different way
-- Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx). Show example with < Suspense around content og page.tsx.
-- Create skeleton by copy-pasting the top (image) of the component cleaning it up
-- We can add another one inside /edit if we want
-- (Turn on staletimes 30 to avoid dynamic fetching every time)
 
 ## Slides: Introduksjon til React 19
 
@@ -140,11 +140,11 @@
 - La oss fullføre CRUD her
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
-- Create: createEmptyContact.ts. How can we use this in the layout?
+- Create: createEmptyContact.ts. How can we use this in the layout? Don't revalidate.
 - How would you submit a form in react?
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
-- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Uten revalidate, så med revalidate. Redirect also does a revalidatePath, use redirect instead.
+- Form and action-prop layout.tsx, mention onClick and hydration and web standards. Don't need to extract to "use client". Would have needed a new component. Add revalidate. Redirect also does a revalidatePath, use redirect instead.
 - Hvis direkte Server Function: show works without js.
 - This is an implicit action = async transition, automatisk "post", "Server Action"
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
