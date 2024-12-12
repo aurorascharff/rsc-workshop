@@ -6,7 +6,7 @@ import { deleteContact } from '@/data/actions/deleteContact';
 
 export default function DeleteContactButton({ contactId }: { contactId: string }) {
   const deleteContactById = deleteContact.bind(null, contactId);
-  const [isPending, startTransition] = useTransition();
+  const [, startTransition] = useTransition();
 
   // Dag 1: bruk onClick
   return (
@@ -15,17 +15,14 @@ export default function DeleteContactButton({ contactId }: { contactId: string }
       onSubmit={e => {
         e.preventDefault();
         const response = confirm('Please confirm you want to delete this record.');
-        if (!response) {
-          return;
+        if (response) {
+          startTransition(async () => {
+            await deleteContactById();
+          });
         }
-        startTransition(async () => {
-          await deleteContactById();
-        });
       }}
     >
-      <SubmitButton loading={isPending} theme="destroy">
-        Delete
-      </SubmitButton>
+      <SubmitButton theme="destroy">Delete</SubmitButton>
     </form>
   );
 }
