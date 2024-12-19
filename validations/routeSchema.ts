@@ -20,7 +20,6 @@ export const { routes, useSafeParams, useSafeSearchParams } = createNavigationCo
         contactId: z.string().default(''),
       }),
     }),
-    contacts: defineRoute('/contacts'),
     home: defineRoute('/', {
       search: searchParamsSchema,
     }),

@@ -14,7 +14,7 @@
 
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
-- Introduce the structure and the components: remember dynamic route.
+- Introduce the structure and the components: remember dynamic route
 - Layouts: wrapper around the page shared across subroutes.
 - Nested layouts: state in the url, users will always see the same thing. Benefits? Shareable, reloadable, bookmarkable.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
@@ -29,7 +29,7 @@
 - Next.js is a React metaframework that includes server components, server component by default.
 - Console.log page.tsx
 - Make (intro)/client-server/page.tsx
-- What are these synaxes? Route group, could be used for authenticated routes for example.
+- What are these syntaxes? Route group, could be used for authenticated routes for example.
 - Link to client-server in page.tsx
 - Make ServerComponent inside client-server/_components and give it styles, add to page.tsx
 - ServerComponent console log
@@ -88,7 +88,7 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
 - Kode contact list: searchParams, extract to property and move await to layout.tsx, filter, could do this on the server.
 - There is actually another solution to this problem with is a task at the end.
-- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q.
+- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q (if questions: could use a wrapper to preserve params across app).
 - Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ## App: Add transition and ContactButton sidebar
@@ -185,7 +185,7 @@
 - Add ErrorBoundary, contactId/edit/error.tsx
 - Return in updateContact, then useActionState, "use client" and Zod
 - Move data fetching one level up
-- Per-field errors coming back, result.data
+- Per-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?
 - By the way, we could use the isPending from useActionState for the loading state

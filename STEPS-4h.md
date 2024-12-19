@@ -14,7 +14,7 @@
 
 - CRUD app for managing contacts: quick demo
 - We have no JS here in this app. Turn off js. Show SSR in console.
-- Introduce the structure and the components: remember dynamic route-
+- Introduce the structure and the components: remember dynamic route
 - Layouts: wrapper around the page shared across subroutes.
 - Nested layouts: state in the url, users will always see the same thing. Benefits? Shareable, reloadable, bookmarkable.
 - We are using tailwind, easy to make the app mobile friendly, show the tailwind.config.js and breakpoints, show mobile logo disappearing. Hvem har brukt tailwind før?
@@ -36,7 +36,6 @@
 - Check React Devtools and see the server component
 - No js in the browser for page.tsx
 - Anything you do here won't add to the bundle size
-- Comment code:
 - Async and fetch data prisma, data[0].first
 - Mention that you can use fetch api to call endpoints
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
@@ -46,7 +45,6 @@
 - Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
 - Normal react components are marked with "use client", "a react 19 directive"
 - They are rendered on the server and then hydrated on the client like with normal SSR
-- Comment code:
 - onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
@@ -90,8 +88,8 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
 - Kode contact list: searchParams, extract to property and move await to layout.tsx, filter, could do this on the server.
 - There is actually another solution to this problem with is a task at the end.
-- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q.
-- Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
+- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q (if questions: could use a wrapper to preserve params across app).
+- Excalidraw tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ## App: Add suspense to ContactPage
 
