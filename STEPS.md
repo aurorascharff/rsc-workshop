@@ -19,6 +19,7 @@
 - Talk about eslint and prettier, show setup and rules, check code-workspace, verify its working
 - Talk about Prisma and the database, show schema
 - README.md prisma seed together, show data in prisma studio, mention sqlite explorer
+- We can easily switch to real db, Prisma Postgres, prisma.migrate
 
 ### Show: Go through the repository
 
