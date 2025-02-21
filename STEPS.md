@@ -89,6 +89,7 @@
 - Add not-found.tsx global
 - There are other errors and error boundaries like this
 - Fetch data in ContactForm
+- (In the future we can reuse this data fetch with use cache)
 - Discuss composition and compare with React Query
 - Excalidraw: tree so far
 - Alt er på server, ikke noe JS på client ennå
