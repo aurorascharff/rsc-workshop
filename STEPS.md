@@ -87,6 +87,7 @@
 - Fetch data in contact page: getContact inside data/services
 - Add contactId/not-found.tsx og throw fra contactId.
 - Add not-found.tsx global
+- There are other errors and error boundaries like this
 - Fetch data in ContactForm
 - Discuss composition and compare with React Query
 - Excalidraw: tree so far

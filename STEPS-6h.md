@@ -78,6 +78,7 @@
 - Next.js does not have type safe routes like i.e tanstack router. Make the props unknown. Mention next-safe-navigation and show schema. And the await params was a breaking change with next.js 15.
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
+- There are other errors and error boundaries like this
 - Fetch data in ContactForm
 - Discuss composition and compare with React Query
 - Excalidraw: tree so far
