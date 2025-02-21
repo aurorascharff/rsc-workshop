@@ -156,7 +156,7 @@
 - The content is streaming in to the client, show in network tab.
 - You need to decide where to wait: in the source or in the destination.
 - Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
-- Avfallsdek: suspenses arbeidsflate og maler.
+- Avfallsdek: suspenses arbeidsflate og maler. 
 - Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
 
 ### App: Add suspense to ContactPage

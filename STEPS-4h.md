@@ -106,6 +106,7 @@
 - Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx). Show example with < Suspense around content og page.tsx.
 - Create skeleton by copy-pasting the top (image) of the component cleaning it up
 - We can add another one inside /edit if we want
+- Show example of filterlist, I will teach you this in my talk!
 - (Turn on staletimes 30 to avoid dynamic fetching every time)
 
 ## App: Add transition to Search

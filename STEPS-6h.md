@@ -126,6 +126,7 @@
 - We can add another one inside /edit if we want
 - You need to decide where to wait: in the source or in the destination.
 - Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
+- Show example of filterlist, I will teach you this in my talk!
 - Turn on staletimes 30 to avoid dynamic fetching every time
 
 ## Slides: Introduksjon til React 19
