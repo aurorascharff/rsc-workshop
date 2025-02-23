@@ -29,7 +29,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## Prisma Setup
 
-Initialize the local sqllite db with:
+Initialize the local sqlite db with:
 
 ```bash
 npm run prisma.push
