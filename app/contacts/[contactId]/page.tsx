@@ -5,26 +5,26 @@ import GithubLogo from '@/public/github-mark.svg';
 import { routes } from '@/validations/routeSchema';
 import DeleteContactButton from './_components/DeleteContactButton';
 import Favorite from './_components/Favorite';
-import type { Metadata } from 'next';
 
 type PageProps = {
   params: Promise<unknown>;
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { contactId } = routes.contactId.$parseParams(await params);
-  const contact = await getContactCache(contactId);
+// TODO: Add with v15.2.0-canary.70
+// export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+//   const { contactId } = routes.contactId.$parseParams(await params);
+//   const contact = await getContactCache(contactId);
 
-  return contact && contact.first && contact.last
-    ? {
-        description: `Contact details for ${contact.first} ${contact.last}`,
-        title: `${contact.first} ${contact.last}`,
-      }
-    : {
-        description: 'Contact details for an unnamed contact',
-        title: 'Unnamed Contact',
-      };
-}
+//   return contact && contact.first && contact.last
+//     ? {
+//         description: `Contact details for ${contact.first} ${contact.last}`,
+//         title: `${contact.first} ${contact.last}`,
+//       }
+//     : {
+//         description: 'Contact details for an unnamed contact',
+//         title: 'Unnamed Contact',
+//       };
+// }
 
 export default async function ContactPage({ params }: PageProps) {
   const { contactId } = routes.contactId.$parseParams(await params);
