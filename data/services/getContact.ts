@@ -20,7 +20,8 @@ export async function getContact(contactId: string) {
   return contact;
 }
 
-export const getContactDedupe = cache(async (contactId: string) => {
+// The function getContact is called multiple times in the same render. Therefore, it has been per-render cached with React cache.
+export const getContactCache = cache(async (contactId: string) => {
   return getContact(contactId);
 });
 

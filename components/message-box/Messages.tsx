@@ -1,5 +1,5 @@
 import React from 'react';
-import { getContactDedupe } from '@/data/services/getContact';
+import { getContactCache } from '@/data/services/getContact';
 import { getCurrentUser } from '@/data/services/getCurrentUser';
 import { getMessages } from '@/data/services/getMessages';
 import MessageDisplay from './MessageDisplay';
@@ -10,7 +10,7 @@ type Props = {
 
 export default async function Messages({ contactId }: Props) {
   const messages = await getMessages(contactId);
-  const contact = await getContactDedupe(contactId);
+  const contact = await getContactCache(contactId);
   const user = await getCurrentUser();
 
   return (

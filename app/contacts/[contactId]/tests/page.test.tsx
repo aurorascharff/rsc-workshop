@@ -6,7 +6,7 @@ import type { Contact } from '@prisma/client';
 
 vi.mock('@/data/services/getContact', () => {
   return {
-    getContactDedupe: async (id: string) => {
+    getContactCache: async (id: string) => {
       return {
         avatar: 'https://example.com/avatar.jpg',
         email: 'test@test.com',
