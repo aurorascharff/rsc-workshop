@@ -7,12 +7,13 @@ import SubmitButton from '@/components/ui/SubmitButton';
 import TextArea from '@/components/ui/TextArea';
 import { updateContact } from '@/data/actions/updateContact';
 import type { ContactSchemaErrorType } from '@/validations/contactSchema';
-import { routes } from '@/validations/routeSchema';
+import { routes, useSafeSearchParams } from '@/validations/routeSchema';
 import type { Contact } from '@prisma/client';
 
 export default function ContactForm({ contactPromise }: { contactPromise: Promise<Contact> }) {
   const contact = use(contactPromise);
   const updateContactById = updateContact.bind(null, contact.id);
+  const { q } = useSafeSearchParams('home');
 
   const [state, updateContactAction] = useActionState(updateContactById, {
     data: {
@@ -99,7 +100,7 @@ export default function ContactForm({ contactPromise }: { contactPromise: Promis
         />
       </div>
       <div className="flex gap-2 self-start @sm:self-end">
-        <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id })}>
+        <LinkButton theme="secondary" href={routes.contactId({ contactId: contact.id, search: q ? { q } : undefined })}>
           Cancel
         </LinkButton>
         <SubmitButton theme="primary">Save</SubmitButton>
