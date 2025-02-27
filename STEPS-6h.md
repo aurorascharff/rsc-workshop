@@ -91,7 +91,7 @@
 - Kode search component: default full page reload, could be a plain filter but we want to use the url. Add defaultvalue and make client. Vi skal fikse det litt senere.
 - Kode contact list: searchParams, extract to property and move await to layout.tsx, filter, could do this on the server.
 - There is actually another solution to this problem with is a task at the end.
-- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q (if questions: could use a wrapper to preserve params across app).
+- Kode contact button: dont need to mark as use client. Why? Reload hvis det feiler. Legg til likevel. Could be either client on server but this is client anyway, thats why mark. Husk å fikse href med q if q (if questions: could use a wrapper to preserve params across app).
 - Excalidraw: tree, minimalt med JS på client. Etterhvert som vi skalerer blir dette viktigere.
 
 ## App: Add transition and ContactButton sidebar
