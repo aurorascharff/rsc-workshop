@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 const CONTACTS = [
   {
     avatar:
-      'https://media.licdn.com/dms/image/v2/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1668631096577?e=1736985600&v=beta&t=VPGjoq_V9V3n7y1ic8XHMapoK3oczBLbTI3Y1GhzpJE',
+      'https://media.licdn.com/dms/image/v2/D4D03AQFrYA7kjR4Wqg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1668631096577?e=1747872000&v=beta&t=xHyzA5Couu74FBOORMon3LBsZ3NiZdN4H3gzXK4NKHw',
     email: 'devlin.duldulao@inmeta.no',
     favorite: true,
     first: 'Devlin',
@@ -20,7 +20,7 @@ const CONTACTS = [
   },
   {
     avatar:
-      'https://media.licdn.com/dms/image/v2/D4D03AQFcCDu4ygJMvA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731698370320?e=1736985600&v=beta&t=ljaNUvXdvVhGSKDbXAHI-xIJj3IiWRJ5RuZuyBKKUAM',
+      'https://media.licdn.com/dms/image/v2/D4D03AQFcCDu4ygJMvA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1731698370320?e=1747872000&v=beta&t=Qmk6_RgOWU4FS0YnTjMCfduW-Hd9opC485mcVDs84rU',
     email: 'aurora.scharff@inmeta.no',
     favorite: false,
     first: 'Aurora',
@@ -28,19 +28,19 @@ const CONTACTS = [
     id: '1cd89022-64e8-4a76-aec6-43433478e32f',
     last: 'Scharff',
     notes:
-      'Aurora is a skilled frontend developer and consultant at Inmeta. With several years of experience in the workforce, she has handled complex projects and worked with a wide range of technologies, including handling large amounts of data and focusing on scalability.',
+      'Aurora is a skilled frontend developer and consultant at Crayon Consulting. With several years of experience in the workforce, she has handled complex projects and worked with a wide range of technologies, including handling large amounts of data and focusing on scalability.',
     position: 'Consultant',
   },
   {
     avatar:
-      'https://media.licdn.com/dms/image/v2/C5103AQEW-xbR-2s5UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516466254031?e=1736985600&v=beta&t=hXe4qC9ess3Ru_xbHRK4mJUl5-n1I3QLsJQRuvTPc4I',
+      'https://media.licdn.com/dms/image/v2/C5103AQEW-xbR-2s5UA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516466254031?e=1747872000&v=beta&t=LvujpMmYVPpsPBsY5M-Fh5KWsRn5Vy59EwQ-eLf_ASY',
     email: 'caspar.hoegh@inmeta.no',
     favorite: false,
     first: 'Caspar',
     id: '2b3b3b3b-64e8-4a76-aec6-43433478e32f',
     last: 'Høegh',
     notes:
-      'Caspar is an experienced architect, developer, and technical lead in the MSDev department at Inmeta, with 13 years of work experience as a full-stack developer and a BcS from HiBu (2013).',
+      'Caspar is an experienced architect, developer, and technical lead in the MSDev department at Crayon Consulting, with 13 years of work experience as a full-stack developer and a BcS from HiBu (2013).',
     position: 'Senior Consultant / Architect',
   },
 ];
@@ -93,7 +93,7 @@ async function seed() {
     }),
   )
     .then(() => {
-      return console.info('[SEED] Succussfully create contact records');
+      return console.info('[SEED] Successfully create contact records');
     })
     .catch(e => {
       return console.error('[SEED] Failed to create contact records', e);
@@ -105,7 +105,7 @@ async function seed() {
     }),
   )
     .then(() => {
-      return console.info('[SEED] Succussfully create user records');
+      return console.info('[SEED] Successfully create user records');
     })
     .catch(e => {
       return console.error('[SEED] Failed to create user records', e);
@@ -123,7 +123,7 @@ async function seed() {
     }),
   )
     .then(() => {
-      return console.info('[SEED] Succussfully create message records');
+      return console.info('[SEED] Successfully create message records');
     })
     .catch(e => {
       return console.error('[SEED] Failed to create message records', e);
