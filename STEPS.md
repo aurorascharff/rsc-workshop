@@ -50,13 +50,14 @@
 - Async and fetch data prisma, data[0].first
 - Mention that you can use fetch api to call endpoints
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
+- Add button alert and showcase error message, cut out
 
 ## Intro: What are client components?
 
 - Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
 - Normal react components are marked with "use client", a react 19 directive
 - They are rendered on the server and then hydrated on the client like with normal SSR
-- onClick alert, onclick state change
+- Move from server component: onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
 - Check React Devtools and see the client component
@@ -66,7 +67,7 @@
 
 ## Intro: Client/server composition
 
-- Now we need to compose them: split view
+- Now we need to compose them
 - Client in server: all good
 - Server in client: any imported to client, like server, becomes client, fails
 - Donut pattern: children and content, works because it´s a reference
@@ -87,7 +88,7 @@
 - Fetch data in contact page: getContact inside data/services
 - Add contactId/not-found.tsx og throw fra contactId.
 - Add not-found.tsx global
-- There are other errors and error boundaries like this
+- There are other errors and error boundaries like this, recently for forbidden() and unauthorized()
 - Fetch data in ContactForm
 - (In the future we can reuse this data fetch with use cache)
 - Discuss composition and compare with React Query
@@ -178,7 +179,7 @@
 - Pages router: you created API endpoints and used for example trpc
 - Type safety and creates a hidden api-endpoint
 - Excalidraw: "use server", a react 19 directive, mutateData.ts, back to the server
-- Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
+- Show in code mutdateData getcontact[0].id, pass as a reference to the client, use in ClientComponent alert, show error then add "use server", no error
 - Show type safety RPC
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
@@ -245,8 +246,8 @@
 - Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
 - Use SubmitButton with loading boolean for delete button transition
 - Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
-- Add useFormStatus isSubmitting. Bruker parent form som kontekst.
-- Delete loading and disabled boolean from deletebutton
+- Add useFormStatus isSubmitting, "use client". Bruker parent form som kontekst.
+- Delete loading boolean from deletebutton, still works
 - Use SubmitButton in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composition of client/server while mainaining interactivity.
@@ -258,7 +259,7 @@
 
 - We want to return validation to the form in updateContact.ts, change to safeParse and throw error.
 - Add ErrorBoundary, contactId/edit/error.tsx
-- Return in updateContact, then useActionState, "use client" and Zod
+- Return errors in updateContact, then useActionState, "use client" and Zod
 - Per-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
 - Used to react hook form and formik?

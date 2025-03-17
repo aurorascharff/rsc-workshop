@@ -40,13 +40,14 @@
 - Async and fetch data prisma, data[0].first
 - Mention that you can use fetch api to call endpoints
 - Limitations onclick button, we need client for interactivity or browser stuff or js on the client
+- Add button alert and showcase error message, cut out
 
 ## Intro: What are client components?
 
 - Make ClientComponent inside client-server/_components and give it styles, add to page.tsx
 - Normal react components are marked with "use client", "a react 19 directive"
 - They are rendered on the server and then hydrated on the client like with normal SSR
-- onClick alert, onclick state change
+- Move from server component: onClick alert, onclick state change
 - Console log client
 - Page.js has js in the browser
 - Check React Devtools and see the client component
@@ -56,7 +57,7 @@
 
 ## Intro: Client/server composition
 
-- Now we need to compose them: split view
+- Now we need to compose them
 - Client in server: all good
 - Server in client: any imported to client, like server, becomes client, fails
 - Donut pattern: children and content, works because it´s a reference
@@ -78,7 +79,7 @@
 - Next.js does not have type safe routes like i.e tanstack router. Make the props unknown. Mention next-safe-navigation and show schema. And the await params was a breaking change with next.js 15.
 - Throw fra contactId and a contactId/not-found.tsx.
 - Add not-found.tsx global
-- There are other errors and error boundaries like this
+- There are other errors and error boundaries like this, recently for forbidden() and unauthorized()
 - Fetch data in ContactForm
 - (In the future we can reuse this data fetch with use cache)
 - Discuss composition and compare with React Query
@@ -119,7 +120,6 @@
 - What is your experience with suspense?
 - Suspense allows you to handle loading states in a declarative way. Concurrent feature in React 18. [Source](https://react.dev/reference/react/Suspense)
 - Used for lazy loading, code splitting, data fetching. Typically lazy loading in a React SPA.
-- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
 - We can use this to handle the frozen app in a different way
 - Comment out transition in ContactButton
 - Add suspense loading.tsx to ContactPage (skeleton ligger i contact layout.tsx). Show example with < Suspense around content og page.tsx.
@@ -127,6 +127,7 @@
 - We can add another one inside /edit if we want
 - You need to decide where to wait: in the source or in the destination.
 - Explain when to pick what: Is there something to show before navigating? Use transitions. Is there something to show after navigating? Use suspense.
+- Have to think about avoiding cumulative layout shift. Show the CWV plugin. Show example in slides.
 - Show example of filterlist, I will teach you this in my talk!
 - Turn on staletimes 30 to avoid dynamic fetching every time
 
@@ -142,7 +143,7 @@
 - Pages router: you created API endpoints and used for example trpc
 - Type safety and creates a hidden api-endpoint
 - Excalidraw: "use server", a react 19 directive, mutateData.ts, back to the server
-- Show in code mutdateData getcontact[0].id, use in ClientComponent alert, show error then no error
+- Show in code mutdateData getcontact[0].id, pass as a reference to the client, use in ClientComponent alert, show error then add "use server", no error
 - Show type safety RPC
 - Not recommended for data fetching unless specific use cases such as infinite scroll
 
@@ -152,7 +153,7 @@
 - Data access layer actions, prefer extracting the actions
 - You could also make a contact.ts service/action file when you get alot, for this is easier to work with now in the workshop
 - Create: createEmptyContact.ts. Don't revalidate.
-- How can we use this in the layout? onClick? Would have needed a new component.
+- How can we use this in the layout? onClick fails! Would have needed a new component.
 - How would you submit a form in react?
 - Show example from pages router [forms](https://nextjs.org/docs/pages/building-your-application/data-fetching/forms-and-mutations)
 - Noen som er kjent med form actions? Hva skjer, hvordan brukes de? Method post og action med route. Nå kan de bindes til funksjoner.
@@ -162,7 +163,9 @@
 - Since we're using a metaframework with SSR, it's extra good to use as many native elements as possible, everything works without js, not button onclick router.push if we dont have to. Good for a11y as well.
 - Update: ContactForm form and action-prop, could use function but we can also use hidden inputs or .bind to ensure prog.en and dont need client-comp.
 - UpdateContactSimple: forklare formdata.
-- Validation. We allow empty data but maybe you don't want that. And there are some things we can validate!
+- Don't test! Errors with prisma.
+- Validation. We allow empty data but maybe you don't want that. And there are some things we can validate! PARSE ikke SAFEPARSE
+- Test! Errors is thrown or contact is saved.
 - Vi er fullstackutviklere, don't trust client input, vi har ansvaret for dette nå istedenfor å yolo sende til backenden vår.
 - Delete (or let it be a task): deleteContact.ts, then form and action-prop, .bind, then DeleteContactButton for modal,. OnSubmit is fallback wiouth js. Could also use hidden input. You could also use the action prop directly.
 - Dette er altså et progressive enhancement.
@@ -170,12 +173,12 @@
 
 ## App: Add interactivity with SubmitButton
 
-- Make all mutations slow. Lets make this realistic.
+- Make all mutations slow. Lets make this realistic. Feel UX.
 - Analyze SubmitButton. Har dere brukt denne synaksen før? Hva gjør den? Rest operator, spread på button. Videreført buttonprops.
 - Use SubmitButton with loading boolean for delete button transition
 - Hva skal vi gjøre i submitButton? Kan jeg bruke en react 19 hook?
-- Add useFormStatus isSubmitting. Bruker parent form som kontekst.
-- Delete loading and disabled boolean from deletebutton
+- Add useFormStatus isSubmitting, "use client". Bruker parent form som kontekst.
+- Delete loading boolean from deletebutton, still works
 - Use SubmitButton in new contact
 - Hva er fordelene med dette?
 - Power of rsc, composition of client/server while mainaining interactivity.
@@ -187,7 +190,7 @@
 - (If no time for this: mention blog post.)
 - We want to return validation to the form in updateContact.ts, change to safeParse and throw error.
 - Add ErrorBoundary, contactId/edit/error.tsx
-- Return in updateContact, then useActionState, "use client" and Zod
+- Return errors in updateContact, then useActionState, "use client" and Zod
 - Move data fetching one level up
 - Per-field errors coming back, result.errors
 - Use errors, then test and show losing data, then set return data and set defaultValue, mister ikke data jeg skrev inn
